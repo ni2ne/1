@@ -1,0 +1,810 @@
+2024-06-03 09:15:58.016 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 游戏...']
+2024-06-03 09:15:58.016 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteStoryStruct], state=0
+2024-06-03 09:16:18.045 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        小说的题材是游戏。请严格使用Chinese语言，并按照instruction中的说明内容输出内容\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是长篇小说领域经验丰富的小说作家, 我们需要您根据给定的小说题材生成故事的基本结构。\n按照以下内容输出符合给定题材的小说基本结构：\n标题:"小说的标题"\n设置:"小说的情景设置细节，包括时间段、地点和所有相关背景信息"\n主角:"小说主角的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n反派角色:"小说反派角色的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n冲突:"小说故事的主要冲突，包括主角面临的问题和涉及的利害关系"\n对话:"以对话的形式描述情节，揭示人物，以此提供一些提示给读者"\n主题:"小说中心主题，并说明如何在整个情节、角色和背景中展开"\n基调:"整体故事的基调，以及保持背景和人物的一致性和适当性的说明"\n节奏:"调节故事节奏以建立和释放紧张气氛，推进情节，创造戏剧效果的说明"\n其它:"任何额外的细节或对故事的要求，如特定的字数或题材限制"\n'}]
+2024-06-03 09:16:41.680 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 09:16:41.680 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '标题: "虚拟战场"\n\n设置: "故事发生在未来的2050年，地球已经无法承受人类的过度开发，人类被迫迁移至虚拟空间生活。在这个虚拟空间中，人们通过意识连接到一个名为\'战场\'的游戏世界中，进行生存竞争。这个游戏世界是一个充满危险的丛林，有着各种未知的生物和环境挑战。"\n\n主角: "主角名叫林风，25岁，是一名顶尖的游戏工程师，负责维护\'战场\'的稳定运行。他性格冷静，思维敏捷，对技术有着极高的热情。他的动机是找到游戏中的一个隐藏的秘密，这个秘密可能改变虚拟世界的现状。"\n\n反派角色: "反派角色名为赵雷，30岁，是一名野心勃勃的游戏玩家，他的目标是控制\'战场\'，成为虚拟世界的统治者。他性格冷酷，手段残忍，不惜一切代价达到目的。"\n\n冲突: "林风在维护游戏的过程中，发现了赵雷的阴谋，他试图通过游戏中的漏洞来控制整个虚拟世界。林风必须阻止赵雷，同时保护\'战场\'的稳定，防止虚拟世界陷入混乱。"\n\n对话: "林风站在虚拟世界的边缘，看着眼前无尽的丛林，心中充满了疑惑。\n\n林风: \'这个游戏背后一定隐藏着什么秘密，我必须找到它。\'\n\n赵雷站在他对面，眼神中透露出贪婪的光芒。\n\n赵雷: \'林风，你太天真了。这个世界，只有强者才能生存。\'\n\n两人的对话揭示了他们的立场和对虚拟世界的不同看法。"\n\n主题: "小说的中心主题是关于权力、控制与自由的斗争。在虚拟世界中，人们虽然摆脱了现实的束缚，却又陷入了新的权力游戏。故事通过主角林风的视角，探讨了技术进步对人类社会的影响，以及在追求自由的过程中，人们如何面对和解决冲突。"\n\n基调: "整体故事的基调是紧张和充满悬疑的。虚拟世界的设定为故事增添了一层神秘色彩，而主角与反派之间的较量则为故事带来了紧张的氛围。保持背景和人物的一致性，需要确保虚拟世界的规则和逻辑自洽，同时人物的行为和动机要符合他们的性格设定。"\n\n节奏: "故事的节奏需要在探索虚拟世界的奥秘和对抗反派的阴谋之间找到平衡。通过设置一系列的挑战和谜题，逐渐揭露游戏背后的秘密，同时通过紧张的对抗场景，推进情节，创造戏剧效果。"\n\n其它: "由于故事发生在虚拟世界中，可以自由发挥想象力，创造各种奇特的生物和环境。同时，由于是游戏题材，可以加入一些游戏设计和编程的专业知识，增加故事的真实感。"\n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是长篇小说领域经验丰富的小说作家。我们需要您根据context的内容创作出小说的目录和章节内容概况。\n请按照以下要求提供该小说的具体目录和目录中的故事概况：\n1. 输出必须严格符合指定语言。\n2. 回答必须严格按照字典格式，如: {"title": "xxx", "directory": {"第一章：章节标题": "故事概况", "第二章：章节标题": "故事概况"}} 。\n3. 目录应尽可能引人注目和充分，包括一级目录和本章故事概况。\n4. 不要有额外的空格或换行符。\n'}]
+2024-06-03 09:16:53.750 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 09:16:53.751 | WARNING  | metagpt.utils.common:wrapper:649 - There is a exception in role's execution, in order to resume, we delete the newest role communication message in the role's memory.
+2024-06-03 09:19:43.863 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 游戏...']
+2024-06-03 09:19:43.863 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteStoryStruct], state=0
+2024-06-03 09:20:03.882 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        小说的题材是游戏。请严格使用Chinese语言，并按照instruction中的说明内容输出内容\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是长篇小说领域经验丰富的小说作家, 我们需要您根据给定的小说题材生成故事的基本结构。\n按照以下内容输出符合给定题材的小说基本结构：\n标题:"小说的标题"\n设置:"小说的情景设置细节，包括时间段、地点和所有相关背景信息"\n主角:"小说主角的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n反派角色:"小说反派角色的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n冲突:"小说故事的主要冲突，包括主角面临的问题和涉及的利害关系"\n对话:"以对话的形式描述情节，揭示人物，以此提供一些提示给读者"\n主题:"小说中心主题，并说明如何在整个情节、角色和背景中展开"\n基调:"整体故事的基调，以及保持背景和人物的一致性和适当性的说明"\n节奏:"调节故事节奏以建立和释放紧张气氛，推进情节，创造戏剧效果的说明"\n其它:"任何额外的细节或对故事的要求，如特定的字数或题材限制"\n'}]
+2024-06-03 09:20:26.955 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 09:20:26.955 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '标题: "虚拟战场"\n\n设置: "故事发生在未来的2050年，地球已经无法承受人类的过度开发，人类被迫迁移至虚拟空间生活。在这个虚拟空间中，人们通过意识连接到一个名为\'战场\'的游戏世界中，进行生存竞争。这个游戏世界是一个充满危险的丛林，有着各种未知的生物和环境挑战。"\n\n主角: "主角名叫林风，25岁，是一名顶尖的游戏工程师，负责维护\'战场\'的稳定运行。他性格冷静，思维敏捷，对技术有着极高的热情。他的动机是找到游戏中的一个隐藏的秘密，这个秘密可能改变虚拟世界的现状。"\n\n反派角色: "反派角色名为赵雷，30岁，是一名野心勃勃的游戏玩家，他的目标是控制\'战场\'，成为虚拟世界的统治者。他性格冷酷，手段残忍，不惜一切代价达到目的。"\n\n冲突: "林风在维护游戏的过程中，发现了赵雷的阴谋，他试图通过游戏中的漏洞来控制整个虚拟世界。林风必须阻止赵雷，同时保护\'战场\'的稳定，防止虚拟世界陷入混乱。"\n\n对话: "林风站在虚拟世界的边缘，看着眼前无尽的丛林，心中充满了疑惑。\n\n林风: \'这个游戏背后一定隐藏着什么秘密，我必须找到它。\'\n\n赵雷站在他对面，眼神中透露出贪婪的光芒。\n\n赵雷: \'林风，你太天真了。这个世界，只有强者才能生存。\'\n\n两人的对话揭示了他们的立场和对虚拟世界的不同看法。"\n\n主题: "小说的中心主题是关于权力、控制与自由的斗争。在虚拟世界中，人们虽然摆脱了现实的束缚，却又陷入了新的权力游戏。故事通过主角林风的视角，探讨了技术进步对人类社会的影响，以及在追求自由的过程中，人们如何面对和解决冲突。"\n\n基调: "整体故事的基调是紧张和充满悬疑的。虚拟世界的设定为故事增添了一层神秘色彩，而主角与反派之间的较量则为故事带来了紧张的氛围。保持背景和人物的一致性，需要确保虚拟世界的规则和逻辑自洽，同时人物的行为和动机要符合他们的性格设定。"\n\n节奏: "故事的节奏需要在探索虚拟世界的奥秘和对抗反派的阴谋之间找到平衡。通过设置一系列的挑战和谜题，逐渐揭露游戏背后的秘密，同时通过紧张的对抗场景，推进情节，创造戏剧效果。"\n\n其它: "由于故事发生在虚拟世界中，可以自由发挥想象力，创造各种奇特的生物和环境。同时，由于是游戏题材，可以加入一些游戏设计和编程的专业知识，增加故事的真实感。"\n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是长篇小说领域经验丰富的小说作家。我们需要您根据context的内容创作出小说的目录和章节内容概况。\n请按照以下要求提供该小说的具体目录和目录中的故事概况：\n1. 输出必须严格符合指定语言。\n2. 回答必须严格按照字典格式，如: {"title": "xxx", "directory": {"第一章：章节标题": "故事概况", "第二章：章节标题": "故事概况"}} 。\n3. 目录应尽可能引人注目和充分，包括一级目录和本章故事概况。\n4. 不要有额外的空格或换行符。\n'}]
+2024-06-03 09:20:38.759 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 09:20:38.760 | WARNING  | metagpt.utils.common:wrapper:649 - There is a exception in role's execution, in order to resume, we delete the newest role communication message in the role's memory.
+2024-06-03 09:27:41.013 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 游戏...']
+2024-06-03 09:27:41.014 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteStoryStruct], state=0
+2024-06-03 09:28:01.033 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        小说的题材是游戏。请严格使用Chinese语言，并按照instruction中的说明内容输出内容\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是长篇小说领域经验丰富的小说作家, 我们需要您根据给定的小说题材生成故事的基本结构。\n按照以下内容输出符合给定题材的小说基本结构：\n标题:"小说的标题"\n设置:"小说的情景设置细节，包括时间段、地点和所有相关背景信息"\n主角:"小说主角的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n反派角色:"小说反派角色的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n冲突:"小说故事的主要冲突，包括主角面临的问题和涉及的利害关系"\n对话:"以对话的形式描述情节，揭示人物，以此提供一些提示给读者"\n主题:"小说中心主题，并说明如何在整个情节、角色和背景中展开"\n基调:"整体故事的基调，以及保持背景和人物的一致性和适当性的说明"\n节奏:"调节故事节奏以建立和释放紧张气氛，推进情节，创造戏剧效果的说明"\n其它:"任何额外的细节或对故事的要求，如特定的字数或题材限制"\n'}]
+2024-06-03 09:28:24.197 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 09:28:24.198 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '标题: "虚拟战场"\n\n设置: "故事发生在未来的2050年，地球已经无法承受人类的过度开发，人类被迫迁移至虚拟空间生活。在这个虚拟空间中，人们通过意识连接到一个名为\'战场\'的游戏世界中，进行生存竞争。这个游戏世界是一个充满危险的丛林，有着各种未知的生物和环境挑战。"\n\n主角: "主角名叫林风，25岁，是一名顶尖的游戏工程师，负责维护\'战场\'的稳定运行。他性格冷静，思维敏捷，对技术有着极高的热情。他的动机是找到游戏中的一个隐藏的秘密，这个秘密可能改变虚拟世界的现状。"\n\n反派角色: "反派角色名为赵雷，30岁，是一名野心勃勃的游戏玩家，他的目标是控制\'战场\'，成为虚拟世界的统治者。他性格冷酷，手段残忍，不惜一切代价达到目的。"\n\n冲突: "林风在维护游戏的过程中，发现了赵雷的阴谋，他试图通过游戏中的漏洞来控制整个虚拟世界。林风必须阻止赵雷，同时保护\'战场\'的稳定，防止虚拟世界陷入混乱。"\n\n对话: "林风站在虚拟世界的边缘，看着眼前无尽的丛林，心中充满了疑惑。\n\n林风: \'这个游戏背后一定隐藏着什么秘密，我必须找到它。\'\n\n赵雷站在他对面，眼神中透露出贪婪的光芒。\n\n赵雷: \'林风，你太天真了。这个世界，只有强者才能生存。\'\n\n两人的对话揭示了他们的立场和对虚拟世界的不同看法。"\n\n主题: "小说的中心主题是关于权力、控制与自由的斗争。在虚拟世界中，人们虽然摆脱了现实的束缚，却又陷入了新的权力游戏。故事通过主角林风的视角，探讨了技术进步对人类社会的影响，以及在追求自由的过程中，人们如何面对和解决冲突。"\n\n基调: "整体故事的基调是紧张和充满悬疑的。虚拟世界的设定为故事增添了一层神秘色彩，而主角与反派之间的较量则为故事带来了紧张的氛围。保持背景和人物的一致性，需要确保虚拟世界的规则和逻辑自洽，同时人物的行为和动机要符合他们的性格设定。"\n\n节奏: "故事的节奏需要在探索虚拟世界的奥秘和对抗反派的阴谋之间找到平衡。通过设置一系列的挑战和谜题，逐渐揭露游戏背后的秘密，同时通过紧张的对抗场景，推进情节，创造戏剧效果。"\n\n其它: "由于故事发生在虚拟世界中，可以自由发挥想象力，创造各种奇特的生物和环境。同时，由于是游戏题材，可以加入一些游戏设计和编程的专业知识，增加故事的真实感。"\n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是长篇小说领域经验丰富的小说作家。我们需要您根据context的内容创作出小说的目录和章节内容概况。\n请按照以下要求提供该小说的具体目录和目录中的故事概况：\n1. 输出必须严格符合指定语言。\n2. 回答必须严格按照字典格式，如: {"title": "xxx", "directory": {"第一章：章节标题": "故事概况", "第二章：章节标题": "故事概况"}} 。\n3. 目录应尽可能引人注目和充分，包括一级目录和本章故事概况。\n4. 不要有额外的空格或换行符。\n'}]
+2024-06-03 09:28:35.960 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 09:28:35.961 | WARNING  | metagpt.utils.common:wrapper:649 - There is a exception in role's execution, in order to resume, we delete the newest role communication message in the role's memory.
+2024-06-03 09:36:29.909 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 游戏...']
+2024-06-03 09:36:29.909 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteStoryStruct], state=0
+2024-06-03 09:36:49.929 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        小说的题材是游戏。请严格使用Chinese语言，并按照instruction中的说明内容输出内容\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是长篇小说领域经验丰富的小说作家, 我们需要您根据给定的小说题材生成故事的基本结构。\n按照以下内容输出符合给定题材的小说基本结构：\n标题:"小说的标题"\n设置:"小说的情景设置细节，包括时间段、地点和所有相关背景信息"\n主角:"小说主角的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n反派角色:"小说反派角色的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n冲突:"小说故事的主要冲突，包括主角面临的问题和涉及的利害关系"\n对话:"以对话的形式描述情节，揭示人物，以此提供一些提示给读者"\n主题:"小说中心主题，并说明如何在整个情节、角色和背景中展开"\n基调:"整体故事的基调，以及保持背景和人物的一致性和适当性的说明"\n节奏:"调节故事节奏以建立和释放紧张气氛，推进情节，创造戏剧效果的说明"\n其它:"任何额外的细节或对故事的要求，如特定的字数或题材限制"\n'}]
+2024-06-03 09:37:13.168 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 09:37:13.169 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '标题: "虚拟战场"\n\n设置: "故事发生在未来的2050年，地球已经无法承受人类的过度开发，人类被迫迁移至虚拟空间生活。在这个虚拟空间中，人们通过意识连接到一个名为\'战场\'的游戏世界中，进行生存竞争。这个游戏世界是一个充满危险的丛林，有着各种未知的生物和环境挑战。"\n\n主角: "主角名叫林风，25岁，是一名顶尖的游戏工程师，负责维护\'战场\'的稳定运行。他性格冷静，思维敏捷，对技术有着极高的热情。他的动机是找到游戏中的一个隐藏的秘密，这个秘密可能改变虚拟世界的现状。"\n\n反派角色: "反派角色名为赵雷，30岁，是一名野心勃勃的游戏玩家，他的目标是控制\'战场\'，成为虚拟世界的统治者。他性格冷酷，手段残忍，不惜一切代价达到目的。"\n\n冲突: "林风在维护游戏的过程中，发现了赵雷的阴谋，他试图通过游戏中的漏洞来控制整个虚拟世界。林风必须阻止赵雷，同时保护\'战场\'的稳定，防止虚拟世界陷入混乱。"\n\n对话: "林风站在虚拟世界的边缘，看着眼前无尽的丛林，心中充满了疑惑。\n\n林风: \'这个游戏背后一定隐藏着什么秘密，我必须找到它。\'\n\n赵雷站在他对面，眼神中透露出贪婪的光芒。\n\n赵雷: \'林风，你太天真了。这个世界，只有强者才能生存。\'\n\n两人的对话揭示了他们的立场和对虚拟世界的不同看法。"\n\n主题: "小说的中心主题是关于权力、控制与自由的斗争。在虚拟世界中，人们虽然摆脱了现实的束缚，却又陷入了新的权力游戏。故事通过主角林风的视角，探讨了技术进步对人类社会的影响，以及在追求自由的过程中，人们如何面对和解决冲突。"\n\n基调: "整体故事的基调是紧张和充满悬疑的。虚拟世界的设定为故事增添了一层神秘色彩，而主角与反派之间的较量则为故事带来了紧张的氛围。保持背景和人物的一致性，需要确保虚拟世界的规则和逻辑自洽，同时人物的行为和动机要符合他们的性格设定。"\n\n节奏: "故事的节奏需要在探索虚拟世界的奥秘和对抗反派的阴谋之间找到平衡。通过设置一系列的挑战和谜题，逐渐揭露游戏背后的秘密，同时通过紧张的对抗场景，推进情节，创造戏剧效果。"\n\n其它: "由于故事发生在虚拟世界中，可以自由发挥想象力，创造各种奇特的生物和环境。同时，由于是游戏题材，可以加入一些游戏设计和编程的专业知识，增加故事的真实感。"\n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是长篇小说领域经验丰富的小说作家。我们需要您根据context的内容创作出小说的目录和章节内容概况。\n请按照以下要求提供该小说的具体目录和目录中的故事概况：\n1. 输出必须严格符合指定语言。\n2. 回答必须严格按照字典格式，如: {"title": "xxx", "directory": {"第一章：章节标题": "故事概况", "第二章：章节标题": "故事概况"}} 。\n3. 目录应尽可能引人注目和充分，包括一级目录和本章故事概况。\n4. 不要有额外的空格或换行符。\n'}]
+2024-06-03 09:37:24.923 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 09:37:24.923 | WARNING  | metagpt.utils.common:wrapper:649 - There is a exception in role's execution, in order to resume, we delete the newest role communication message in the role's memory.
+2024-06-03 09:39:08.241 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 游戏...']
+2024-06-03 09:39:08.241 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[], state=0
+2024-06-03 09:39:08.241 | WARNING  | metagpt.utils.common:wrapper:649 - There is a exception in role's execution, in order to resume, we delete the newest role communication message in the role's memory.
+2024-06-03 09:41:57.413 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 游戏...']
+2024-06-03 09:41:57.413 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[], state=0
+2024-06-03 09:41:57.413 | WARNING  | metagpt.utils.common:wrapper:649 - There is a exception in role's execution, in order to resume, we delete the newest role communication message in the role's memory.
+2024-06-03 09:42:41.903 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 游戏...']
+2024-06-03 09:42:41.903 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[], state=0
+2024-06-03 09:42:41.903 | WARNING  | metagpt.utils.common:wrapper:649 - There is a exception in role's execution, in order to resume, we delete the newest role communication message in the role's memory.
+2024-06-03 09:44:52.540 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 游戏...']
+2024-06-03 09:44:52.540 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[], state=0
+2024-06-03 09:44:52.540 | WARNING  | metagpt.utils.common:wrapper:649 - There is a exception in role's execution, in order to resume, we delete the newest role communication message in the role's memory.
+2024-06-03 09:46:29.523 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 游戏...']
+2024-06-03 09:46:29.523 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[], state=0
+2024-06-03 09:46:29.523 | WARNING  | metagpt.utils.common:wrapper:649 - There is a exception in role's execution, in order to resume, we delete the newest role communication message in the role's memory.
+2024-06-03 09:47:58.097 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 游戏...']
+2024-06-03 09:47:58.097 | WARNING  | metagpt.utils.common:wrapper:649 - There is a exception in role's execution, in order to resume, we delete the newest role communication message in the role's memory.
+2024-06-03 09:49:20.531 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 游戏...']
+2024-06-03 09:49:20.532 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[], state=-1
+2024-06-03 09:53:57.586 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 游戏...']
+2024-06-03 09:53:57.586 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[], state=-1
+2024-06-03 09:55:43.519 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 游戏...']
+2024-06-03 09:55:43.520 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[], state=-1
+2024-06-03 09:56:13.673 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 游戏...']
+2024-06-03 09:56:13.673 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[], state=-1
+2024-06-03 09:59:08.685 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 游戏...']
+2024-06-03 09:59:08.685 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[], state=-1
+2024-06-03 09:59:59.645 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 游戏...']
+2024-06-03 09:59:59.646 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteStoryStruct], state=-1
+2024-06-03 10:01:05.621 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 游戏...']
+2024-06-03 10:01:05.643 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=(), state=-1
+2024-06-03 10:02:50.338 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 游戏...']
+2024-06-03 10:02:50.445 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[], state=-1
+2024-06-03 10:07:27.334 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 游戏...']
+2024-06-03 10:07:27.347 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[], state=-1
+2024-06-03 10:08:47.447 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 游戏...']
+2024-06-03 10:08:47.448 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[], state=-1
+2024-06-03 10:10:39.023 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 游戏...']
+2024-06-03 10:10:39.024 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[], state=-1
+2024-06-03 10:11:06.087 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 游戏...']
+2024-06-03 10:11:06.088 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[], state=-1
+2024-06-03 11:01:37.587 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 科幻...']
+2024-06-03 11:01:37.687 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[], state=0
+2024-06-03 11:01:37.688 | WARNING  | metagpt.utils.common:wrapper:649 - There is a exception in role's execution, in order to resume, we delete the newest role communication message in the role's memory.
+2024-06-03 11:05:09.326 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 科幻...']
+2024-06-03 11:05:29.434 | DEBUG    | metagpt.utils.file:write:42 - Successfully write file: 2024-06-03_11-05-29\.md
+2024-06-03 11:05:29.436 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[], state=-1
+2024-06-03 11:07:11.976 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 科幻...']
+2024-06-03 11:07:31.993 | DEBUG    | metagpt.utils.file:write:42 - Successfully write file: 2024-06-03_11-07-31\.md
+2024-06-03 11:07:31.993 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[], state=-1
+2024-06-03 11:09:55.313 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 科幻...']
+2024-06-03 11:10:15.325 | DEBUG    | metagpt.utils.file:write:42 - Successfully write file: 2024-06-03_11-10-15\.md
+2024-06-03 11:10:15.326 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[], state=-1
+2024-06-03 11:13:42.654 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 科幻...']
+2024-06-03 11:14:02.663 | DEBUG    | metagpt.utils.file:write:42 - Successfully write file: 2024-06-03_11-14-02\.md
+2024-06-03 11:14:02.664 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[], state=-1
+2024-06-03 11:15:12.090 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 科幻...']
+2024-06-03 11:15:32.108 | DEBUG    | metagpt.utils.file:write:42 - Successfully write file: 2024-06-03_11-15-32\.md
+2024-06-03 11:15:32.110 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[], state=-1
+2024-06-03 11:16:43.842 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 科幻...']
+2024-06-03 11:17:03.848 | DEBUG    | metagpt.utils.file:write:42 - Successfully write file: 2024-06-03_11-17-03\.md
+2024-06-03 11:17:03.849 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[], state=-1
+2024-06-03 11:23:37.681 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 科幻...']
+2024-06-03 11:23:57.695 | DEBUG    | metagpt.utils.file:write:42 - Successfully write file: 2024-06-03_11-23-57\.md
+2024-06-03 11:23:57.696 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[], state=-1
+2024-06-03 11:32:36.864 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 科幻...']
+2024-06-03 11:32:56.877 | DEBUG    | metagpt.utils.file:write:42 - Successfully write file: 2024-06-03_11-32-56\.md
+2024-06-03 11:32:56.878 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[], state=-1
+2024-06-03 11:37:22.048 | INFO     | __main__:main:282 - 科幻
+2024-06-03 11:37:22.048 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 科幻...']
+2024-06-03 11:37:22.048 | INFO     | __main__:_think:203 - -1
+2024-06-03 11:37:22.049 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteStoryStruct], state=0
+2024-06-03 11:37:42.091 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        小说的题材是科幻。请严格使用Chinese语言，并按照instruction中的说明内容输出内容\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家, 我们需要您根据给定的小说题材生成故事的基本结构。\n按照以下内容输出符合给定题材的小说基本结构：\n标题:"小说的标题"\n设置:"小说的情景设置细节，包括时间段、地点和所有相关背景信息"\n主角:"小说主角的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n反派角色:"小说反派角色的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n冲突:"小说故事的主要冲突，包括主角面临的问题和涉及的利害关系"\n对话:"以对话的形式描述情节，揭示人物，以此提供一些提示给读者"\n主题:"小说中心主题，并说明如何在整个情节、角色和背景中展开"\n基调:"整体故事的基调，以及保持背景和人物的一致性和适当性的说明"\n节奏:"调节故事节奏以建立和释放紧张气氛，推进情节，创造戏剧效果的说明"\n其它:"任何额外的细节或对故事的要求，如特定的字数或题材限制"\n'}]
+2024-06-03 11:38:00.248 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 11:38:00.250 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '标题: "星际迷航：遗失的文明"\n\n设置: 故事发生在遥远的未来，人类已经掌握了星际旅行的技术，并与其他外星文明建立了联系。主角的飞船在一次探索任务中意外发现了一个被遗忘的星球，这个星球上隐藏着一个古老的文明，其科技水平远远超越了当前的宇宙文明。\n\n主角: 李明，35岁，是一名经验丰富的星际探险家，性格坚韧不拔，好奇心旺盛，对未知充满渴望。他的动机是寻找宇宙中的未知文明，并揭示它们的秘密。\n\n反派角色: 杰克，40岁，是一名野心勃勃的宇宙海盗，性格冷酷无情，对权力和财富有着无尽的渴望。他的动机是夺取遗失文明的科技，以此来统治宇宙。\n\n冲突: 李明和他的团队在探索遗失文明的过程中，发现了这个文明留下的强大武器，但同时也触发了星球上的防御系统。杰克得知这一消息后，率领他的海盗舰队前来争夺。\n\n对话: 李明站在遗失文明的废墟前，对队友说：“我们终于找到了，这是人类历史上的重大发现。”杰克通过通讯器传来声音：“李明，我知道你在那里，交出你找到的东西，否则你们都别想活着离开。”\n\n主题: 故事的主题是探索与贪婪。通过主角和李明的冒险，展现了人类对未知世界的好奇心和探索精神，同时也揭示了贪婪和野心可能带来的灾难性后果。\n\n基调: 故事的基调是紧张和神秘，随着主角对遗失文明的深入探索，逐渐揭开这个古老文明的秘密，同时也面临着来自宇宙海盗的威胁。\n\n节奏: 故事的节奏紧凑，通过一系列的冒险和冲突，不断推进情节的发展，让读者感受到紧张的气氛和探索的乐趣。\n\n其它: 故事需要保持科学严谨性，所有科技和外星文明的设计都需要有合理的解释。此外，故事的结局应该是开放性的，留给读者想象的空间。\n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家。我们需要您根据context的内容创作出小说的目录和章节内容概况。\n请按照以下要求提供该小说的具体目录和目录中的故事概况：\n1. 输出必须严格符合指定语言。\n2. 回答必须严格按照字典格式，如: {"title": "xxx", "directory": {"第一章：章节标题": "故事概况", "第二章：章节标题": "故事概况"}} 。\n3. 目录应尽可能引人注目和充分，包括一级目录和本章故事概况。\n4. 不要有额外的空格或换行符。\n'}]
+2024-06-03 11:38:10.171 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 11:38:10.172 | INFO     | __main__:_act:243 - {'title': '星际迷航：遗失的文明', 'directory': {'第一章：发现遗迹': '李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。', '第二章：遗失的科技': '探索过程中，李明发现了这个文明留下的强大武器，但同时也激活了星球的防御系统。', '第三章：海盗的威胁': '宇宙海盗杰克得知遗失文明的存在，率领舰队前来争夺，李明和他的团队面临严峻挑战。', '第四章：文明的秘密': '在躲避海盗追击的同时，李明深入研究遗失文明的科技，揭示了这个古老文明的秘密。', '第五章：最终对决': '李明和杰克的舰队在遗失文明的星球上展开决战，李明利用遗失文明的科技保护星球，阻止杰克的野心。', '第六章：新的开始': '决战后，李明决定将遗失文明的科技用于和平目的，开启了人类与外星文明的新篇章。'}}
+2024-06-03 11:38:10.172 | INFO     | __main__:_think:203 - 0
+2024-06-03 11:38:10.172 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=0
+2024-06-03 11:38:30.200 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        您现在是短篇小说领域经验丰富的小说作家。请以引人入胜的风格，深入细致地按照故事概况"李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。"写出故事内容，注意与上一章故事内容的衔接。\n        上一章故事内容为星际迷航：遗失的文明。\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n您现在是短篇小说领域经验丰富的小说作家。我们需要您创作出小说详细内容。'}]
+2024-06-03 11:38:53.318 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 11:38:53.319 | INFO     | __main__:_think:203 - 0
+2024-06-03 11:38:53.319 | INFO     | __main__:_react:269 - Write tutorial to D:\Python\Test\data\tutorial_docx\2024-06-03_11-38-53
+2024-06-03 11:38:53.417 | DEBUG    | metagpt.utils.file:write:42 - Successfully write file: D:\Python\Test\data\tutorial_docx\2024-06-03_11-38-53\星际迷航：遗失的文明.md
+2024-06-03 11:38:53.419 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=-1
+2024-06-03 11:38:53.419 | INFO     | __main__:main:284 - : ## 第一章：发现遗迹
+
+在遥远的未来，星际探索已成为人类文明的重要组成部分。李明，一位杰出的星际探险家，带领着他的团队，驾驶着先进的星际飞船“希望号”，穿梭于浩瀚的宇宙之中，寻找着未知的世界和文明的遗迹。
+
+“希望号”的引擎在星际间划出一道道绚丽的光芒，它的目标是一个被遗忘的星球——X-789。这个星球位于银河系的边缘，被一片未知的星云所掩盖，因此，它一直未被人类发现。李明的团队通过最新的星图探测技术，才得以发现这个隐藏在星云背后的秘密。
+
+当“希望号”缓缓降落在X-789星球的表面时，李明和他的队员们被眼前的景象所震撼。这个星球的表面覆盖着茂密的植被，巨大的树木直插云霄，各种奇异的生物在林间穿梭。但是，最引人注目的是那些散落在星球各处的巨大石柱和废墟，它们似乎在诉说着一个古老文明的辉煌与衰落。
+
+李明和他的团队开始了对这个星球的深入探索。他们发现，这个古老文明的遗迹中充满了智慧与科技的结晶。巨大的石柱上刻满了神秘的符号，似乎是某种古老的文字。而在废墟之中，他们找到了一些保存完好的机械装置，这些装置的复杂程度甚至超过了现代科技。
+
+随着探索的深入，李明和他的团队逐渐揭开了这个古老文明的面纱。他们发现，这个文明曾经是一个高度发达的星际帝国，他们掌握了穿越时空的技术，但最终因为一场未知的灾难而灭亡。在废墟的最深处，他们找到了一台古老的计算机，里面保存着这个文明的全部历史和知识。
+
+李明和他的团队决定将这些宝贵的知识带回地球，让全人类共享这份来自远古的智慧。他们小心翼翼地将计算机装载上“希望号”，准备返回地球。
+
+然而，就在他们即将离开X-789星球时，一个巨大的能量波动突然出现，整个星球开始震动。李明意识到，这个古老的文明可能还隐藏着未知的危险。他们必须尽快离开这个星球。
+
+“希望号”的引擎再次启动，飞船迅速升空，逃离了这个神秘的星球。在飞船的屏幕上，X-789星球逐渐变小，最终消失在星云之中。李明和他的团队知道，他们这次的发现将会改变人类的历史，而那个被遗忘的星球，以及它所隐藏的古老文明，将会永远留在他们的记忆之中。
+2024-06-03 11:40:59.110 | INFO     | __main__:main:282 - 科幻
+2024-06-03 11:40:59.111 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 科幻...']
+2024-06-03 11:40:59.111 | INFO     | __main__:_think:203 - -1
+2024-06-03 11:40:59.111 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteStoryStruct], state=0
+2024-06-03 11:41:19.143 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        小说的题材是科幻。请严格使用Chinese语言，并按照instruction中的说明内容输出内容\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家, 我们需要您根据给定的小说题材生成故事的基本结构。\n按照以下内容输出符合给定题材的小说基本结构：\n标题:"小说的标题"\n设置:"小说的情景设置细节，包括时间段、地点和所有相关背景信息"\n主角:"小说主角的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n反派角色:"小说反派角色的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n冲突:"小说故事的主要冲突，包括主角面临的问题和涉及的利害关系"\n对话:"以对话的形式描述情节，揭示人物，以此提供一些提示给读者"\n主题:"小说中心主题，并说明如何在整个情节、角色和背景中展开"\n基调:"整体故事的基调，以及保持背景和人物的一致性和适当性的说明"\n节奏:"调节故事节奏以建立和释放紧张气氛，推进情节，创造戏剧效果的说明"\n其它:"任何额外的细节或对故事的要求，如特定的字数或题材限制"\n'}]
+2024-06-03 11:41:36.680 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 11:41:36.680 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '标题: "星际迷航：遗失的文明"\n\n设置: 故事发生在遥远的未来，人类已经掌握了星际旅行的技术，并与其他外星文明建立了联系。主角的飞船在一次探索任务中意外发现了一个被遗忘的星球，这个星球上隐藏着一个古老的文明，其科技水平远远超越了当前的宇宙文明。\n\n主角: 李明，35岁，是一名经验丰富的星际探险家，性格坚韧不拔，好奇心旺盛，对未知充满渴望。他的动机是寻找宇宙中的未知文明，并揭示它们的秘密。\n\n反派角色: 杰克，40岁，是一名野心勃勃的宇宙海盗，性格冷酷无情，对权力和财富有着无尽的渴望。他的动机是夺取遗失文明的科技，以此来统治宇宙。\n\n冲突: 李明和他的团队在探索遗失文明的过程中，发现了这个文明留下的强大武器，但同时也触发了星球上的防御系统。杰克得知这一消息后，率领他的海盗舰队前来争夺。\n\n对话: 李明站在遗失文明的废墟前，对队友说：“我们终于找到了，这是人类历史上的重大发现。”杰克通过通讯器传来声音：“李明，我知道你在那里，交出你找到的东西，否则你们都别想活着离开。”\n\n主题: 故事的主题是探索与贪婪。通过主角和李明的冒险，展现了人类对未知世界的好奇心和探索精神，同时也揭示了贪婪和野心可能带来的灾难性后果。\n\n基调: 故事的基调是紧张和神秘，随着主角对遗失文明的深入探索，逐渐揭开这个古老文明的秘密，同时也面临着来自宇宙海盗的威胁。\n\n节奏: 故事的节奏紧凑，通过一系列的冒险和冲突，不断推进情节的发展，让读者感受到紧张的气氛和探索的乐趣。\n\n其它: 故事需要保持科学严谨性，所有科技和外星文明的设计都需要有合理的解释。此外，故事的结局应该是开放性的，留给读者想象的空间。\n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家。我们需要您根据context的内容创作出小说的目录和章节内容概况。\n请按照以下要求提供该小说的具体目录和目录中的故事概况：\n1. 输出必须严格符合指定语言。\n2. 回答必须严格按照字典格式，如: {"title": "xxx", "directory": {"第一章：章节标题": "故事概况", "第二章：章节标题": "故事概况"}} 。\n3. 目录应尽可能引人注目和充分，包括一级目录和本章故事概况。\n4. 不要有额外的空格或换行符。\n'}]
+2024-06-03 11:41:45.642 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 11:41:45.643 | INFO     | __main__:_act:243 - {'title': '星际迷航：遗失的文明', 'directory': {'第一章：发现遗迹': '李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。', '第二章：遗失的科技': '探索过程中，李明发现了这个文明留下的强大武器，但同时也激活了星球的防御系统。', '第三章：海盗的威胁': '宇宙海盗杰克得知遗失文明的消息，率领舰队前来争夺，李明和他的团队面临严峻挑战。', '第四章：文明的秘密': '在躲避海盗追击的同时，李明深入研究遗失文明的科技，揭示了这个古老文明的秘密。', '第五章：终极对决': '李明和杰克的舰队在遗失文明的星球上展开决战，争夺控制权。', '第六章：新的开始': '决战后，李明和他的团队决定将遗失文明的科技用于和平目的，而杰克的野心也得到了应有的惩罚。'}}
+2024-06-03 11:41:45.643 | INFO     | __main__:_think:203 - 0
+2024-06-03 11:41:45.644 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=0
+2024-06-03 11:42:05.661 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        您现在是短篇小说领域经验丰富的小说作家。请以引人入胜的风格，深入细致地按照故事概况"李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。"写出故事内容，注意与上一章故事内容的衔接。\n        上一章故事内容为星际迷航：遗失的文明。\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n您现在是短篇小说领域经验丰富的小说作家。我们需要您创作出小说详细内容。'}]
+2024-06-03 11:42:28.369 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 11:42:28.370 | INFO     | __main__:_think:203 - 0
+2024-06-03 11:42:28.370 | INFO     | __main__:_react:269 - Write tutorial to D:\Python\Test\data\tutorial_docx\2024-06-03_11-42-28
+2024-06-03 11:42:28.371 | DEBUG    | metagpt.utils.file:write:42 - Successfully write file: D:\Python\Test\data\tutorial_docx\2024-06-03_11-42-28\星际迷航：遗失的文明.md
+2024-06-03 11:42:28.372 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=-1
+2024-06-03 11:42:28.372 | INFO     | __main__:main:284 - : ## 第一章：发现遗迹
+
+在遥远的未来，星际探索已成为人类文明的重要组成部分。李明，一位杰出的星际探险家，带领着他的团队，驾驶着先进的星际飞船“希望号”，穿梭于浩瀚的宇宙之中，寻找着未知的世界和文明的遗迹。
+
+“希望号”的引擎在星际间划出一道道绚丽的光芒，它的目标是一个被遗忘的星球——X-789。这个星球位于银河系的边缘，被一片未知的星云所掩盖，因此，它一直未被人类发现。李明的团队通过最新的星图探测技术，才得以发现这个隐藏在星云背后的秘密。
+
+当“希望号”缓缓降落在X-789星球的表面时，李明和他的队员们被眼前的景象所震撼。这个星球的表面覆盖着茂密的植被，巨大的树木直插云霄，各种奇异的生物在林间穿梭。但是，最引人注目的是那些散落在星球各处的巨大石柱和废墟，它们似乎在诉说着一个古老文明的辉煌与衰落。
+
+李明和他的团队开始了对这个星球的深入探索。他们发现，这个古老文明的遗迹中充满了智慧与科技的结晶。巨大的石柱上刻满了神秘的符号，似乎是某种古老的文字。而在废墟之中，他们找到了一些保存完好的机械装置，这些装置的复杂程度甚至超过了现代科技。
+
+随着探索的深入，李明和他的团队逐渐揭开了这个古老文明的面纱。他们发现，这个文明曾经是一个高度发达的星际帝国，他们掌握了穿越时空的技术，但最终因为一场未知的灾难而灭亡。在废墟的最深处，他们找到了一台古老的计算机，里面保存着这个文明的全部历史和知识。
+
+李明和他的团队决定将这些宝贵的知识带回地球，让全人类共享这份来自远古的智慧。他们小心翼翼地将计算机装载上“希望号”，准备返回地球。
+
+然而，就在他们即将离开X-789星球时，一个巨大的能量波动突然出现，整个星球开始震动。李明意识到，这个古老的文明可能还隐藏着未知的危险。他们必须尽快离开这个星球。
+
+“希望号”的引擎再次启动，飞船迅速升空，逃离了这个神秘的星球。在飞船的屏幕上，X-789星球逐渐变小，最终消失在星云之中。李明和他的团队知道，他们这次的发现将会改变人类的历史，而那个被遗忘的星球，以及它所隐藏的古老文明，将会永远留在他们的记忆之中。
+2024-06-03 11:43:16.586 | INFO     | __main__:main:282 - 科幻
+2024-06-03 11:43:16.587 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 科幻...']
+2024-06-03 11:43:16.587 | INFO     | __main__:_think:203 - -1
+2024-06-03 11:43:16.587 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteStoryStruct], state=0
+2024-06-03 11:43:36.614 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        小说的题材是科幻。请严格使用Chinese语言，并按照instruction中的说明内容输出内容\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家, 我们需要您根据给定的小说题材生成故事的基本结构。\n按照以下内容输出符合给定题材的小说基本结构：\n标题:"小说的标题"\n设置:"小说的情景设置细节，包括时间段、地点和所有相关背景信息"\n主角:"小说主角的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n反派角色:"小说反派角色的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n冲突:"小说故事的主要冲突，包括主角面临的问题和涉及的利害关系"\n对话:"以对话的形式描述情节，揭示人物，以此提供一些提示给读者"\n主题:"小说中心主题，并说明如何在整个情节、角色和背景中展开"\n基调:"整体故事的基调，以及保持背景和人物的一致性和适当性的说明"\n节奏:"调节故事节奏以建立和释放紧张气氛，推进情节，创造戏剧效果的说明"\n其它:"任何额外的细节或对故事的要求，如特定的字数或题材限制"\n'}]
+2024-06-03 11:43:54.142 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 11:43:54.143 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '标题: "星际迷航：遗失的文明"\n\n设置: 故事发生在遥远的未来，人类已经掌握了星际旅行的技术，并与其他外星文明建立了联系。主角的飞船在一次探索任务中意外发现了一个被遗忘的星球，这个星球上隐藏着一个古老的文明，其科技水平远远超越了当前的宇宙文明。\n\n主角: 李明，35岁，是一名经验丰富的星际探险家，性格坚韧不拔，好奇心旺盛，对未知充满渴望。他的动机是寻找宇宙中的未知文明，并揭示它们的秘密。\n\n反派角色: 杰克，40岁，是一名野心勃勃的宇宙海盗，性格冷酷无情，对权力和财富有着无尽的渴望。他的动机是夺取遗失文明的科技，以此来统治宇宙。\n\n冲突: 李明和他的团队在探索遗失文明的过程中，发现了这个文明留下的强大武器，但同时也触发了星球上的防御系统。杰克得知这一消息后，率领他的海盗舰队前来争夺。\n\n对话: 李明站在遗失文明的废墟前，对队友说：“我们终于找到了，这是人类历史上的重大发现。”杰克通过通讯器传来声音：“李明，我知道你在那里，交出你找到的东西，否则你们都别想活着离开。”\n\n主题: 故事的主题是探索与贪婪。通过主角和李明的冒险，展现了人类对未知世界的好奇心和探索精神，同时也揭示了贪婪和野心可能带来的灾难性后果。\n\n基调: 故事的基调是紧张和神秘，随着主角对遗失文明的深入探索，逐渐揭开这个古老文明的秘密，同时也面临着来自宇宙海盗的威胁。\n\n节奏: 故事的节奏紧凑，通过一系列的冒险和冲突，不断推进情节的发展，让读者感受到紧张的气氛和探索的乐趣。\n\n其它: 故事需要保持科学严谨性，所有科技和外星文明的设计都需要有合理的解释。此外，故事的结局应该是开放性的，留给读者想象的空间。\n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家。我们需要您根据context的内容创作出小说的目录和章节内容概况。\n请按照以下要求提供该小说的具体目录和目录中的故事概况：\n1. 输出必须严格符合指定语言。\n2. 回答必须严格按照字典格式，如: {"title": "xxx", "directory": {"第一章：章节标题": "故事概况", "第二章：章节标题": "故事概况"}} 。\n3. 目录应尽可能引人注目和充分，包括一级目录和本章故事概况。\n4. 不要有额外的空格或换行符。\n'}]
+2024-06-03 11:44:02.947 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 11:44:02.948 | INFO     | __main__:_act:243 - {'title': '星际迷航：遗失的文明', 'directory': {'第一章：发现遗迹': '李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。', '第二章：遗失的科技': '探索过程中，李明发现了这个文明留下的强大武器，但同时也激活了星球的防御系统。', '第三章：海盗的威胁': '宇宙海盗杰克得知遗失文明的消息，率领舰队前来争夺，李明和他的团队面临严峻挑战。', '第四章：文明的秘密': '在躲避海盗追击的同时，李明深入研究遗失文明的科技，揭示了这个古老文明的秘密。', '第五章：终极对决': '李明和杰克的舰队在遗失文明的星球上展开决战，争夺控制权。', '第六章：新的开始': '决战后，李明和他的团队决定将遗失文明的科技用于和平目的，而杰克的野心也得到了应有的惩罚。'}}
+2024-06-03 11:44:02.948 | INFO     | __main__:_think:203 - 0
+2024-06-03 11:44:02.949 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=0
+2024-06-03 11:44:22.963 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        您现在是短篇小说领域经验丰富的小说作家。请以引人入胜的风格，深入细致地按照故事概况"李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。"写出故事内容，注意与上一章故事内容的衔接。\n        上一章故事内容为星际迷航：遗失的文明。\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n您现在是短篇小说领域经验丰富的小说作家。我们需要您创作出小说详细内容。'}]
+2024-06-03 11:44:46.469 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 11:44:46.471 | INFO     | __main__:_think:203 - 0
+2024-06-03 11:44:46.472 | INFO     | __main__:_react:269 - Write tutorial to D:\Python\Test\data\tutorial_docx\2024-06-03_11-44-46
+2024-06-03 11:44:46.475 | DEBUG    | metagpt.utils.file:write:42 - Successfully write file: D:\Python\Test\data\tutorial_docx\2024-06-03_11-44-46\星际迷航：遗失的文明.md
+2024-06-03 11:44:46.476 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=-1
+2024-06-03 11:44:46.476 | INFO     | __main__:main:284 - : ## 第一章：发现遗迹
+
+在遥远的未来，星际探索已成为人类文明的重要组成部分。李明，一位杰出的星际探险家，带领着他的团队，驾驶着先进的星际飞船“希望号”，穿梭于浩瀚的宇宙之中，寻找着未知的世界和文明的遗迹。
+
+他们的目标是一个被遗忘的星球，这个星球在古老的星图上被标记为“X-77”，但关于它的信息几乎是一片空白。李明和他的团队对这个神秘星球充满了好奇，他们知道，每一次的发现都可能改写人类对宇宙的认知。
+
+经过数月的航行，他们终于抵达了X-77星球。这个星球表面覆盖着厚厚的云层，从太空中望去，就像一颗巨大的珍珠。当“希望号”穿过云层，缓缓降落在这个星球上时，李明和他的团队被眼前的景象惊呆了。
+
+星球的表面是一片荒凉的景象，但在这荒凉之中，却隐藏着令人难以置信的秘密。他们发现了一系列古老的建筑，这些建筑风格奇特，与人类已知的任何文明都不相同。这些建筑似乎是由一种未知的材料建造，即使经过了无数岁月的侵蚀，依然坚固如初。
+
+李明和他的团队小心翼翼地探索着这些建筑，他们发现了一些壁画和文字，这些壁画和文字记录了一个古老文明的兴衰。这个文明曾经繁荣昌盛，但最终因为一场未知的灾难而消亡。
+
+在探索的过程中，李明发现了一个隐藏的房间，房间的中央摆放着一个奇特的装置。这个装置似乎是一个古老的计算机，上面覆盖着密密麻麻的符号。李明小心翼翼地触碰了这个装置，突然间，整个房间亮了起来，墙壁上出现了一幅幅动态的画面，展示了这个古老文明的生活场景。
+
+通过这些画面，李明和他的团队了解到，这个文明曾经是一个高度发达的科技社会，他们掌握了先进的能源技术和星际旅行的能力。但最终，因为一场突如其来的宇宙灾难，这个文明失去了与外界的联系，逐渐走向了灭亡。
+
+李明和他的团队意识到，他们发现的这个古老文明可能是人类历史上最重要的发现之一。他们决定将这个发现带回地球，与全人类分享。在离开这个星球之前，李明在心中默默地向这个古老文明的灵魂致敬，感谢他们留下的宝贵遗产。
+
+“希望号”缓缓升空，再次穿越云层，驶向遥远的星空。李明和他的团队知道，他们的这次探索将会被载入史册，而那个被遗忘的星球，也将不再是宇宙中的秘密。
+2024-06-03 11:47:52.417 | INFO     | __main__:main:282 - 游戏
+2024-06-03 11:47:52.417 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 游戏...']
+2024-06-03 11:47:52.417 | INFO     | __main__:_think:203 - -1
+2024-06-03 11:47:52.417 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteStoryStruct], state=0
+2024-06-03 11:48:12.437 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        小说的题材是游戏。请严格使用Chinese语言，并按照instruction中的说明内容输出内容\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家, 我们需要您根据给定的小说题材生成故事的基本结构。\n按照以下内容输出符合给定题材的小说基本结构：\n标题:"小说的标题"\n设置:"小说的情景设置细节，包括时间段、地点和所有相关背景信息"\n主角:"小说主角的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n反派角色:"小说反派角色的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n冲突:"小说故事的主要冲突，包括主角面临的问题和涉及的利害关系"\n对话:"以对话的形式描述情节，揭示人物，以此提供一些提示给读者"\n主题:"小说中心主题，并说明如何在整个情节、角色和背景中展开"\n基调:"整体故事的基调，以及保持背景和人物的一致性和适当性的说明"\n节奏:"调节故事节奏以建立和释放紧张气氛，推进情节，创造戏剧效果的说明"\n其它:"任何额外的细节或对故事的要求，如特定的字数或题材限制"\n'}]
+2024-06-03 11:48:29.717 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 11:48:29.717 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '标题: "虚拟战场"\n\n设置: 故事发生在未来的2050年，在一个名为“新世界”的虚拟现实游戏中。这个游戏是一个高度先进的模拟战场，玩家可以通过虚拟现实设备完全沉浸在游戏中，体验真实的战斗和冒险。游戏的背景是一个末日后的地球，玩家需要在这个荒废的世界中生存并完成各种任务。\n\n主角: 主角名叫林浩，25岁，是一名职业游戏玩家。他性格坚韧，机智过人，有着强烈的正义感。林浩的动机是成为游戏中的顶尖玩家，同时揭露游戏背后隐藏的秘密。\n\n反派角色: 反派角色名为赵峰，30岁，是游戏中的一个神秘组织的头目。他性格冷酷，善于操纵人心，他的动机是控制游戏世界，以此来实现自己在现实世界中的野心。\n\n冲突: 林浩在游戏中发现了一个隐藏的阴谋，这个阴谋威胁到了所有玩家的安全。他必须与赵峰和他的组织对抗，阻止他们利用游戏来达到不可告人的目的。\n\n对话: 林浩站在虚拟战场的废墟上，面对着赵峰。\n林浩：“赵峰，你的阴谋我已经知道了。我不会让你伤害任何一个玩家。”\n赵峰冷笑：“林浩，你以为你能阻止我吗？这个游戏是我的，我能控制一切。”\n\n主题: 故事的主题是关于现实与虚拟的界限，以及在虚拟世界中寻找真实自我和正义的斗争。\n\n基调: 故事的基调是紧张和刺激的，充满了冒险和战斗的元素。同时，也包含了对人性和道德的深刻探讨。\n\n节奏: 故事的节奏紧凑，通过一系列的冲突和战斗来推进情节，同时在关键时刻放慢节奏，以加深对角色和主题的理解。\n\n其它: 故事需要保持在10,000字以内，以确保读者能够在短时间内完成阅读，并获得完整的阅读体验。\n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家。我们需要您根据context的内容创作出小说的目录和章节内容概况。\n请按照以下要求提供该小说的具体目录和目录中的故事概况：\n1. 输出必须严格符合指定语言。\n2. 回答必须严格按照字典格式，如: {"title": "xxx", "directory": {"第一章：章节标题": "故事概况", "第二章：章节标题": "故事概况"}} 。\n3. 目录应尽可能引人注目和充分，包括一级目录和本章故事概况。\n4. 不要有额外的空格或换行符。\n'}]
+2024-06-03 11:48:42.056 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 11:48:42.056 | INFO     | __main__:_act:243 - {'title': '虚拟战场', 'directory': {'第一章：末日序曲': '林浩在现实世界中的生活，以及他如何成为职业游戏玩家。介绍新世界游戏的背景和规则。', '第二章：虚拟潜入': '林浩首次进入新世界游戏，探索游戏世界，并与其他玩家建立联系。', '第三章：隐藏的阴谋': '林浩在游戏中发现了一些不寻常的事件，开始怀疑游戏背后有更大的阴谋。', '第四章：神秘组织': '林浩揭露了赵峰和他领导的神秘组织的存在，以及他们控制游戏的野心。', '第五章：正义之战': '林浩联合其他玩家，准备对抗赵峰和他的组织，以保护游戏世界的安全。', '第六章：虚拟与现实': '林浩在战斗中逐渐意识到虚拟世界与现实世界的界限开始模糊，他必须找到自己的真实身份。', '第七章：最终对决': '林浩与赵峰在游戏中的最终对决，决定游戏世界的命运。', '第八章：新世界的黎明': '战斗结束后，林浩揭露了游戏背后的真相，新世界游戏迎来了新的开始。'}}
+2024-06-03 11:48:42.057 | INFO     | __main__:_think:203 - 0
+2024-06-03 11:48:42.057 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=0
+2024-06-03 11:49:02.087 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        您现在是短篇小说领域经验丰富的小说作家。请以引人入胜的风格，深入细致地按照故事概况"林浩在现实世界中的生活，以及他如何成为职业游戏玩家。介绍新世界游戏的背景和规则。"写出故事内容，注意与上一章故事内容的衔接。\n        上一章故事内容为虚拟战场。\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n您现在是短篇小说领域经验丰富的小说作家。我们需要您创作出小说详细内容。'}]
+2024-06-03 11:49:19.475 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 11:49:19.477 | INFO     | __main__:_think:203 - 0
+2024-06-03 11:49:19.477 | INFO     | __main__:_react:269 - Write tutorial to D:\Python\Test\data\tutorial_docx\2024-06-03_11-49-19
+2024-06-03 11:49:19.482 | DEBUG    | metagpt.utils.file:write:42 - Successfully write file: D:\Python\Test\data\tutorial_docx\2024-06-03_11-49-19\虚拟战场.md
+2024-06-03 11:49:19.483 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=-1
+2024-06-03 11:49:19.484 | INFO     | __main__:main:284 - : ## 第一章：末日序曲
+
+林浩站在虚拟战场的边缘，他的心跳如同擂鼓，每一次呼吸都带着紧张与期待。在这个世界里，他不再是那个平凡的办公室职员，而是以“浩克”之名，在游戏世界中声名鹊起的职业玩家。他的手指在键盘上跳跃，如同钢琴家在琴键上演奏，每一次点击都精确无比，每一次操作都充满力量。
+
+回想起自己的转变，林浩的心中涌起一股暖流。在现实世界，他是一个普通的上班族，每天重复着单调的工作，生活如同一潭死水。直到有一天，他在网络上偶然发现了一款名为“新世界”的游戏。这款游戏以其独特的背景和规则吸引了林浩的注意，他开始尝试着进入这个全新的世界。
+
+“新世界”是一款结合了虚拟现实技术的网络游戏，玩家可以通过特殊的设备完全沉浸在游戏中，体验到与现实无异的感受。游戏的背景设定在一个充满魔法与剑的世界，玩家可以选择不同的种族和职业，进行冒险和战斗。游戏的规则复杂而严谨，不仅考验玩家的操作技巧，更考验他们的智慧和策略。
+
+林浩被这个游戏深深吸引，他开始投入大量的时间和精力，研究游戏的每一个细节，不断提升自己的技能。他的努力没有白费，很快，他在游戏中的表现引起了其他玩家的注意，他的名声开始在游戏世界中传播。
+
+随着时间的推移，林浩在“新世界”中的成就越来越高，他的名字成为了传奇。他不仅在游戏中找到了乐趣，更找到了一份新的职业——职业游戏玩家。他开始参加各种比赛，与来自世界各地的玩家竞技，每一次胜利都让他更加坚定自己的选择。
+
+现在，站在虚拟战场的边缘，林浩深吸一口气，他知道自己已经准备好了。他的手指在键盘上轻轻舞动，他的目光坚定而专注。这是一场新的战斗，也是他职业生涯中的一个新的篇章。他相信，只要自己不断努力，就能够在“新世界”中创造出更多的传奇。
+2024-06-03 11:57:46.611 | INFO     | __main__:main:282 - 游戏
+2024-06-03 11:57:46.611 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 游戏...']
+2024-06-03 11:57:46.611 | INFO     | __main__:_think:203 - -1
+2024-06-03 11:57:46.612 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteStoryStruct], state=0
+2024-06-03 11:57:58.346 | ERROR    | metagpt.utils.common:wrapper:642 - KeyboardInterrupt:  occurs, start to serialize the project
+2024-06-03 11:58:06.908 | INFO     | __main__:main:282 - 科幻
+2024-06-03 11:58:06.908 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 科幻...']
+2024-06-03 11:58:06.908 | INFO     | __main__:_think:203 - -1
+2024-06-03 11:58:06.908 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteStoryStruct], state=0
+2024-06-03 11:58:26.938 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        小说的题材是科幻。请严格使用Chinese语言，并按照instruction中的说明内容输出内容\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家, 我们需要您根据给定的小说题材生成故事的基本结构。\n按照以下内容输出符合给定题材的小说基本结构：\n标题:"小说的标题"\n设置:"小说的情景设置细节，包括时间段、地点和所有相关背景信息"\n主角:"小说主角的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n反派角色:"小说反派角色的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n冲突:"小说故事的主要冲突，包括主角面临的问题和涉及的利害关系"\n对话:"以对话的形式描述情节，揭示人物，以此提供一些提示给读者"\n主题:"小说中心主题，并说明如何在整个情节、角色和背景中展开"\n基调:"整体故事的基调，以及保持背景和人物的一致性和适当性的说明"\n节奏:"调节故事节奏以建立和释放紧张气氛，推进情节，创造戏剧效果的说明"\n其它:"任何额外的细节或对故事的要求，如特定的字数或题材限制"\n'}]
+2024-06-03 12:02:16.894 | INFO     | __main__:main:280 - 科幻
+2024-06-03 12:02:16.895 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 科幻...']
+2024-06-03 12:02:16.895 | INFO     | __main__:_think:203 - -1
+2024-06-03 12:02:16.895 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteStoryStruct], state=0
+2024-06-03 12:02:36.917 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        小说的题材是科幻。请严格使用Chinese语言，并按照instruction中的说明内容输出内容\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家, 我们需要您根据给定的小说题材生成故事的基本结构。\n按照以下内容输出符合给定题材的小说基本结构：\n标题:"小说的标题"\n设置:"小说的情景设置细节，包括时间段、地点和所有相关背景信息"\n主角:"小说主角的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n反派角色:"小说反派角色的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n冲突:"小说故事的主要冲突，包括主角面临的问题和涉及的利害关系"\n对话:"以对话的形式描述情节，揭示人物，以此提供一些提示给读者"\n主题:"小说中心主题，并说明如何在整个情节、角色和背景中展开"\n基调:"整体故事的基调，以及保持背景和人物的一致性和适当性的说明"\n节奏:"调节故事节奏以建立和释放紧张气氛，推进情节，创造戏剧效果的说明"\n其它:"任何额外的细节或对故事的要求，如特定的字数或题材限制"\n'}]
+2024-06-03 12:02:55.297 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 12:02:55.298 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '标题: "星际迷航：遗失的文明"\n\n设置: 故事发生在遥远的未来，人类已经掌握了星际旅行的技术，并与其他外星文明建立了联系。主角的飞船在一次探索任务中意外发现了一个被遗忘的星球，这个星球上隐藏着一个古老的文明，其科技水平远远超越了当前的宇宙文明。\n\n主角: 李明，35岁，是一名经验丰富的星际探险家，性格坚韧不拔，好奇心旺盛，对未知充满渴望。他的动机是寻找宇宙中的未知文明，揭示宇宙的奥秘。\n\n反派角色: 杰克，40岁，是一名野心勃勃的宇宙海盗，性格冷酷无情，对权力和财富有着无尽的渴望。他的动机是夺取遗失文明的科技，以此来统治宇宙。\n\n冲突: 李明和他的团队在探索遗失文明的过程中，发现了这个文明留下的强大科技，但同时也遭遇了杰克和他的海盗团伙。双方为了争夺这些科技而展开了激烈的斗争。\n\n对话: 李明站在遗失文明的废墟前，对队友说：“我们终于找到了，这是人类历史上的重大发现。”杰克则在远处冷笑：“找到又如何，最终这些都将属于我。”\n\n主题: 故事的主题是探索与贪婪。通过主角对未知文明的探索，展现了人类对知识的渴望和对宇宙奥秘的追求。同时，反派角色的贪婪和对权力的渴望，则揭示了人性中黑暗的一面。\n\n基调: 故事的基调是紧张和神秘的。在探索遗失文明的过程中，充满了未知和危险，同时也伴随着对古代文明的敬畏和好奇。\n\n节奏: 故事的节奏紧凑，随着主角对文明的探索逐渐深入，紧张气氛逐渐升级，最终达到高潮，即与海盗的冲突。\n\n其它: 故事需要保持科学严谨性，所有科技和外星文明的设计都需要有科学依据。此外，故事的结局应该是开放性的，留给读者想象的空间。\n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家。我们需要您根据context的内容创作出小说的目录和章节内容概况。\n请按照以下要求提供该小说的具体目录和目录中的故事概况：\n1. 输出必须严格符合指定语言。\n2. 回答必须严格按照字典格式，如: {"title": "xxx", "directory": {"第一章：章节标题": "故事概况", "第二章：章节标题": "故事概况"}} 。\n3. 目录应尽可能引人注目和充分，包括一级目录和本章故事概况。\n4. 不要有额外的空格或换行符。\n'}]
+2024-06-03 12:03:09.780 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 12:03:09.781 | INFO     | __main__:_act:243 - {'title': '星际迷航：遗失的文明', 'directory': {'第一章：发现遗迹': '李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。', '第二章：文明的秘密': '探索过程中，李明发现了这个文明留下的强大科技，这些科技远远超越了当前的宇宙文明。', '第三章：海盗的阴影': '宇宙海盗杰克得知了遗失文明的存在，决定夺取这些科技来统治宇宙。', '第四章：科技争夺战': '李明和杰克的团队为了争夺遗失文明的科技而展开了激烈的斗争。', '第五章：人性的较量': '在争夺科技的过程中，李明和杰克的人性被推向极限，揭示了探索与贪婪的主题。', '第六章：文明的觉醒': '遗失的文明突然苏醒，其真正的力量和目的开始显现。', '第七章：宇宙的奥秘': '李明和杰克在遗失文明的引导下，揭开了宇宙中更深层次的奥秘。', '第八章：和平的曙光': '在经历了种种挑战后，李明和杰克意识到合作的重要性，共同面对宇宙中的未知威胁。', '第九章：遗失的传承': '遗失文明的科技被安全地传承给了宇宙中的文明，为未来的和平与发展奠定了基础。', '第十章：未知的旅程': '故事以开放性的结局结束，李明和他的团队踏上了新的探索旅程，寻找宇宙中的其他遗失文明。'}}
+2024-06-03 12:03:09.781 | INFO     | __main__:_think:203 - 0
+2024-06-03 12:03:09.782 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=0
+2024-06-03 12:03:29.804 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        您现在是短篇小说领域经验丰富的小说作家。请以引人入胜的风格，深入细致地按照故事概况"李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。"写出故事内容，注意与上一章故事内容的衔接。\n        上一章故事内容为星际迷航：遗失的文明。\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n您现在是短篇小说领域经验丰富的小说作家。我们需要您创作出小说详细内容。'}]
+2024-06-03 12:03:49.017 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 12:03:49.017 | INFO     | __main__:_think:203 - 0
+2024-06-03 12:03:49.017 | INFO     | __main__:_write_to_file:273 - Write tutorial to D:\Python\Test\data\tutorial_docx\2024-06-03_12-03-49
+2024-06-03 12:03:49.018 | DEBUG    | metagpt.utils.file:write:42 - Successfully write file: D:\Python\Test\data\tutorial_docx\2024-06-03_12-03-49\星际迷航：遗失的文明.md
+2024-06-03 12:03:49.020 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=-1
+2024-06-03 12:03:49.020 | INFO     | __main__:main:282 - Tutorial generation and writing completed successfully
+2024-06-03 12:07:23.177 | INFO     | __main__:main:280 - 科幻
+2024-06-03 12:07:23.177 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 科幻...']
+2024-06-03 12:07:23.178 | INFO     | __main__:_think:203 - -1
+2024-06-03 12:07:23.178 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteStoryStruct], state=0
+2024-06-03 12:07:23.178 | INFO     | __main__:_think:203 - 0
+2024-06-03 12:07:23.178 | WARNING  | metagpt.utils.common:wrapper:649 - There is a exception in role's execution, in order to resume, we delete the newest role communication message in the role's memory.
+2024-06-03 12:17:35.859 | INFO     | __main__:main:279 - 科幻
+2024-06-03 12:17:35.859 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 科幻...']
+2024-06-03 12:17:35.859 | INFO     | __main__:_write_to_file:272 - Write tutorial to D:\Python\Test\data\tutorial_docx\2024-06-03_12-17-35
+2024-06-03 12:17:35.861 | DEBUG    | metagpt.utils.file:write:42 - Successfully write file: D:\Python\Test\data\tutorial_docx\2024-06-03_12-17-35\.md
+2024-06-03 12:17:35.862 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteStoryStruct], state=-1
+2024-06-03 12:17:35.862 | INFO     | __main__:main:281 - Tutorial generation and writing completed successfully
+2024-06-03 12:19:28.485 | INFO     | __main__:main:280 - 科幻
+2024-06-03 12:19:28.486 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 科幻...']
+2024-06-03 12:19:28.486 | INFO     | __main__:_think:203 - -1
+2024-06-03 12:19:28.486 | INFO     | __main__:_write_to_file:273 - Write tutorial to D:\Python\Test\data\tutorial_docx\2024-06-03_12-19-28
+2024-06-03 12:19:28.487 | DEBUG    | metagpt.utils.file:write:42 - Successfully write file: D:\Python\Test\data\tutorial_docx\2024-06-03_12-19-28\.md
+2024-06-03 12:19:28.488 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteStoryStruct], state=-1
+2024-06-03 12:19:28.488 | INFO     | __main__:main:282 - Tutorial generation and writing completed successfully
+2024-06-03 12:26:10.175 | INFO     | __main__:main:280 - 科幻
+2024-06-03 12:26:10.175 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 科幻...']
+2024-06-03 12:26:10.175 | INFO     | __main__:_think:203 - -1
+2024-06-03 12:26:10.175 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteStoryStruct], state=0
+2024-06-03 12:26:30.201 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        小说的题材是科幻。请严格使用Chinese语言，并按照instruction中的说明内容输出内容\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家, 我们需要您根据给定的小说题材生成故事的基本结构。\n按照以下内容输出符合给定题材的小说基本结构：\n标题:"小说的标题"\n设置:"小说的情景设置细节，包括时间段、地点和所有相关背景信息"\n主角:"小说主角的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n反派角色:"小说反派角色的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n冲突:"小说故事的主要冲突，包括主角面临的问题和涉及的利害关系"\n对话:"以对话的形式描述情节，揭示人物，以此提供一些提示给读者"\n主题:"小说中心主题，并说明如何在整个情节、角色和背景中展开"\n基调:"整体故事的基调，以及保持背景和人物的一致性和适当性的说明"\n节奏:"调节故事节奏以建立和释放紧张气氛，推进情节，创造戏剧效果的说明"\n其它:"任何额外的细节或对故事的要求，如特定的字数或题材限制"\n'}]
+2024-06-03 12:26:47.784 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 12:26:47.785 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '标题: "星际迷航：遗失的文明"\n\n设置: 故事发生在遥远的未来，人类已经掌握了星际旅行的技术，并与其他外星文明建立了联系。主角的飞船在一次探索任务中意外发现了一个被遗忘的星球，这个星球上隐藏着一个古老的文明，其科技水平远远超越了当前的宇宙文明。\n\n主角: 李明，35岁，是一名经验丰富的星际探险家，性格坚韧不拔，好奇心旺盛，对未知充满渴望。他的动机是寻找宇宙中的未知文明，并揭示它们的秘密。\n\n反派角色: 杰克，40岁，是一名野心勃勃的宇宙海盗，性格冷酷无情，对权力和财富有着无尽的渴望。他的动机是夺取遗失文明的科技，以此来统治宇宙。\n\n冲突: 李明和他的团队在探索遗失文明的过程中，发现了这个文明留下的强大武器，但同时也触发了星球上的防御系统。杰克得知这一消息后，率领他的海盗舰队前来争夺。\n\n对话: 李明站在遗失文明的废墟前，对队友说：“我们终于找到了，这是人类历史上的重大发现。”杰克通过通讯器传来声音：“李明，我知道你在那里，交出你找到的东西，否则你们都别想活着离开。”\n\n主题: 故事的主题是探索与贪婪。通过主角和李明的冒险，展现了人类对未知世界的好奇心和探索精神，同时也揭示了贪婪和野心可能带来的灾难性后果。\n\n基调: 故事的基调是紧张和神秘，随着主角对遗失文明的深入探索，逐渐揭开这个古老文明的秘密，同时也面临着来自宇宙海盗的威胁。\n\n节奏: 故事的节奏紧凑，通过一系列的冒险和冲突，不断推进情节的发展，让读者感受到紧张的气氛和探索的乐趣。\n\n其它: 故事需要保持科学严谨性，所有科技和外星文明的设计都需要有合理的解释。此外，故事的结局应该是开放性的，留给读者想象的空间。\n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家。我们需要您根据context的内容创作出小说的目录和章节内容概况。\n请按照以下要求提供该小说的具体目录和目录中的故事概况：\n1. 输出必须严格符合指定语言。\n2. 回答必须严格按照字典格式，如: {"title": "xxx", "directory": {"第一章：章节标题": "故事概况", "第二章：章节标题": "故事概况"}} 。\n3. 目录应尽可能引人注目和充分，包括一级目录和本章故事概况。\n4. 不要有额外的空格或换行符。\n'}]
+2024-06-03 12:26:56.634 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 12:26:56.635 | INFO     | __main__:_act:243 - {'title': '星际迷航：遗失的文明', 'directory': {'第一章：发现遗迹': '李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。', '第二章：遗失的科技': '探索过程中，李明发现了这个文明留下的强大武器，但同时也激活了星球的防御系统。', '第三章：海盗的威胁': '宇宙海盗杰克得知遗失文明的消息，率领舰队前来争夺，李明和他的团队面临严峻挑战。', '第四章：文明的秘密': '在躲避海盗追击的同时，李明深入研究遗失文明的科技，揭示了这个古老文明的秘密。', '第五章：终极对决': '李明和杰克的舰队在遗失文明的星球上展开决战，争夺控制权。', '第六章：新的开始': '决战后，李明和他的团队决定将遗失文明的科技用于和平目的，而杰克的野心也得到了应有的惩罚。'}}
+2024-06-03 12:26:56.635 | INFO     | __main__:_think:203 - 0
+2024-06-03 12:26:56.636 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=0
+2024-06-03 12:27:16.662 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        您现在是短篇小说领域经验丰富的小说作家。请以引人入胜的风格，深入细致地按照故事概况"李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。"写出故事内容，注意与上一章故事内容的衔接。\n        上一章故事内容为星际迷航：遗失的文明。\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n您现在是短篇小说领域经验丰富的小说作家。我们需要您创作出小说详细内容。'}]
+2024-06-03 12:27:35.940 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 12:27:35.940 | INFO     | __main__:_think:203 - 0
+2024-06-03 12:27:35.940 | INFO     | __main__:_write_to_file:273 - Write tutorial to D:\Python\Test\data\tutorial_docx\2024-06-03_12-27-35
+2024-06-03 12:27:35.942 | DEBUG    | metagpt.utils.file:write:42 - Successfully write file: D:\Python\Test\data\tutorial_docx\2024-06-03_12-27-35\星际迷航：遗失的文明.md
+2024-06-03 12:27:35.942 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=-1
+2024-06-03 12:27:35.943 | INFO     | __main__:main:282 - Tutorial generation and writing completed successfully
+2024-06-03 12:27:46.687 | INFO     | __main__:main:282 - 科幻
+2024-06-03 12:27:46.687 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 科幻...']
+2024-06-03 12:27:46.687 | INFO     | __main__:_think:205 - -1
+2024-06-03 12:27:46.688 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteStoryStruct], state=0
+2024-06-03 12:28:06.711 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        小说的题材是科幻。请严格使用Chinese语言，并按照instruction中的说明内容输出内容\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家, 我们需要您根据给定的小说题材生成故事的基本结构。\n按照以下内容输出符合给定题材的小说基本结构：\n标题:"小说的标题"\n设置:"小说的情景设置细节，包括时间段、地点和所有相关背景信息"\n主角:"小说主角的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n反派角色:"小说反派角色的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n冲突:"小说故事的主要冲突，包括主角面临的问题和涉及的利害关系"\n对话:"以对话的形式描述情节，揭示人物，以此提供一些提示给读者"\n主题:"小说中心主题，并说明如何在整个情节、角色和背景中展开"\n基调:"整体故事的基调，以及保持背景和人物的一致性和适当性的说明"\n节奏:"调节故事节奏以建立和释放紧张气氛，推进情节，创造戏剧效果的说明"\n其它:"任何额外的细节或对故事的要求，如特定的字数或题材限制"\n'}]
+2024-06-03 12:28:24.201 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 12:28:24.202 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '标题: "星际迷航：遗失的文明"\n\n设置: 故事发生在遥远的未来，人类已经掌握了星际旅行的技术，并与其他外星文明建立了联系。主角的飞船在一次探索任务中意外发现了一个被遗忘的星球，这个星球上隐藏着一个古老的文明，其科技水平远远超越了当前的宇宙文明。\n\n主角: 李明，35岁，是一名经验丰富的星际探险家，性格坚韧不拔，好奇心旺盛，对未知充满渴望。他的动机是寻找宇宙中的未知文明，并揭示它们的秘密。\n\n反派角色: 杰克，40岁，是一名野心勃勃的宇宙海盗，性格冷酷无情，对权力和财富有着无尽的渴望。他的动机是夺取遗失文明的科技，以此来统治宇宙。\n\n冲突: 李明和他的团队在探索遗失文明的过程中，发现了这个文明留下的强大武器，但同时也触发了星球上的防御系统。杰克得知这一消息后，率领他的海盗舰队前来争夺。\n\n对话: 李明站在遗失文明的废墟前，对队友说：“我们终于找到了，这是人类历史上的重大发现。”杰克通过通讯器传来声音：“李明，我知道你在那里，交出你找到的东西，否则你们都别想活着离开。”\n\n主题: 故事的主题是探索与贪婪。通过主角和李明的冒险，展现了人类对未知世界的好奇心和探索精神，同时也揭示了贪婪和野心可能带来的灾难性后果。\n\n基调: 故事的基调是紧张和神秘，随着主角对遗失文明的深入探索，逐渐揭开这个古老文明的秘密，同时也面临着来自宇宙海盗的威胁。\n\n节奏: 故事的节奏紧凑，通过一系列的冒险和冲突，不断推进情节的发展，让读者感受到紧张的气氛和探索的乐趣。\n\n其它: 故事需要保持科学严谨性，所有科技和外星文明的设计都需要有合理的解释。此外，故事的结局应该是开放性的，留给读者想象的空间。\n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家。我们需要您根据context的内容创作出小说的目录和章节内容概况。\n请按照以下要求提供该小说的具体目录和目录中的故事概况：\n1. 输出必须严格符合指定语言。\n2. 回答必须严格按照字典格式，如: {"title": "xxx", "directory": {"第一章：章节标题": "故事概况", "第二章：章节标题": "故事概况"}} 。\n3. 目录应尽可能引人注目和充分，包括一级目录和本章故事概况。\n4. 不要有额外的空格或换行符。\n'}]
+2024-06-03 12:28:32.986 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 12:28:32.986 | INFO     | __main__:_act:245 - {'title': '星际迷航：遗失的文明', 'directory': {'第一章：发现遗迹': '李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。', '第二章：遗失的科技': '探索过程中，李明发现了这个文明留下的强大武器，但同时也激活了星球的防御系统。', '第三章：海盗的威胁': '宇宙海盗杰克得知遗失文明的消息，率领舰队前来争夺，李明和他的团队面临严峻挑战。', '第四章：文明的秘密': '在躲避海盗追击的同时，李明深入研究遗失文明的科技，揭示了这个古老文明的秘密。', '第五章：终极对决': '李明和杰克的舰队在遗失文明的星球上展开决战，争夺控制权。', '第六章：新的开始': '决战后，李明和他的团队决定将遗失文明的科技用于和平目的，而杰克的野心也得到了应有的惩罚。'}}
+2024-06-03 12:28:32.987 | INFO     | __main__:_think:205 - 0
+2024-06-03 12:28:32.987 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=0
+2024-06-03 12:28:53.009 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        您现在是短篇小说领域经验丰富的小说作家。请以引人入胜的风格，深入细致地按照故事概况"李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。"写出故事内容，注意与上一章故事内容的衔接。\n        上一章故事内容为星际迷航：遗失的文明。\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n您现在是短篇小说领域经验丰富的小说作家。我们需要您创作出小说详细内容。'}]
+2024-06-03 12:29:12.454 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 12:29:12.454 | INFO     | __main__:_think:205 - 0
+2024-06-03 12:29:12.455 | INFO     | __main__:_write_to_file:275 - Write tutorial to D:\Python\Test\data\tutorial_docx\2024-06-03_12-29-12
+2024-06-03 12:29:12.456 | DEBUG    | metagpt.utils.file:write:42 - Successfully write file: D:\Python\Test\data\tutorial_docx\2024-06-03_12-29-12\星际迷航：遗失的文明.md
+2024-06-03 12:29:12.457 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=-1
+2024-06-03 12:29:12.457 | INFO     | __main__:main:284 - Tutorial generation and writing completed successfully
+2024-06-03 12:29:48.202 | INFO     | __main__:main:283 - 科幻
+2024-06-03 12:29:48.202 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 科幻...']
+2024-06-03 12:29:48.202 | INFO     | __main__:_think:206 - -1
+2024-06-03 12:29:48.203 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteStoryStruct], state=0
+2024-06-03 12:30:08.219 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        小说的题材是科幻。请严格使用Chinese语言，并按照instruction中的说明内容输出内容\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家, 我们需要您根据给定的小说题材生成故事的基本结构。\n按照以下内容输出符合给定题材的小说基本结构：\n标题:"小说的标题"\n设置:"小说的情景设置细节，包括时间段、地点和所有相关背景信息"\n主角:"小说主角的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n反派角色:"小说反派角色的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n冲突:"小说故事的主要冲突，包括主角面临的问题和涉及的利害关系"\n对话:"以对话的形式描述情节，揭示人物，以此提供一些提示给读者"\n主题:"小说中心主题，并说明如何在整个情节、角色和背景中展开"\n基调:"整体故事的基调，以及保持背景和人物的一致性和适当性的说明"\n节奏:"调节故事节奏以建立和释放紧张气氛，推进情节，创造戏剧效果的说明"\n其它:"任何额外的细节或对故事的要求，如特定的字数或题材限制"\n'}]
+2024-06-03 12:30:27.916 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 12:30:27.917 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '标题: "星际迷航：遗失的文明"\n\n设置: 故事发生在遥远的未来，人类已经掌握了星际旅行的技术，并与其他外星文明建立了联系。主角的飞船在一次探索任务中意外发现了一个被遗忘的星球，这个星球上隐藏着一个古老的文明，其科技水平远远超越了当前的宇宙文明。\n\n主角: 李明，35岁，是一名经验丰富的星际探险家，性格坚韧不拔，好奇心旺盛，对未知充满渴望。他的动机是寻找宇宙中的未知文明，并揭示它们的秘密。\n\n反派角色: 杰克，40岁，是一名野心勃勃的宇宙海盗，性格冷酷无情，对权力和财富有着无尽的渴望。他的动机是夺取遗失文明的科技，以此来统治宇宙。\n\n冲突: 李明和他的团队在探索遗失文明的过程中，发现了这个文明留下的强大武器，但同时也触发了星球上的防御系统。杰克得知这一消息后，率领他的海盗舰队前来争夺。\n\n对话: 李明站在遗失文明的废墟前，对队友说：“我们终于找到了，这是人类历史上最伟大的发现。” 杰克通过通讯器传来声音：“李明，我知道你在那里，交出你找到的东西，否则你们都别想活着离开。”\n\n主题: 故事的主题是探索与贪婪。通过主角和李明的冒险，展现了人类对未知世界的好奇心和探索精神，同时也揭示了贪婪和野心可能带来的灾难性后果。\n\n基调: 故事的基调是紧张和神秘，随着探索的深入，不断揭示遗失文明的秘密，同时也伴随着杰克的威胁和攻击，增加了故事的紧张气氛。\n\n节奏: 故事的节奏需要在探索的平静和海盗攻击的紧张之间切换，以此来吸引读者的注意力，并在关键时刻释放紧张气氛，达到戏剧性的效果。\n\n其它: 故事需要在1万字以内完成，确保情节紧凑，同时保留足够的细节来描绘遗失文明的科技和宇宙海盗的残酷。\n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家。我们需要您根据context的内容创作出小说的目录和章节内容概况。\n请按照以下要求提供该小说的具体目录和目录中的故事概况：\n1. 输出必须严格符合指定语言。\n2. 回答必须严格按照字典格式，如: {"title": "xxx", "directory": {"第一章：章节标题": "故事概况", "第二章：章节标题": "故事概况"}} 。\n3. 目录应尽可能引人注目和充分，包括一级目录和本章故事概况。\n4. 不要有额外的空格或换行符。\n'}]
+2024-06-03 12:30:39.806 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 12:30:39.807 | INFO     | __main__:_act:246 - {'title': '星际迷航：遗失的文明', 'directory': {'第一章：发现遗迹': '李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。', '第二章：遗失的科技': '探索过程中，李明发现了这个文明留下的强大武器，但同时也激活了星球的防御系统。', '第三章：海盗的威胁': '宇宙海盗杰克得知遗失文明的存在后，率领舰队前来争夺，威胁要夺取李明发现的科技。', '第四章：防御与反击': '面对杰克的攻击，李明和他的团队必须利用遗失文明的科技来保护自己，同时寻找逃离星球的方法。', '第五章：文明的秘密': '在对抗海盗的同时，李明逐渐揭开了遗失文明背后的秘密，发现了一个可能改变宇宙命运的真相。', '第六章：最终对决': '李明和杰克之间的冲突达到高潮，一场关于科技和命运的最终对决在遗失的星球上展开。', '第七章：新的开始': '对决结束后，李明和他的团队带着对遗失文明的深刻理解和对宇宙的新认识，踏上了返回地球的旅程。'}}
+2024-06-03 12:30:39.809 | INFO     | __main__:_think:206 - 0
+2024-06-03 12:30:39.810 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=0
+2024-06-03 12:30:59.835 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        您现在是短篇小说领域经验丰富的小说作家。请以引人入胜的风格，深入细致地按照故事概况"李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。"写出故事内容，注意与上一章故事内容的衔接。\n        上一章故事内容为星际迷航：遗失的文明。\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n您现在是短篇小说领域经验丰富的小说作家。我们需要您创作出小说详细内容。'}]
+2024-06-03 12:31:19.139 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 12:31:19.140 | INFO     | __main__:_think:206 - 0
+2024-06-03 12:31:19.140 | INFO     | __main__:_write_to_file:276 - Write tutorial to D:\Python\Test\data\tutorial_docx\2024-06-03_12-31-19
+2024-06-03 12:31:19.141 | DEBUG    | metagpt.utils.file:write:42 - Successfully write file: D:\Python\Test\data\tutorial_docx\2024-06-03_12-31-19\星际迷航：遗失的文明.md
+2024-06-03 12:31:19.142 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=-1
+2024-06-03 12:31:19.142 | INFO     | __main__:main:285 - Tutorial generation and writing completed successfully
+2024-06-03 12:35:33.421 | INFO     | __main__:main:283 - 科幻
+2024-06-03 12:35:33.422 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 科幻...']
+2024-06-03 12:35:33.422 | INFO     | __main__:_think:206 - -1
+2024-06-03 12:35:33.422 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteStoryStruct], state=0
+2024-06-03 12:35:53.437 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        小说的题材是科幻。请严格使用Chinese语言，并按照instruction中的说明内容输出内容\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家, 我们需要您根据给定的小说题材生成故事的基本结构。\n按照以下内容输出符合给定题材的小说基本结构：\n标题:"小说的标题"\n设置:"小说的情景设置细节，包括时间段、地点和所有相关背景信息"\n主角:"小说主角的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n反派角色:"小说反派角色的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n冲突:"小说故事的主要冲突，包括主角面临的问题和涉及的利害关系"\n对话:"以对话的形式描述情节，揭示人物，以此提供一些提示给读者"\n主题:"小说中心主题，并说明如何在整个情节、角色和背景中展开"\n基调:"整体故事的基调，以及保持背景和人物的一致性和适当性的说明"\n节奏:"调节故事节奏以建立和释放紧张气氛，推进情节，创造戏剧效果的说明"\n其它:"任何额外的细节或对故事的要求，如特定的字数或题材限制"\n'}]
+2024-06-03 12:36:11.835 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 12:36:11.835 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '标题: "星际迷航：遗失的文明"\n\n设置: 故事发生在遥远的未来，人类已经掌握了星际旅行的技术，并与其他外星文明建立了联系。主角的飞船在一次探索任务中意外发现了一个被遗忘的星球，这个星球上隐藏着一个古老的文明，其科技水平远远超越了当前的宇宙文明。\n\n主角: 李明，35岁，是一名经验丰富的星际探险家，性格坚韧不拔，好奇心旺盛，对未知充满渴望。他的动机是寻找宇宙中的未知文明，揭示宇宙的奥秘。\n\n反派角色: 杰克，40岁，是一名野心勃勃的宇宙海盗，性格冷酷无情，对权力和财富有着无尽的渴望。他的动机是夺取遗失文明的科技，以此来统治宇宙。\n\n冲突: 李明和他的团队在探索遗失文明的过程中，发现了这个文明留下的强大科技，但同时也遭遇了杰克和他的海盗团伙。双方为了争夺这些科技而展开了激烈的斗争。\n\n对话: 李明站在遗失文明的废墟前，对队友说：“我们终于找到了，这是人类历史上的重大发现。”杰克则在远处冷笑：“找到又如何，最终这些都将属于我。”\n\n主题: 故事的主题是探索与贪婪。通过主角对未知文明的探索，展现了人类对知识的渴望和对宇宙奥秘的追求。同时，反派角色的贪婪和对权力的渴望，则揭示了人性中黑暗的一面。\n\n基调: 故事的基调是紧张和神秘的。在探索遗失文明的过程中，充满了未知和危险，同时也伴随着对古代文明的敬畏和好奇。\n\n节奏: 故事的节奏紧凑，随着主角对文明的探索逐渐深入，紧张气氛逐渐升级，最终达到高潮，即与海盗的冲突。\n\n其它: 故事需要保持科学严谨性，所有科技和外星文明的设计都需要有科学依据。此外，故事的结局应该是开放性的，留给读者想象的空间。\n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家。我们需要您根据context的内容创作出小说的目录和章节内容概况。\n请按照以下要求提供该小说的具体目录和目录中的故事概况：\n1. 输出必须严格符合指定语言。\n2. 回答必须严格按照字典格式，如: {"title": "xxx", "directory": {"第一章：章节标题": "故事概况", "第二章：章节标题": "故事概况"}} 。\n3. 目录应尽可能引人注目和充分，包括一级目录和本章故事概况。\n4. 不要有额外的空格或换行符。\n'}]
+2024-06-03 12:36:26.010 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 12:36:26.010 | INFO     | __main__:_act:246 - {'title': '星际迷航：遗失的文明', 'directory': {'第一章：发现遗迹': '李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。', '第二章：文明的秘密': '探索过程中，李明发现了这个文明留下的强大科技，这些科技远远超越了当前的宇宙文明。', '第三章：海盗的阴影': '宇宙海盗杰克得知了遗失文明的存在，决定夺取这些科技来统治宇宙。', '第四章：科技争夺战': '李明和杰克的团队为了争夺遗失文明的科技而展开了激烈的斗争。', '第五章：人性的较量': '在争夺科技的过程中，李明和杰克的人性被推向极限，揭示了探索与贪婪的主题。', '第六章：文明的觉醒': '遗失的文明突然苏醒，其真正的力量和目的开始显现。', '第七章：宇宙的奥秘': '李明和杰克在遗失文明的引导下，揭开了宇宙中更深层次的奥秘。', '第八章：和平的曙光': '在经历了种种挑战后，李明和杰克意识到合作的重要性，共同面对宇宙中的未知威胁。', '第九章：遗失的传承': '遗失文明的科技被安全地传承给了宇宙中的文明，为未来的和平与发展奠定了基础。', '第十章：未知的旅程': '故事以开放性的结局结束，李明和他的团队踏上了新的探索旅程，寻找宇宙中的其他遗失文明。'}}
+2024-06-03 12:36:26.011 | INFO     | __main__:_think:206 - 0
+2024-06-03 12:36:26.011 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=0
+2024-06-03 12:36:46.036 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        您现在是短篇小说领域经验丰富的小说作家。请以引人入胜的风格，深入细致地按照故事概况"李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。"写出故事内容，注意与上一章故事内容的衔接。\n        上一章故事内容为星际迷航：遗失的文明。\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n您现在是短篇小说领域经验丰富的小说作家。我们需要您创作出小说详细内容。'}]
+2024-06-03 12:37:05.348 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 12:37:05.349 | INFO     | __main__:_think:206 - 0
+2024-06-03 12:37:05.349 | INFO     | __main__:_write_to_file:276 - Write tutorial to D:\Python\Test\data\tutorial_docx\2024-06-03_12-37-05
+2024-06-03 12:37:05.350 | DEBUG    | metagpt.utils.file:write:42 - Successfully write file: D:\Python\Test\data\tutorial_docx\2024-06-03_12-37-05\星际迷航：遗失的文明.md
+2024-06-03 12:37:05.351 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=-1
+2024-06-03 12:37:05.351 | INFO     | __main__:main:285 - Tutorial generation and writing completed successfully
+2024-06-03 12:37:44.140 | INFO     | __main__:main:283 - 科幻
+2024-06-03 12:37:44.141 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 科幻...']
+2024-06-03 12:37:44.141 | INFO     | __main__:_think:206 - -1
+2024-06-03 12:37:44.141 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteStoryStruct], state=0
+2024-06-03 12:38:04.171 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        小说的题材是科幻。请严格使用Chinese语言，并按照instruction中的说明内容输出内容\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家, 我们需要您根据给定的小说题材生成故事的基本结构。\n按照以下内容输出符合给定题材的小说基本结构：\n标题:"小说的标题"\n设置:"小说的情景设置细节，包括时间段、地点和所有相关背景信息"\n主角:"小说主角的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n反派角色:"小说反派角色的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n冲突:"小说故事的主要冲突，包括主角面临的问题和涉及的利害关系"\n对话:"以对话的形式描述情节，揭示人物，以此提供一些提示给读者"\n主题:"小说中心主题，并说明如何在整个情节、角色和背景中展开"\n基调:"整体故事的基调，以及保持背景和人物的一致性和适当性的说明"\n节奏:"调节故事节奏以建立和释放紧张气氛，推进情节，创造戏剧效果的说明"\n其它:"任何额外的细节或对故事的要求，如特定的字数或题材限制"\n'}]
+2024-06-03 12:38:21.836 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 12:38:21.836 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '标题: "星际迷航：遗失的文明"\n\n设置: 故事发生在遥远的未来，人类已经掌握了星际旅行的技术，并与其他外星文明建立了联系。主角的飞船在一次探索任务中意外发现了一个被遗忘的星球，这个星球上隐藏着一个古老的文明，其科技水平远远超越了当前的宇宙文明。\n\n主角: 李明，35岁，是一名经验丰富的星际探险家，性格坚韧不拔，好奇心旺盛，对未知充满渴望。他的动机是寻找宇宙中的未知文明，并揭示它们的秘密。\n\n反派角色: 杰克，40岁，是一名野心勃勃的宇宙海盗，性格冷酷无情，对权力和财富有着无尽的渴望。他的动机是夺取遗失文明的科技，以此来统治宇宙。\n\n冲突: 李明和他的团队在探索遗失文明的过程中，发现了这个文明留下的强大武器，但同时也触发了星球上的防御系统。杰克得知这一消息后，率领他的海盗舰队前来争夺。\n\n对话: 李明站在遗失文明的废墟前，对队友说：“我们终于找到了，这是人类历史上的重大发现。”杰克通过通讯器传来声音：“李明，我知道你在那里，交出你找到的东西，否则你们都别想活着离开。”\n\n主题: 故事的主题是探索与贪婪。通过主角和李明的冒险，展现了人类对未知世界的好奇心和探索精神，同时也揭示了贪婪和野心可能带来的灾难性后果。\n\n基调: 故事的基调是紧张和神秘，随着主角对遗失文明的深入探索，逐渐揭开这个古老文明的秘密，同时也面临着来自宇宙海盗的威胁。\n\n节奏: 故事的节奏紧凑，通过一系列的冒险和冲突，不断推进情节的发展，让读者感受到紧张的气氛和探索的乐趣。\n\n其它: 故事需要保持科学严谨性，所有科技和外星文明的设计都需要有合理的解释。此外，故事的结局应该是开放性的，留给读者想象的空间。\n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家。我们需要您根据context的内容创作出小说的目录和章节内容概况。\n请按照以下要求提供该小说的具体目录和目录中的故事概况：\n1. 输出必须严格符合指定语言。\n2. 回答必须严格按照字典格式，如: {"title": "xxx", "directory": {"第一章：章节标题": "故事概况", "第二章：章节标题": "故事概况"}} 。\n3. 目录应尽可能引人注目和充分，包括一级目录和本章故事概况。\n4. 不要有额外的空格或换行符。\n'}]
+2024-06-03 12:38:30.710 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 12:38:30.711 | INFO     | __main__:_act:246 - {'title': '星际迷航：遗失的文明', 'directory': {'第一章：发现遗迹': '李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。', '第二章：遗失的科技': '探索过程中，李明发现了这个文明留下的强大武器，但同时也激活了星球的防御系统。', '第三章：海盗的威胁': '宇宙海盗杰克得知遗失文明的消息，率领舰队前来争夺，李明和他的团队面临严峻挑战。', '第四章：文明的秘密': '在躲避海盗追击的同时，李明深入研究遗失文明的科技，揭示了这个古老文明的秘密。', '第五章：终极对决': '李明和杰克的舰队在遗失文明的星球上展开决战，争夺控制权。', '第六章：新的开始': '决战后，李明和他的团队决定将遗失文明的科技用于和平目的，而杰克的野心也得到了应有的惩罚。'}}
+2024-06-03 12:38:30.712 | INFO     | __main__:_think:206 - 0
+2024-06-03 12:38:30.712 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=0
+2024-06-03 12:38:50.735 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        您现在是短篇小说领域经验丰富的小说作家。请以引人入胜的风格，深入细致地按照故事概况"李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。"写出故事内容，注意与上一章故事内容的衔接。\n        上一章故事内容为星际迷航：遗失的文明。\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n您现在是短篇小说领域经验丰富的小说作家。我们需要您创作出小说详细内容。'}]
+2024-06-03 12:39:10.514 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 12:39:10.514 | INFO     | __main__:_think:206 - 0
+2024-06-03 12:39:10.514 | INFO     | __main__:_write_to_file:276 - Write tutorial to D:\Python\Test\data\tutorial_docx\2024-06-03_12-39-10
+2024-06-03 12:39:10.516 | DEBUG    | metagpt.utils.file:write:42 - Successfully write file: D:\Python\Test\data\tutorial_docx\2024-06-03_12-39-10\星际迷航：遗失的文明.md
+2024-06-03 12:39:10.517 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=-1
+2024-06-03 12:39:10.517 | INFO     | __main__:main:285 - Tutorial generation and writing completed successfully
+2024-06-03 12:40:01.381 | INFO     | __main__:main:283 - 科幻
+2024-06-03 12:40:01.381 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 科幻...']
+2024-06-03 12:40:01.382 | INFO     | __main__:_think:206 - -1
+2024-06-03 12:40:01.382 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteStoryStruct], state=0
+2024-06-03 12:40:21.405 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        小说的题材是科幻。请严格使用Chinese语言，并按照instruction中的说明内容输出内容\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家, 我们需要您根据给定的小说题材生成故事的基本结构。\n按照以下内容输出符合给定题材的小说基本结构：\n标题:"小说的标题"\n设置:"小说的情景设置细节，包括时间段、地点和所有相关背景信息"\n主角:"小说主角的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n反派角色:"小说反派角色的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n冲突:"小说故事的主要冲突，包括主角面临的问题和涉及的利害关系"\n对话:"以对话的形式描述情节，揭示人物，以此提供一些提示给读者"\n主题:"小说中心主题，并说明如何在整个情节、角色和背景中展开"\n基调:"整体故事的基调，以及保持背景和人物的一致性和适当性的说明"\n节奏:"调节故事节奏以建立和释放紧张气氛，推进情节，创造戏剧效果的说明"\n其它:"任何额外的细节或对故事的要求，如特定的字数或题材限制"\n'}]
+2024-06-03 12:40:39.548 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 12:40:39.548 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '标题: "星际迷航：遗失的文明"\n\n设置: 故事发生在遥远的未来，人类已经掌握了星际旅行的技术，并与其他外星文明建立了联系。主角的飞船在一次探索任务中意外发现了一个被遗忘的星球，这个星球上隐藏着一个古老的文明，其科技水平远远超越了当前的宇宙文明。\n\n主角: 李明，35岁，是一名经验丰富的星际探险家，性格坚韧不拔，好奇心旺盛，对未知充满渴望。他的动机是寻找宇宙中的未知文明，并揭示它们的秘密。\n\n反派角色: 杰克，40岁，是一名野心勃勃的宇宙海盗，性格冷酷无情，对权力和财富有着无尽的渴望。他的动机是夺取遗失文明的科技，以此来统治宇宙。\n\n冲突: 李明和他的团队在探索遗失文明的过程中，发现了这个文明留下的强大武器，但同时也触发了星球上的防御系统。杰克得知这一消息后，率领他的海盗舰队前来争夺。\n\n对话: 李明站在遗失文明的废墟前，对队友说：“我们终于找到了，这是人类历史上的重大发现。”杰克通过通讯器传来声音：“李明，我知道你在那里，交出你找到的东西，否则后果自负。”\n\n主题: 故事的主题是探索与贪婪。通过李明和杰克的对比，展现了人类对未知的好奇与渴望，以及对权力和财富的贪婪如何导致冲突和战争。\n\n基调: 故事的基调是紧张和神秘的，随着探索的深入，不断揭示遗失文明的秘密，同时也伴随着杰克的威胁和攻击。\n\n节奏: 故事的节奏紧凑，通过探索的发现和杰克的追击，不断建立和释放紧张气氛，推动情节发展。\n\n其它: 故事需要在2万字以内完成，保持科幻题材的严谨性和逻辑性，同时要有人文关怀的元素，展现科技与人性的冲突与融合。\n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家。我们需要您根据context的内容创作出小说的目录和章节内容概况。\n请按照以下要求提供该小说的具体目录和目录中的故事概况：\n1. 输出必须严格符合指定语言。\n2. 回答必须严格按照字典格式，如: {"title": "xxx", "directory": {"第一章：章节标题": "故事概况", "第二章：章节标题": "故事概况"}} 。\n3. 目录应尽可能引人注目和充分，包括一级目录和本章故事概况。\n4. 不要有额外的空格或换行符。\n'}]
+2024-06-03 12:40:48.290 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 12:40:48.291 | INFO     | __main__:_act:246 - {'title': '星际迷航：遗失的文明', 'directory': {'第一章：发现遗迹': '李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。', '第二章：文明的秘密': '探索过程中，李明发现了这个文明留下的强大武器，但同时也激活了星球的防御系统。', '第三章：海盗的威胁': '宇宙海盗杰克得知遗失文明的消息，威胁李明交出发现，否则将面临严重后果。', '第四章：科技与人性': '在探索遗失文明的过程中，李明和他的团队面临科技与人性的冲突，以及对权力和财富的贪婪。', '第五章：最终对决': '李明和杰克之间的冲突达到顶点，他们为了控制遗失文明的科技而展开最终的对决。'}}
+2024-06-03 12:40:48.292 | INFO     | __main__:_think:206 - 0
+2024-06-03 12:40:48.292 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=0
+2024-06-03 12:41:08.317 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        您现在是短篇小说领域经验丰富的小说作家。请以引人入胜的风格，深入细致地按照故事概况"李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。"写出故事内容，注意与上一章故事内容的衔接。\n        上一章故事内容为星际迷航：遗失的文明。\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n您现在是短篇小说领域经验丰富的小说作家。我们需要您创作出小说详细内容。'}]
+2024-06-03 12:41:27.558 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 12:41:27.559 | INFO     | __main__:_think:206 - 0
+2024-06-03 12:41:27.559 | INFO     | __main__:_write_to_file:276 - Write tutorial to D:\Python\Test\data\tutorial_docx\2024-06-03_12-41-27
+2024-06-03 12:41:27.561 | DEBUG    | metagpt.utils.file:write:42 - Successfully write file: D:\Python\Test\data\tutorial_docx\2024-06-03_12-41-27\星际迷航：遗失的文明.md
+2024-06-03 12:41:27.561 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=-1
+2024-06-03 12:41:27.562 | INFO     | __main__:main:285 - Tutorial generation and writing completed successfully
+2024-06-03 13:00:53.825 | INFO     | __main__:main:283 - 科幻
+2024-06-03 13:00:53.826 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 科幻...']
+2024-06-03 13:00:53.826 | INFO     | __main__:_think:206 - -1
+2024-06-03 13:00:53.826 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteStoryStruct], state=0
+2024-06-03 13:01:13.842 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        小说的题材是科幻。请严格使用Chinese语言，并按照instruction中的说明内容输出内容\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家, 我们需要您根据给定的小说题材生成故事的基本结构。\n按照以下内容输出符合给定题材的小说基本结构：\n标题:"小说的标题"\n设置:"小说的情景设置细节，包括时间段、地点和所有相关背景信息"\n主角:"小说主角的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n反派角色:"小说反派角色的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n冲突:"小说故事的主要冲突，包括主角面临的问题和涉及的利害关系"\n对话:"以对话的形式描述情节，揭示人物，以此提供一些提示给读者"\n主题:"小说中心主题，并说明如何在整个情节、角色和背景中展开"\n基调:"整体故事的基调，以及保持背景和人物的一致性和适当性的说明"\n节奏:"调节故事节奏以建立和释放紧张气氛，推进情节，创造戏剧效果的说明"\n其它:"任何额外的细节或对故事的要求，如特定的字数或题材限制"\n'}]
+2024-06-03 13:01:31.449 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 13:01:31.449 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '标题: "星际迷航：遗失的文明"\n\n设置: 故事发生在遥远的未来，人类已经掌握了星际旅行的技术，并与其他外星文明建立了联系。主角的飞船在一次探索任务中意外发现了一个被遗忘的星球，这个星球上隐藏着一个古老的文明，其科技水平远远超越了当前的宇宙文明。\n\n主角: 李明，35岁，是一名经验丰富的星际探险家，性格坚韧不拔，好奇心旺盛，对未知充满渴望。他的动机是寻找宇宙中的未知文明，并揭示它们的秘密。\n\n反派角色: 杰克，40岁，是一名野心勃勃的宇宙海盗，性格冷酷无情，对权力和财富有着无尽的渴望。他的动机是夺取遗失文明的科技，以此来统治宇宙。\n\n冲突: 李明和他的团队在探索遗失文明的过程中，发现了这个文明留下的强大武器，但同时也触发了星球上的防御系统。杰克得知这一消息后，率领他的海盗舰队前来争夺。\n\n对话: 李明站在遗失文明的废墟前，对队友说：“我们终于找到了，这是人类历史上的重大发现。”杰克通过通讯器传来声音：“李明，我知道你在那里，交出你找到的东西，否则你们都别想活着离开。”\n\n主题: 故事的主题是探索与贪婪。通过主角和李明的冒险，展现了人类对未知世界的好奇心和探索精神，同时也揭示了贪婪和野心可能带来的灾难性后果。\n\n基调: 故事的基调是紧张和神秘，随着主角对遗失文明的深入探索，逐渐揭开这个古老文明的秘密，同时也面临着来自宇宙海盗的威胁。\n\n节奏: 故事的节奏紧凑，通过一系列的冒险和冲突，不断推进情节的发展，让读者感受到紧张的气氛和探索的乐趣。\n\n其它: 故事需要保持科学严谨性，所有科技和外星文明的设计都需要有合理的解释。此外，故事的结局应该是开放性的，留给读者想象的空间。\n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家。我们需要您根据context的内容创作出小说的目录和章节内容概况。\n请按照以下要求提供该小说的具体目录和目录中的故事概况：\n1. 输出必须严格符合指定语言。\n2. 回答必须严格按照字典格式，如: {"title": "xxx", "directory": {"第一章：章节标题": "故事概况", "第二章：章节标题": "故事概况"}} 。\n3. 目录应尽可能引人注目和充分，包括一级目录和本章故事概况。\n4. 不要有额外的空格或换行符。\n'}]
+2024-06-03 13:01:41.232 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 13:01:41.233 | INFO     | __main__:_act:246 - {'title': '星际迷航：遗失的文明', 'directory': {'第一章：发现遗迹': '李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。', '第二章：遗失的科技': '探索过程中，李明发现了这个文明留下的强大武器，但同时也激活了星球的防御系统。', '第三章：海盗的威胁': '宇宙海盗杰克得知遗失文明的存在，率领舰队前来争夺，李明和他的团队面临严峻挑战。', '第四章：文明的秘密': '在躲避海盗追击的同时，李明深入研究遗失文明的科技，揭示了这个古老文明的秘密。', '第五章：终极对决': '李明和杰克在遗失文明的废墟上展开最终对决，决定着遗失科技的命运和宇宙的未来。', '第六章：开放的结局': '对决之后，李明和他的团队离开了遗失的星球，但遗留的科技和文明的秘密仍然吸引着其他探险者，故事留下开放的结局。'}}
+2024-06-03 13:01:41.233 | INFO     | __main__:_think:206 - 0
+2024-06-03 13:01:41.234 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=0
+2024-06-03 13:02:01.252 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        您现在是短篇小说领域经验丰富的小说作家。请以引人入胜的风格，深入细致地按照故事概况"李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。"写出故事内容，注意与上一章故事内容的衔接。\n        上一章故事内容为星际迷航：遗失的文明。\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n您现在是短篇小说领域经验丰富的小说作家。我们需要您创作出小说详细内容。'}]
+2024-06-03 13:02:20.662 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 13:02:20.662 | INFO     | __main__:_think:206 - 0
+2024-06-03 13:02:20.663 | INFO     | __main__:_write_to_file:276 - Write tutorial to D:\Python\Test\data\tutorial_docx\2024-06-03_13-02-20
+2024-06-03 13:02:20.664 | DEBUG    | metagpt.utils.file:write:42 - Successfully write file: D:\Python\Test\data\tutorial_docx\2024-06-03_13-02-20\星际迷航：遗失的文明.md
+2024-06-03 13:02:20.664 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=-1
+2024-06-03 13:02:20.665 | INFO     | __main__:main:285 - Tutorial generation and writing completed successfully
+2024-06-03 13:42:34.603 | INFO     | __main__:main:283 - 科幻
+2024-06-03 13:42:34.603 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 科幻...']
+2024-06-03 13:42:34.603 | INFO     | __main__:_think:206 - -1
+2024-06-03 13:42:34.603 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteStoryStruct], state=0
+2024-06-03 13:42:34.686 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        小说的题材是科幻。请严格使用Chinese语言，并按照instruction中的说明内容输出内容\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家, 我们需要您根据给定的小说题材生成故事的基本结构。\n按照以下内容输出符合给定题材的小说基本结构：\n标题:"小说的标题"\n设置:"小说的情景设置细节，包括时间段、地点和所有相关背景信息"\n主角:"小说主角的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n反派角色:"小说反派角色的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n冲突:"小说故事的主要冲突，包括主角面临的问题和涉及的利害关系"\n对话:"以对话的形式描述情节，揭示人物，以此提供一些提示给读者"\n主题:"小说中心主题，并说明如何在整个情节、角色和背景中展开"\n基调:"整体故事的基调，以及保持背景和人物的一致性和适当性的说明"\n节奏:"调节故事节奏以建立和释放紧张气氛，推进情节，创造戏剧效果的说明"\n其它:"任何额外的细节或对故事的要求，如特定的字数或题材限制"\n'}]
+2024-06-03 13:42:52.679 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 13:42:52.679 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '标题: "星际迷航：遗失的文明"\n\n设置: 故事发生在遥远的未来，人类已经掌握了星际旅行的技术，并与其他外星文明建立了联系。主角的飞船在一次探索任务中意外发现了一个被遗忘的星球，这个星球上隐藏着一个古老的文明，其科技水平远远超越了当前的宇宙文明。\n\n主角: 李明，35岁，是一名经验丰富的星际探险家，性格坚韧不拔，好奇心旺盛，对未知充满渴望。他的动机是寻找宇宙中的未知文明，并揭示它们的秘密。\n\n反派角色: 杰克，40岁，是一名野心勃勃的宇宙海盗，性格冷酷无情，对权力和财富有着无尽的渴望。他的动机是夺取遗失文明的科技，以此来统治宇宙。\n\n冲突: 李明和他的团队在探索遗失文明的过程中，发现了这个文明留下的强大武器，但同时也触发了星球上的防御系统。杰克得知这一消息后，率领他的海盗舰队前来争夺。\n\n对话: 李明站在遗失文明的废墟前，对队友说：“我们终于找到了，这是人类历史上的重大发现。”杰克通过通讯器传来声音：“李明，我知道你在那里，交出你找到的东西，否则你们都别想活着离开。”\n\n主题: 故事的主题是探索与贪婪。通过主角和李明的冒险，展现了人类对未知世界的好奇心和探索精神，同时也揭示了贪婪和野心可能带来的灾难性后果。\n\n基调: 故事的基调是紧张和神秘，随着主角对遗失文明的深入探索，逐渐揭开这个古老文明的秘密，同时也面临着来自宇宙海盗的威胁。\n\n节奏: 故事的节奏紧凑，通过一系列的冒险和冲突，不断推进情节的发展，让读者感受到紧张的气氛和探索的乐趣。\n\n其它: 故事需要保持科学严谨性，所有科技和外星文明的设计都需要有合理的解释。此外，故事的结局应该是开放性的，留给读者想象的空间。\n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家。我们需要您根据context的内容创作出小说的目录和章节内容概况。\n请按照以下要求提供该小说的具体目录和目录中的故事概况：\n1. 输出必须严格符合指定语言。\n2. 回答必须严格按照字典格式，如: {"title": "xxx", "directory": {"第一章：章节标题": "故事概况", "第二章：章节标题": "故事概况"}} 。\n3. 目录应尽可能引人注目和充分，包括一级目录和本章故事概况。\n4. 不要有额外的空格或换行符。\n'}]
+2024-06-03 13:43:01.557 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 13:43:01.558 | INFO     | __main__:_act:246 - {'title': '星际迷航：遗失的文明', 'directory': {'第一章：发现遗迹': '李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。', '第二章：遗失的科技': '探索过程中，李明发现了这个文明留下的强大武器，但同时也激活了星球的防御系统。', '第三章：海盗的威胁': '宇宙海盗杰克得知遗失文明的消息，率领舰队前来争夺，李明和他的团队面临严峻挑战。', '第四章：文明的秘密': '在躲避海盗追击的同时，李明深入研究遗失文明的科技，揭示了这个古老文明的秘密。', '第五章：终极对决': '李明和杰克的舰队在遗失文明的星球上展开决战，争夺控制权。', '第六章：新的开始': '决战后，李明和他的团队决定将遗失文明的科技用于和平目的，而杰克的野心也得到了应有的惩罚。'}}
+2024-06-03 13:43:01.559 | INFO     | __main__:_think:206 - 0
+2024-06-03 13:43:01.559 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=0
+2024-06-03 13:43:01.574 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        您现在是短篇小说领域经验丰富的小说作家。请以引人入胜的风格，深入细致地按照故事概况"李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。"写出故事内容，注意与上一章故事内容的衔接。\n        上一章故事内容为星际迷航：遗失的文明。\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n您现在是短篇小说领域经验丰富的小说作家。我们需要您创作出小说详细内容。'}]
+2024-06-03 13:43:20.781 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 13:43:20.782 | INFO     | __main__:_think:206 - 0
+2024-06-03 13:43:20.782 | INFO     | __main__:_write_to_file:276 - Write tutorial to D:\Python\Test\data\tutorial_docx\2024-06-03_13-43-20
+2024-06-03 13:43:20.783 | DEBUG    | metagpt.utils.file:write:42 - Successfully write file: D:\Python\Test\data\tutorial_docx\2024-06-03_13-43-20\星际迷航：遗失的文明.md
+2024-06-03 13:43:20.784 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=-1
+2024-06-03 13:43:20.784 | INFO     | __main__:main:285 - Tutorial generation and writing completed successfully
+2024-06-03 13:44:30.319 | INFO     | __main__:main:283 - 科幻
+2024-06-03 13:44:30.320 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 科幻...']
+2024-06-03 13:44:30.320 | INFO     | __main__:_think:206 - -1
+2024-06-03 13:44:30.320 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteStoryStruct], state=0
+2024-06-03 13:44:50.348 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        小说的题材是科幻。请严格使用Chinese语言，并按照instruction中的说明内容输出内容\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家, 我们需要您根据给定的小说题材生成故事的基本结构。\n按照以下内容输出符合给定题材的小说基本结构：\n标题:"小说的标题"\n设置:"小说的情景设置细节，包括时间段、地点和所有相关背景信息"\n主角:"小说主角的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n反派角色:"小说反派角色的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n冲突:"小说故事的主要冲突，包括主角面临的问题和涉及的利害关系"\n对话:"以对话的形式描述情节，揭示人物，以此提供一些提示给读者"\n主题:"小说中心主题，并说明如何在整个情节、角色和背景中展开"\n基调:"整体故事的基调，以及保持背景和人物的一致性和适当性的说明"\n节奏:"调节故事节奏以建立和释放紧张气氛，推进情节，创造戏剧效果的说明"\n其它:"任何额外的细节或对故事的要求，如特定的字数或题材限制"\n'}]
+2024-06-03 13:45:07.839 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 13:45:07.839 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '标题: "星际迷航：遗失的文明"\n\n设置: 故事发生在遥远的未来，人类已经掌握了星际旅行的技术，并与其他外星文明建立了联系。主角的飞船在一次探索任务中意外发现了一个被遗忘的星球，这个星球上隐藏着一个古老的文明，其科技水平远远超越了当前的宇宙文明。\n\n主角: 李明，35岁，是一名经验丰富的星际探险家，性格坚韧不拔，好奇心旺盛，对未知充满渴望。他的动机是寻找宇宙中的未知文明，并揭示它们的秘密。\n\n反派角色: 杰克，40岁，是一名野心勃勃的宇宙海盗，性格冷酷无情，对权力和财富有着无尽的渴望。他的动机是夺取遗失文明的科技，以此来统治宇宙。\n\n冲突: 李明和他的团队在探索遗失文明的过程中，发现了这个文明留下的强大武器，但同时也触发了星球上的防御系统。杰克得知这一消息后，率领他的海盗舰队前来争夺。\n\n对话: 李明站在遗失文明的废墟前，对队友说：“我们终于找到了，这是人类历史上的重大发现。”杰克通过通讯器传来声音：“李明，我知道你在那里，交出你找到的东西，否则你们都别想活着离开。”\n\n主题: 故事的主题是探索与贪婪。通过主角和李明的冒险，展现了人类对未知世界的好奇心和探索精神，同时也揭示了贪婪和野心可能带来的灾难性后果。\n\n基调: 故事的基调是紧张和神秘，随着主角对遗失文明的深入探索，逐渐揭开这个古老文明的秘密，同时也面临着来自宇宙海盗的威胁。\n\n节奏: 故事的节奏紧凑，通过一系列的冒险和冲突，不断推进情节的发展，让读者感受到紧张的气氛和探索的乐趣。\n\n其它: 故事需要保持科学严谨性，所有科技和外星文明的设计都需要有合理的解释。此外，故事的结局应该是开放性的，留给读者想象的空间。\n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家。我们需要您根据context的内容创作出小说的目录和章节内容概况。\n请按照以下要求提供该小说的具体目录和目录中的故事概况：\n1. 输出必须严格符合指定语言。\n2. 回答必须严格按照字典格式，如: {"title": "xxx", "directory": {"第一章：章节标题": "故事概况", "第二章：章节标题": "故事概况"}} 。\n3. 目录应尽可能引人注目和充分，包括一级目录和本章故事概况。\n4. 不要有额外的空格或换行符。\n'}]
+2024-06-03 13:45:16.774 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 13:45:16.775 | INFO     | __main__:_act:246 - {'title': '星际迷航：遗失的文明', 'directory': {'第一章：发现遗迹': '李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。', '第二章：遗失的科技': '探索过程中，李明发现了这个文明留下的强大武器，但同时也激活了星球的防御系统。', '第三章：海盗的威胁': '宇宙海盗杰克得知遗失文明的消息，率领舰队前来争夺，李明和他的团队面临严峻挑战。', '第四章：文明的秘密': '在躲避海盗追击的同时，李明深入研究遗失文明的科技，揭示了这个古老文明的秘密。', '第五章：终极对决': '李明和杰克的舰队在遗失文明的星球上展开决战，争夺控制权。', '第六章：新的开始': '决战后，李明和他的团队决定将遗失文明的科技用于和平目的，而杰克的野心也得到了应有的惩罚。'}}
+2024-06-03 13:45:16.777 | INFO     | __main__:_think:206 - 0
+2024-06-03 13:45:16.777 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=0
+2024-06-03 13:45:36.804 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        您现在是短篇小说领域经验丰富的小说作家。请以引人入胜的风格，深入细致地按照故事概况"李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。"写出故事内容，注意与上一章故事内容的衔接。\n        上一章故事内容为星际迷航：遗失的文明。\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n您现在是短篇小说领域经验丰富的小说作家。我们需要您创作出小说详细内容。'}]
+2024-06-03 13:45:56.007 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 13:45:56.008 | INFO     | __main__:_think:206 - 0
+2024-06-03 13:45:56.008 | INFO     | __main__:_write_to_file:276 - Write tutorial to D:\Python\Test\data\tutorial_docx\2024-06-03_13-45-56
+2024-06-03 13:45:56.009 | DEBUG    | metagpt.utils.file:write:42 - Successfully write file: D:\Python\Test\data\tutorial_docx\2024-06-03_13-45-56\星际迷航：遗失的文明.md
+2024-06-03 13:45:56.010 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=-1
+2024-06-03 13:45:56.010 | INFO     | __main__:main:285 - Tutorial generation and writing completed successfully
+2024-06-03 13:57:27.683 | INFO     | __main__:main:284 - 科幻
+2024-06-03 13:57:27.683 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 科幻...']
+2024-06-03 13:57:27.684 | INFO     | __main__:_think:206 - -1
+2024-06-03 13:57:27.684 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteStoryStruct], state=0
+2024-06-03 13:57:47.705 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        小说的题材是科幻。请严格使用Chinese语言，并按照instruction中的说明内容输出内容\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家, 我们需要您根据给定的小说题材生成故事的基本结构。\n按照以下内容输出符合给定题材的小说基本结构：\n标题:"小说的标题"\n设置:"小说的情景设置细节，包括时间段、地点和所有相关背景信息"\n主角:"小说主角的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n反派角色:"小说反派角色的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n冲突:"小说故事的主要冲突，包括主角面临的问题和涉及的利害关系"\n对话:"以对话的形式描述情节，揭示人物，以此提供一些提示给读者"\n主题:"小说中心主题，并说明如何在整个情节、角色和背景中展开"\n基调:"整体故事的基调，以及保持背景和人物的一致性和适当性的说明"\n节奏:"调节故事节奏以建立和释放紧张气氛，推进情节，创造戏剧效果的说明"\n其它:"任何额外的细节或对故事的要求，如特定的字数或题材限制"\n'}]
+2024-06-03 13:58:06.004 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 13:58:06.005 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '标题: "星际迷航：遗失的文明"\n\n设置: 故事发生在遥远的未来，人类已经掌握了星际旅行的技术，并与其他外星文明建立了联系。主角的飞船在一次探索任务中意外发现了一个被遗忘的星球，这个星球上隐藏着一个古老的文明，其科技水平远远超越了当前的宇宙文明。\n\n主角: 李明，35岁，是一名经验丰富的星际探险家，性格坚韧不拔，好奇心旺盛，对未知充满渴望。他的动机是寻找宇宙中的未知文明，并揭示它们的秘密。\n\n反派角色: 杰克，40岁，是一名野心勃勃的宇宙海盗，性格冷酷无情，对权力和财富有着无尽的渴望。他的动机是夺取遗失文明的科技，以此来统治宇宙。\n\n冲突: 李明和他的团队在探索遗失文明的过程中，发现了这个文明留下的强大武器，但同时也触发了星球上的防御系统。杰克得知这一消息后，率领他的海盗舰队前来争夺。\n\n对话: 李明站在遗失文明的废墟前，对队友说：“我们终于找到了，这是人类历史上的重大发现。”杰克通过通讯器传来声音：“李明，我知道你在那里，交出你找到的东西，否则你们都别想活着离开。”\n\n主题: 故事的主题是探索与贪婪。通过主角对未知文明的探索和对知识的追求，以及反派角色对权力和财富的贪婪，展现了人类面对未知时的不同态度和选择。\n\n基调: 故事的基调是紧张和神秘，随着探索的深入，未知文明的秘密逐渐揭开，同时也伴随着宇宙海盗的威胁，为故事增添了紧张刺激的氛围。\n\n节奏: 故事的节奏紧凑，随着主角对文明的探索和反派角色的逼近，紧张气氛逐渐升级，最终在遗失文明的废墟中达到高潮。\n\n其它: 故事需要保持科学严谨性，同时也要有足够的想象空间，以吸引科幻爱好者的兴趣。\n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家。我们需要您根据context的内容创作出小说的目录和章节内容概况。\n请按照以下要求提供该小说的具体目录和目录中的故事概况：\n1. 输出必须严格符合指定语言。\n2. 回答必须严格按照字典格式，如: {"title": "xxx", "directory": {"第一章：章节标题": "故事概况", "第二章：章节标题": "故事概况"}} 。\n3. 目录应尽可能引人注目和充分，包括一级目录和本章故事概况。\n4. 不要有额外的空格或换行符。\n'}]
+2024-06-03 13:58:15.239 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 13:58:15.240 | INFO     | __main__:_act:229 - {'title': '星际迷航：遗失的文明', 'directory': {'第一章：发现遗迹': '李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。', '第二章：文明的秘密': '探索过程中，李明发现了这个文明留下的强大武器，但同时也触发了星球上的防御系统。', '第三章：海盗的威胁': '宇宙海盗杰克得知遗失文明的消息，率领舰队前来争夺，李明和他的团队面临严峻挑战。', '第四章：科技与智慧': '在对抗海盗的过程中，李明利用遗失文明的科技和智慧，寻找反击的方法。', '第五章：最终对决': '李明和杰克在遗失文明的废墟中展开最终对决，决定着文明的命运和宇宙的未来。', '第六章：文明的传承': '对决结束后，李明决定如何处理遗失文明的科技，以及如何将其智慧传承给宇宙中的其他文明。'}}
+2024-06-03 13:58:15.242 | INFO     | __main__:_think:206 - 0
+2024-06-03 13:58:15.243 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=0
+2024-06-03 13:58:35.269 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        您现在是短篇小说领域经验丰富的小说作家。请以引人入胜的风格，深入细致地按照故事概况"李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。"写出故事内容，注意与上一章故事内容的衔接。\n        上一章故事内容为星际迷航：遗失的文明。\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n您现在是短篇小说领域经验丰富的小说作家。我们需要您创作出小说详细内容。'}]
+2024-06-03 13:58:54.530 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 13:58:54.531 | INFO     | __main__:_think:206 - 0
+2024-06-03 13:58:54.532 | INFO     | __main__:_write_to_file:277 - Write tutorial to D:\Python\Test\data\tutorial_docx\2024-06-03_13-58-54
+2024-06-03 13:58:54.534 | DEBUG    | metagpt.utils.file:write:42 - Successfully write file: D:\Python\Test\data\tutorial_docx\2024-06-03_13-58-54\星际迷航：遗失的文明.md
+2024-06-03 13:58:54.535 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=-1
+2024-06-03 13:58:54.535 | INFO     | __main__:main:286 - Tutorial generation and writing completed successfully
+2024-06-03 14:02:45.809 | INFO     | __main__:main:284 - 科幻
+2024-06-03 14:02:45.810 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 科幻...']
+2024-06-03 14:02:45.810 | INFO     | __main__:_think:206 - -1
+2024-06-03 14:02:45.810 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteStoryStruct], state=0
+2024-06-03 14:02:50.826 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        小说的题材是科幻。请严格使用Chinese语言，并按照instruction中的说明内容输出内容\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家, 我们需要您根据给定的小说题材生成故事的基本结构。\n按照以下内容输出符合给定题材的小说基本结构：\n标题:"小说的标题"\n设置:"小说的情景设置细节，包括时间段、地点和所有相关背景信息"\n主角:"小说主角的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n反派角色:"小说反派角色的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n冲突:"小说故事的主要冲突，包括主角面临的问题和涉及的利害关系"\n对话:"以对话的形式描述情节，揭示人物，以此提供一些提示给读者"\n主题:"小说中心主题，并说明如何在整个情节、角色和背景中展开"\n基调:"整体故事的基调，以及保持背景和人物的一致性和适当性的说明"\n节奏:"调节故事节奏以建立和释放紧张气氛，推进情节，创造戏剧效果的说明"\n其它:"任何额外的细节或对故事的要求，如特定的字数或题材限制"\n'}]
+2024-06-03 14:03:08.555 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 14:03:08.555 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '标题: "星际迷航：遗失的文明"\n\n设置: 故事发生在遥远的未来，人类已经掌握了星际旅行的技术，并与其他外星文明建立了联系。主角的飞船在一次探索任务中意外发现了一个被遗忘的星球，这个星球上隐藏着一个古老的文明，其科技水平远远超越了当前的宇宙文明。\n\n主角: 李明，35岁，是一名经验丰富的星际探险家，性格坚韧不拔，好奇心旺盛，对未知充满渴望。他的动机是寻找宇宙中的未知文明，并揭示它们的秘密。\n\n反派角色: 杰克，40岁，是一名野心勃勃的宇宙海盗，性格冷酷无情，对权力和财富有着无尽的渴望。他的动机是夺取遗失文明的科技，以此来统治宇宙。\n\n冲突: 李明和他的团队在探索遗失文明的过程中，发现了这个文明留下的强大武器，但同时也触发了星球上的防御系统。杰克得知这一消息后，率领他的海盗舰队前来争夺。\n\n对话: 李明站在遗失文明的废墟前，对队友说：“我们终于找到了，这是人类历史上的重大发现。”杰克通过通讯器传来声音：“李明，我知道你在那里，交出你找到的东西，否则你们都别想活着离开。”\n\n主题: 故事的主题是探索与贪婪。通过主角和李明的冒险，展现了人类对未知世界的好奇心和探索精神，同时也揭示了贪婪和野心可能带来的灾难性后果。\n\n基调: 故事的基调是紧张和神秘，随着主角对遗失文明的深入探索，逐渐揭开这个古老文明的秘密，同时也面临着来自宇宙海盗的威胁。\n\n节奏: 故事的节奏紧凑，通过一系列的冒险和冲突，不断推进情节的发展，让读者感受到紧张的气氛和探索的乐趣。\n\n其它: 故事需要保持科学严谨性，所有科技和外星文明的设计都需要有合理的解释。此外，故事的结局应该是开放性的，留给读者想象的空间。\n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家。我们需要您根据context的内容创作出小说的目录和章节内容概况。\n请按照以下要求提供该小说的具体目录和目录中的故事概况：\n1. 输出必须严格符合指定语言。\n2. 回答必须严格按照字典格式，如: {"title": "xxx", "directory": {"第一章：章节标题": "故事概况", "第二章：章节标题": "故事概况"}} 。\n3. 目录应尽可能引人注目和充分，包括一级目录和本章故事概况。\n4. 不要有额外的空格或换行符。\n'}]
+2024-06-03 14:03:17.381 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 14:03:17.381 | INFO     | __main__:_act:229 - {'title': '星际迷航：遗失的文明', 'directory': {'第一章：发现遗迹': '李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。', '第二章：遗失的科技': '探索过程中，李明发现了这个文明留下的强大武器，但同时也激活了星球的防御系统。', '第三章：海盗的威胁': '宇宙海盗杰克得知遗失文明的消息，率领舰队前来争夺，李明和他的团队面临严峻挑战。', '第四章：文明的秘密': '在躲避海盗追击的同时，李明深入研究遗失文明的科技，揭示了这个古老文明的秘密。', '第五章：终极对决': '李明和杰克的舰队在遗失文明的星球上展开决战，争夺控制权。', '第六章：新的开始': '决战后，李明和他的团队决定将遗失文明的科技用于和平目的，而杰克的野心也得到了应有的惩罚。'}}
+2024-06-03 14:03:17.382 | INFO     | __main__:_think:206 - 0
+2024-06-03 14:03:17.382 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=0
+2024-06-03 14:03:22.410 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        您现在是短篇小说领域经验丰富的小说作家。请以引人入胜的风格，深入细致地按照故事概况"李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。"写出故事内容，注意与上一章故事内容的衔接。\n        上一章故事内容为星际迷航：遗失的文明。\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n您现在是短篇小说领域经验丰富的小说作家。我们需要您创作出小说详细内容。'}]
+2024-06-03 14:03:41.664 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 14:03:41.665 | INFO     | __main__:_think:206 - 0
+2024-06-03 14:03:41.665 | INFO     | __main__:_write_to_file:277 - Write tutorial to D:\Python\Test\data\tutorial_docx\2024-06-03_14-03-41
+2024-06-03 14:03:41.666 | DEBUG    | metagpt.utils.file:write:42 - Successfully write file: D:\Python\Test\data\tutorial_docx\2024-06-03_14-03-41\星际迷航：遗失的文明.md
+2024-06-03 14:03:41.667 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=-1
+2024-06-03 14:03:41.667 | INFO     | __main__:main:286 - Tutorial generation and writing completed successfully
+2024-06-03 14:11:34.892 | INFO     | __main__:main:286 - 科幻
+2024-06-03 14:11:34.893 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 科幻...']
+2024-06-03 14:11:34.893 | INFO     | __main__:_think:208 - -1
+2024-06-03 14:11:34.893 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteStoryStruct], state=0
+2024-06-03 14:11:39.914 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        小说的题材是科幻。请严格使用Chinese语言，并按照instruction中的说明内容输出内容\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家, 我们需要您根据给定的小说题材生成故事的基本结构。\n按照以下内容输出符合给定题材的小说基本结构：\n标题:"小说的标题"\n设置:"小说的情景设置细节，包括时间段、地点和所有相关背景信息"\n主角:"小说主角的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n反派角色:"小说反派角色的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n冲突:"小说故事的主要冲突，包括主角面临的问题和涉及的利害关系"\n对话:"以对话的形式描述情节，揭示人物，以此提供一些提示给读者"\n主题:"小说中心主题，并说明如何在整个情节、角色和背景中展开"\n基调:"整体故事的基调，以及保持背景和人物的一致性和适当性的说明"\n节奏:"调节故事节奏以建立和释放紧张气氛，推进情节，创造戏剧效果的说明"\n其它:"任何额外的细节或对故事的要求，如特定的字数或题材限制"\n'}]
+2024-06-03 14:11:57.418 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 14:11:57.419 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '标题: "星际迷航：遗失的文明"\n\n设置: 故事发生在遥远的未来，人类已经掌握了星际旅行的技术，并与其他外星文明建立了联系。主角的飞船在一次探索任务中意外发现了一个被遗忘的星球，这个星球上隐藏着一个古老的文明，其科技水平远远超越了当前的宇宙文明。\n\n主角: 李明，35岁，是一名经验丰富的星际探险家，性格坚韧不拔，好奇心旺盛，对未知充满渴望。他的动机是寻找宇宙中的未知文明，并揭示它们的秘密。\n\n反派角色: 杰克，40岁，是一名野心勃勃的宇宙海盗，性格冷酷无情，对权力和财富有着无尽的渴望。他的动机是夺取遗失文明的科技，以此来统治宇宙。\n\n冲突: 李明和他的团队在探索遗失文明的过程中，发现了这个文明留下的强大武器，但同时也触发了星球上的防御系统。杰克得知这一消息后，率领他的海盗舰队前来争夺。\n\n对话: 李明站在遗失文明的废墟前，对队友说：“我们终于找到了，这是人类历史上的重大发现。”杰克通过通讯器传来声音：“李明，我知道你在那里，交出你找到的东西，否则你们都别想活着离开。”\n\n主题: 故事的主题是探索与贪婪。通过主角和李明的冒险，展现了人类对未知世界的好奇心和探索精神，同时也揭示了贪婪和野心可能带来的灾难性后果。\n\n基调: 故事的基调是紧张和神秘，随着主角对遗失文明的深入探索，逐渐揭开这个古老文明的秘密，同时也面临着来自宇宙海盗的威胁。\n\n节奏: 故事的节奏紧凑，通过一系列的冒险和冲突，不断推进情节的发展，让读者感受到紧张的气氛和探索的乐趣。\n\n其它: 故事需要保持科学严谨性，所有科技和外星文明的设计都需要有合理的解释。此外，故事的结局应该是开放性的，留给读者想象的空间。\n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家。我们需要您根据context的内容创作出小说的目录和章节内容概况。\n请按照以下要求提供该小说的具体目录和目录中的故事概况：\n1. 输出必须严格符合指定语言。\n2. 回答必须严格按照字典格式，如: {"title": "xxx", "directory": {"第一章：章节标题": "故事概况", "第二章：章节标题": "故事概况"}} 。\n3. 目录应尽可能引人注目和充分，包括一级目录和本章故事概况。\n4. 不要有额外的空格或换行符。\n'}]
+2024-06-03 14:12:06.329 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 14:12:06.329 | INFO     | __main__:_act:231 - {'title': '星际迷航：遗失的文明', 'directory': {'第一章：发现遗迹': '李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。', '第二章：遗失的科技': '探索过程中，李明发现了这个文明留下的强大武器，但同时也激活了星球的防御系统。', '第三章：海盗的威胁': '宇宙海盗杰克得知遗失文明的消息，率领舰队前来争夺，李明和他的团队面临严峻挑战。', '第四章：文明的秘密': '在躲避海盗追击的同时，李明深入研究遗失文明的科技，揭示了这个古老文明的秘密。', '第五章：终极对决': '李明和杰克的舰队在遗失文明的星球上展开决战，争夺控制权。', '第六章：新的开始': '决战后，李明和他的团队决定将遗失文明的科技用于和平目的，而杰克的野心也得到了应有的惩罚。'}}
+2024-06-03 14:12:06.330 | INFO     | __main__:_think:208 - 0
+2024-06-03 14:12:06.330 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=0
+2024-06-03 14:12:11.358 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        您现在是短篇小说领域经验丰富的小说作家。请以引人入胜的风格，深入细致地按照故事概况"李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。"写出故事内容，注意与上一章故事内容的衔接。\n        上一章故事内容为星际迷航：遗失的文明。\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n您现在是短篇小说领域经验丰富的小说作家。我们需要您创作出小说详细内容。'}]
+2024-06-03 14:12:30.571 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 14:12:30.572 | INFO     | __main__:_think:208 - 0
+2024-06-03 14:12:30.573 | INFO     | __main__:_write_to_file:279 - Write tutorial to D:\Python\Test\data\tutorial_docx\2024-06-03_14-12-30
+2024-06-03 14:12:30.574 | DEBUG    | metagpt.utils.file:write:42 - Successfully write file: D:\Python\Test\data\tutorial_docx\2024-06-03_14-12-30\星际迷航：遗失的文明.md
+2024-06-03 14:12:30.575 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=-1
+2024-06-03 14:12:30.575 | INFO     | __main__:main:288 - Tutorial generation and writing completed successfully
+2024-06-03 14:26:39.220 | INFO     | __main__:main:285 - 科幻
+2024-06-03 14:26:39.221 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 科幻...']
+2024-06-03 14:26:39.221 | INFO     | __main__:_think:208 - -1
+2024-06-03 14:26:39.221 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteStoryStruct], state=0
+2024-06-03 14:26:44.236 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        小说的题材是科幻。请严格使用Chinese语言，并按照instruction中的说明内容输出内容\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家, 我们需要您根据给定的小说题材生成故事的基本结构。\n按照以下内容输出符合给定题材的小说基本结构：\n标题:"小说的标题"\n设置:"小说的情景设置细节，包括时间段、地点和所有相关背景信息"\n主角:"小说主角的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n反派角色:"小说反派角色的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n冲突:"小说故事的主要冲突，包括主角面临的问题和涉及的利害关系"\n对话:"以对话的形式描述情节，揭示人物，以此提供一些提示给读者"\n主题:"小说中心主题，并说明如何在整个情节、角色和背景中展开"\n基调:"整体故事的基调，以及保持背景和人物的一致性和适当性的说明"\n节奏:"调节故事节奏以建立和释放紧张气氛，推进情节，创造戏剧效果的说明"\n其它:"任何额外的细节或对故事的要求，如特定的字数或题材限制"\n'}]
+2024-06-03 14:27:03.532 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 14:27:03.533 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '标题: "星际迷航：遗失的文明"\n\n设置: 故事发生在遥远的未来，人类已经掌握了星际旅行的技术，并与其他外星文明建立了联系。主角的飞船在一次探索任务中意外发现了一个被遗忘的星球，这个星球上隐藏着一个古老的文明，其科技水平远远超越了当前的宇宙文明。\n\n主角: 李明，35岁，是一名经验丰富的星际探险家，性格坚韧不拔，好奇心旺盛，对未知充满渴望。他的动机是寻找宇宙中的未知文明，并揭示它们的秘密。\n\n反派角色: 杰克，40岁，是一名野心勃勃的宇宙海盗，性格冷酷无情，对权力和财富有着无尽的渴望。他的动机是夺取遗失文明的科技，以控制整个宇宙。\n\n冲突: 李明和他的团队在探索遗失文明的过程中，发现了这个文明留下的强大武器，但同时也触发了星球上的防御系统。杰克得知这一消息后，率领他的海盗舰队前来争夺。\n\n对话: 李明站在遗失文明的废墟前，对队友说：“我们终于找到了，这是人类历史上最伟大的发现。” 杰克通过通讯器传来声音：“李明，我知道你在那里，交出你找到的东西，否则你们都别想活着离开。”\n\n主题: 故事的主题是探索与贪婪。通过主角对未知文明的探索和对知识的追求，以及反派角色对权力和财富的贪婪，展现了人类面对未知时的不同选择和后果。\n\n基调: 故事的基调是紧张和神秘，随着主角对遗失文明的深入探索，以及与反派角色的对抗，紧张气氛逐渐升级。\n\n节奏: 故事的节奏通过探索遗失文明的谜团和与海盗的对抗来调节，探索部分缓慢而神秘，对抗部分则快速而紧张，以此创造出戏剧性的效果。\n\n其它: 故事需要保持科学严谨性，所有科技和外星文明的设计都需要有合理的科学依据。\n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家。我们需要您根据context的内容创作出小说的目录和章节内容概况。\n请按照以下要求提供该小说的具体目录和目录中的故事概况：\n1. 输出必须严格符合指定语言。\n2. 回答必须严格按照字典格式，如: {"title": "xxx", "directory": {"第一章：章节标题": "故事概况", "第二章：章节标题": "故事概况"}} 。\n3. 目录应尽可能引人注目和充分，包括一级目录和本章故事概况。\n4. 不要有额外的空格或换行符。\n'}]
+2024-06-03 14:27:12.492 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 14:27:12.492 | INFO     | __main__:_act:231 - {'title': '星际迷航：遗失的文明', 'directory': {'第一章：星际探险家': '李明和他的团队在星际间探索，意外发现了一个隐藏着古老文明的星球。', '第二章：遗失的秘密': '探索过程中，李明发现了遗失文明的科技，但同时也激活了星球的防御系统。', '第三章：宇宙海盗的威胁': '杰克得知遗失文明的存在，率领海盗舰队前来争夺，与李明的团队发生冲突。', '第四章：科技与贪婪': '李明和杰克之间的对决升级，揭示了人类面对未知时的不同选择和后果。', '第五章：文明的觉醒': '在遗失文明的废墟中，李明找到了文明的真相，并找到了阻止杰克的方法。', '第六章：星际和平': '李明成功阻止了杰克的野心，遗失文明的科技被用于维护宇宙的和平，故事以一个充满希望的未来结束。'}}
+2024-06-03 14:27:12.493 | INFO     | __main__:_think:208 - 0
+2024-06-03 14:27:12.493 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=0
+2024-06-03 14:27:17.514 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        您现在是短篇小说领域经验丰富的小说作家。请以引人入胜的风格，深入细致地按照故事概况"李明和他的团队在星际间探索，意外发现了一个隐藏着古老文明的星球。"写出故事内容，注意与上一章故事内容的衔接。\n        上一章故事内容为星际迷航：遗失的文明。\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n您现在是短篇小说领域经验丰富的小说作家。我们需要您创作出小说详细内容。'}]
+2024-06-03 14:27:38.058 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 14:27:38.059 | INFO     | __main__:_think:208 - 0
+2024-06-03 14:27:38.059 | INFO     | __main__:_write_to_file:278 - Write tutorial to D:\Python\Test\data\tutorial_docx\2024-06-03_14-27-38
+2024-06-03 14:27:38.060 | DEBUG    | metagpt.utils.file:write:42 - Successfully write file: D:\Python\Test\data\tutorial_docx\2024-06-03_14-27-38\星际迷航：遗失的文明.md
+2024-06-03 14:27:38.061 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=-1
+2024-06-03 14:27:38.061 | INFO     | __main__:main:287 - Tutorial generation and writing completed successfully
+2024-06-03 14:28:43.753 | INFO     | __main__:main:287 - 科幻
+2024-06-03 14:28:43.754 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 科幻...']
+2024-06-03 14:28:43.754 | INFO     | __main__:_think:208 - -1
+2024-06-03 14:28:43.754 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteStoryStruct], state=0
+2024-06-03 14:28:48.793 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        小说的题材是科幻。请严格使用Chinese语言，并按照instruction中的说明内容输出内容\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家, 我们需要您根据给定的小说题材生成故事的基本结构。\n按照以下内容输出符合给定题材的小说基本结构：\n标题:"小说的标题"\n设置:"小说的情景设置细节，包括时间段、地点和所有相关背景信息"\n主角:"小说主角的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n反派角色:"小说反派角色的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n冲突:"小说故事的主要冲突，包括主角面临的问题和涉及的利害关系"\n对话:"以对话的形式描述情节，揭示人物，以此提供一些提示给读者"\n主题:"小说中心主题，并说明如何在整个情节、角色和背景中展开"\n基调:"整体故事的基调，以及保持背景和人物的一致性和适当性的说明"\n节奏:"调节故事节奏以建立和释放紧张气氛，推进情节，创造戏剧效果的说明"\n其它:"任何额外的细节或对故事的要求，如特定的字数或题材限制"\n'}]
+2024-06-03 14:29:07.906 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 14:29:07.906 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '标题: "星际迷航：遗失的文明"\n\n设置: 故事发生在遥远的未来，人类已经掌握了星际旅行的技术，并与其他外星文明建立了联系。主角的飞船在一次探索任务中意外发现了一个被遗忘的星球，这个星球上隐藏着一个古老的文明，其科技水平远远超越了当前的宇宙文明。\n\n主角: 李明，35岁，是一名经验丰富的星际探险家，性格坚韧不拔，好奇心旺盛，对未知充满渴望。他的动机是寻找宇宙中的未知文明，揭示宇宙的奥秘。\n\n反派角色: 杰克，40岁，是一名野心勃勃的宇宙海盗，性格冷酷无情，对权力和财富有着无尽的渴望。他的动机是夺取遗失文明的科技，以此来统治宇宙。\n\n冲突: 李明和他的团队在探索遗失文明的过程中，发现了这个文明留下的强大科技，但同时也遭遇了杰克和他的海盗团伙。双方为了争夺这些科技而展开了激烈的斗争。\n\n对话: 李明站在遗失文明的废墟前，对队友说：“我们终于找到了，这是人类历史上最伟大的发现。”杰克则在远处冷笑：“伟大的发现？不，这是我的战利品。”\n\n主题: 故事的主题是探索与贪婪。通过主角和李明的探索精神，展现了人类对未知世界的好奇和渴望。而通过反派角色杰克的贪婪，则揭示了权力和财富的诱惑如何扭曲人性。\n\n基调: 故事的基调是紧张和神秘的。遗失文明的秘密和宇宙海盗的威胁为故事增添了紧张的气氛，而对未知文明的探索则带来了神秘感。\n\n节奏: 故事的节奏需要在探索遗失文明的缓慢揭示和与海盗的紧张对峙之间切换，以此来建立和释放紧张气氛，推进情节，创造戏剧效果。\n\n其它: 故事需要在保持科学合理性的同时，充分发挥想象力，创造一个既真实又充满奇幻色彩的宇宙世界。\n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家。我们需要您根据context的内容创作出小说的目录和章节内容概况。\n请按照以下要求提供该小说的具体目录和目录中的故事概况：\n1. 输出必须严格符合指定语言。\n2. 回答必须严格按照字典格式，如: {"title": "xxx", "directory": {"第一章：章节标题": "故事概况", "第二章：章节标题": "故事概况"}} 。\n3. 目录应尽可能引人注目和充分，包括一级目录和本章故事概况。\n4. 不要有额外的空格或换行符。\n'}]
+2024-06-03 14:29:18.307 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 14:29:18.307 | INFO     | __main__:_act:248 - {'title': '星际迷航：遗失的文明', 'directory': {'第一章：星际探险家': '李明和他的团队在星际间探索，意外发现了一个隐藏的星球。', '第二章：遗失的星球': '探索遗失星球的表面，发现古老文明的废墟。', '第三章：文明的秘密': '李明团队深入研究废墟，揭示古老文明的科技秘密。', '第四章：宇宙海盗的威胁': '杰克和他的海盗团伙出现，威胁要夺取古老文明的科技。', '第五章：星际对峙': '李明和杰克之间的紧张对峙，争夺遗失文明的控制权。', '第六章：科技的较量': '双方利用古老文明的科技进行战斗，决定谁将掌握这些力量。', '第七章：人性的考验': '在权力和贪婪面前，李明和杰克都面临人性的考验。', '第八章：宇宙的奥秘': '最终揭示遗失文明的真正目的，以及它对宇宙的意义。', '第九章：新的探索': '李明和他的团队继续他们的星际探索，寻找更多的未知文明。'}}
+2024-06-03 14:29:18.308 | INFO     | __main__:_think:208 - 0
+2024-06-03 14:29:18.308 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=0
+2024-06-03 14:29:23.324 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        您现在是短篇小说领域经验丰富的小说作家。请以引人入胜的风格，深入细致地按照故事概况"李明和他的团队在星际间探索，意外发现了一个隐藏的星球。"写出故事内容，注意与上一章故事内容的衔接。\n        上一章故事内容为星际迷航：遗失的文明。\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n您现在是短篇小说领域经验丰富的小说作家。我们需要您创作出小说详细内容。'}]
+2024-06-03 14:29:52.502 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 14:29:52.502 | INFO     | __main__:_think:208 - 0
+2024-06-03 14:29:52.503 | INFO     | __main__:_write_to_file:280 - Write tutorial to D:\Python\Test\data\tutorial_docx\2024-06-03_14-29-52
+2024-06-03 14:29:52.504 | DEBUG    | metagpt.utils.file:write:42 - Successfully write file: D:\Python\Test\data\tutorial_docx\2024-06-03_14-29-52\星际迷航：遗失的文明.md
+2024-06-03 14:29:52.505 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=-1
+2024-06-03 14:29:52.505 | INFO     | __main__:main:289 - Tutorial generation and writing completed successfully
+2024-06-03 14:30:48.221 | INFO     | __main__:main:288 - 科幻
+2024-06-03 14:30:48.222 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 科幻...']
+2024-06-03 14:30:48.222 | INFO     | __main__:_think:208 - -1
+2024-06-03 14:30:48.222 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteStoryStruct], state=0
+2024-06-03 14:30:53.244 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        小说的题材是科幻。请严格使用Chinese语言，并按照instruction中的说明内容输出内容\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家, 我们需要您根据给定的小说题材生成故事的基本结构。\n按照以下内容输出符合给定题材的小说基本结构：\n标题:"小说的标题"\n设置:"小说的情景设置细节，包括时间段、地点和所有相关背景信息"\n主角:"小说主角的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n反派角色:"小说反派角色的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n冲突:"小说故事的主要冲突，包括主角面临的问题和涉及的利害关系"\n对话:"以对话的形式描述情节，揭示人物，以此提供一些提示给读者"\n主题:"小说中心主题，并说明如何在整个情节、角色和背景中展开"\n基调:"整体故事的基调，以及保持背景和人物的一致性和适当性的说明"\n节奏:"调节故事节奏以建立和释放紧张气氛，推进情节，创造戏剧效果的说明"\n其它:"任何额外的细节或对故事的要求，如特定的字数或题材限制"\n'}]
+2024-06-03 14:31:10.944 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 14:31:10.945 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '标题: "星际迷航：遗失的文明"\n\n设置: 故事发生在遥远的未来，人类已经掌握了星际旅行的技术，并与其他外星文明建立了联系。主角的飞船在一次探索任务中意外发现了一个被遗忘的星球，这个星球上隐藏着一个古老的文明，其科技水平远远超越了当前的宇宙文明。\n\n主角: 李明，35岁，是一名经验丰富的星际探险家，性格坚韧不拔，好奇心旺盛，对未知充满渴望。他的动机是寻找宇宙中的未知文明，并揭示它们的秘密。\n\n反派角色: 杰克，40岁，是一名野心勃勃的宇宙海盗，性格冷酷无情，对权力和财富有着无尽的渴望。他的动机是夺取遗失文明的科技，以此来统治宇宙。\n\n冲突: 李明和他的团队在探索遗失文明的过程中，发现了这个文明留下的强大武器，但同时也触发了星球上的防御系统。杰克得知这一消息后，率领他的海盗舰队前来争夺。\n\n对话: 李明站在遗失文明的废墟前，对队友说：“我们终于找到了，这是人类历史上的重大发现。”杰克通过通讯器传来声音：“李明，我知道你在那里，交出你找到的东西，否则你们都别想活着离开。”\n\n主题: 故事的主题是探索与贪婪。通过主角和李明的冒险，展现了人类对未知世界的好奇心和探索精神，同时也揭示了贪婪和野心可能带来的灾难性后果。\n\n基调: 故事的基调是紧张和神秘，随着主角对遗失文明的深入探索，逐渐揭开这个古老文明的秘密，同时也面临着来自宇宙海盗的威胁。\n\n节奏: 故事的节奏紧凑，通过一系列的冒险和冲突，不断推进情节的发展，让读者感受到紧张的气氛和探索的乐趣。\n\n其它: 故事需要保持科学严谨性，所有科技和外星文明的设计都需要有合理的解释。此外，故事的结局应该是开放性的，留给读者想象的空间。\n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家。我们需要您根据context的内容创作出小说的目录和章节内容概况。\n请按照以下要求提供该小说的具体目录和目录中的故事概况：\n1. 输出必须严格符合指定语言。\n2. 回答必须严格按照字典格式，如: {"title": "xxx", "directory": {"第一章：章节标题": "故事概况", "第二章：章节标题": "故事概况"}} 。\n3. 目录应尽可能引人注目和充分，包括一级目录和本章故事概况。\n4. 不要有额外的空格或换行符。\n'}]
+2024-06-03 14:31:20.851 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 14:31:20.852 | INFO     | __main__:_act:249 - {'title': '星际迷航：遗失的文明', 'directory': {'第一章：发现遗迹': '李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。', '第二章：遗失的科技': '探索过程中，李明发现了这个文明留下的强大武器，但同时也激活了星球的防御系统。', '第三章：海盗的威胁': '宇宙海盗杰克得知遗失文明的消息，率领舰队前来争夺，李明和他的团队面临严峻挑战。', '第四章：文明的秘密': '在躲避海盗追击的同时，李明深入研究遗失文明的科技，揭示了这个古老文明的秘密。', '第五章：最终对决': '李明和杰克的舰队在遗失文明的星球上展开决战，李明利用遗失文明的科技保护星球，阻止杰克的野心。', '第六章：新的开始': '决战后，李明决定将遗失文明的科技用于和平目的，开启了人类与外星文明的新篇章。'}}
+2024-06-03 14:31:20.853 | INFO     | __main__:_think:208 - 0
+2024-06-03 14:31:20.853 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=0
+2024-06-03 14:31:25.875 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        您现在是短篇小说领域经验丰富的小说作家。请以引人入胜的风格，深入细致地按照故事概况"李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。"写出故事内容，注意与上一章故事内容的衔接。\n        上一章故事内容为星际迷航：遗失的文明。\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n您现在是短篇小说领域经验丰富的小说作家。我们需要您创作出小说详细内容。'}]
+2024-06-03 14:31:45.137 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 14:31:45.138 | INFO     | __main__:_think:208 - 0
+2024-06-03 14:31:45.138 | INFO     | __main__:_write_to_file:281 - Write tutorial to D:\Python\Test\data\tutorial_docx\2024-06-03_14-31-45
+2024-06-03 14:31:45.140 | DEBUG    | metagpt.utils.file:write:42 - Successfully write file: D:\Python\Test\data\tutorial_docx\2024-06-03_14-31-45\星际迷航：遗失的文明.md
+2024-06-03 14:31:45.140 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=-1
+2024-06-03 14:31:45.141 | INFO     | __main__:main:290 - Tutorial generation and writing completed successfully
+2024-06-03 16:47:50.510 | INFO     | __main__:main:289 - 科幻
+2024-06-03 16:47:50.511 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 科幻...']
+2024-06-03 16:47:50.511 | INFO     | __main__:_think:208 - -1
+2024-06-03 16:47:50.511 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteStoryStruct], state=0
+2024-06-03 16:47:55.529 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        小说的题材是科幻。请严格使用Chinese语言，并按照instruction中的说明内容输出内容\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家, 我们需要您根据给定的小说题材生成故事的基本结构。\n按照以下内容输出符合给定题材的小说基本结构：\n标题:"小说的标题"\n设置:"小说的情景设置细节，包括时间段、地点和所有相关背景信息"\n主角:"小说主角的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n反派角色:"小说反派角色的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n冲突:"小说故事的主要冲突，包括主角面临的问题和涉及的利害关系"\n对话:"以对话的形式描述情节，揭示人物，以此提供一些提示给读者"\n主题:"小说中心主题，并说明如何在整个情节、角色和背景中展开"\n基调:"整体故事的基调，以及保持背景和人物的一致性和适当性的说明"\n节奏:"调节故事节奏以建立和释放紧张气氛，推进情节，创造戏剧效果的说明"\n其它:"任何额外的细节或对故事的要求，如特定的字数或题材限制"\n'}]
+2024-06-03 16:48:15.005 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 16:48:15.006 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '标题: "星际迷航：遗失的文明"\n\n设置: 故事发生在遥远的未来，人类已经掌握了星际旅行的技术，并与其他外星文明建立了联系。主角的飞船在一次探索任务中意外发现了一个被遗忘的星球，这个星球上隐藏着一个古老的文明，其科技水平远远超越了当前的宇宙文明。\n\n主角: 李明，35岁，是一名经验丰富的星际探险家，性格坚韧不拔，好奇心旺盛，对未知充满渴望。他的动机是寻找宇宙中的未知文明，并解开它们的秘密。\n\n反派角色: 杰克，40岁，是一名野心勃勃的宇宙海盗，性格冷酷无情，对权力和财富有着无尽的渴望。他的动机是夺取遗失文明的科技，以此来统治宇宙。\n\n冲突: 李明和他的团队在探索遗失文明的过程中，发现了这个文明留下的强大武器，但同时也触发了星球上的防御系统。杰克得知这一消息后，率领他的海盗舰队前来争夺。\n\n对话: 李明站在遗失文明的废墟前，对队友说：“我们终于找到了，这是人类历史上最伟大的发现。”杰克通过通讯器传来声音：“李明，我知道你在那里，交出你找到的东西，否则你们都得死。”\n\n主题: 故事的主题是探索与贪婪。通过李明和杰克的对比，展现了人类对未知的好奇和对权力的渴望，以及这两种欲望如何影响人类的行为和选择。\n\n基调: 故事的基调是紧张和神秘，随着探索的深入，未知文明的秘密逐渐揭开，同时也伴随着杰克的威胁和攻击，增加了故事的紧迫感。\n\n节奏: 故事的节奏需要在探索的缓慢揭示和杰克的突然袭击之间切换，以此来建立和释放紧张气氛，推动情节发展。\n\n其它: 故事需要在1万字以内完成，确保情节紧凑，同时要保持科幻元素的真实性和逻辑性。\n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家。我们需要您根据context的内容创作出小说的目录和章节内容概况。\n请按照以下要求提供该小说的具体目录和目录中的故事概况：\n1. 输出必须严格符合指定语言。\n2. 回答必须严格按照字典格式，如: {"title": "xxx", "directory": {"第一章：章节标题": "故事概况", "第二章：章节标题": "故事概况"}} 。\n3. 目录应尽可能引人注目和充分，包括一级目录和本章故事概况。\n4. 不要有额外的空格或换行符。\n'}]
+2024-06-03 16:48:27.546 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 16:48:27.547 | INFO     | __main__:_act:249 - {'title': '星际迷航：遗失的文明', 'directory': {'第一章：发现遗迹': '李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。', '第二章：文明的秘密': '探索过程中，李明发现了这个文明留下的强大武器，但同时也触发了星球上的防御系统。', '第三章：海盗的威胁': '宇宙海盗杰克得知遗失文明的消息，率领舰队前来争夺，李明和他的团队面临严峻挑战。', '第四章：科技与贪婪': '李明和杰克的对决揭示了人类对未知的好奇和对权力的渴望，以及这两种欲望如何影响人类的行为和选择。', '第五章：遗失文明的觉醒': '在遗失文明的废墟中，李明找到了控制防御系统的方法，并准备与杰克的舰队进行决战。', '第六章：星际之战': '李明利用遗失文明的科技与杰克的舰队展开激战，双方损失惨重，但李明最终占据了上风。', '第七章：文明的传承': '战斗结束后，李明决定将遗失文明的科技用于和平目的，并与其他文明分享，以促进宇宙的和谐与发展。'}}
+2024-06-03 16:48:27.548 | INFO     | __main__:_think:208 - 0
+2024-06-03 16:48:27.548 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=0
+2024-06-03 16:48:32.569 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        您现在是短篇小说领域经验丰富的小说作家。请以引人入胜的风格，深入细致地按照故事概况"李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。"写出故事内容，注意与上一章故事内容的衔接。\n        上一章故事内容为星际迷航：遗失的文明。\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n您现在是短篇小说领域经验丰富的小说作家。我们需要您创作出小说详细内容。'}]
+2024-06-03 16:48:58.909 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 16:48:58.910 | INFO     | __main__:_think:208 - 0
+2024-06-03 16:48:58.910 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=-1
+2024-06-03 16:48:58.911 | INFO     | __main__:main:291 - : ## 第一章：发现遗迹
+
+在遥远的未来，星际探索已成为人类文明的重要组成部分。李明，一位杰出的星际探险家，带领着他的团队，驾驶着先进的星际飞船“希望号”，穿梭于浩瀚的宇宙之中，寻找着未知的星球和文明。他们的目标是探索那些被遗忘的角落，揭示宇宙的奥秘。
+
+在一次例行的星际跳跃后，李明的团队发现了一个未被记录的星球，它隐藏在一片星云之后，仿佛是宇宙中的一个秘密。这个星球被命名为“遗忘之地”，因为它似乎被时间遗忘了，没有任何文明的迹象。然而，李明的直觉告诉他，这里隐藏着不为人知的秘密。
+
+他们小心翼翼地降落在星球表面，发现这里的大气和环境竟然与地球相似，这是一个令人震惊的发现。团队成员们穿上了防护服，开始了对这个神秘星球的探索。
+
+在一片荒凉的平原上，李明和他的团队发现了一些奇异的建筑遗迹。这些建筑风格独特，与人类已知的任何文明都不相同。它们似乎是由一种未知的材料建造，即使经过了岁月的侵蚀，依然坚固如初。
+
+随着探索的深入，他们发现了一个巨大的地下设施。在这个设施中，他们找到了一系列的壁画和文字，这些壁画描绘了一个古老文明的兴衰，而文字则记录了这个文明的历史和科技。这个文明曾经繁荣昌盛，但最终因为一场灾难而消亡。
+
+李明的团队意识到，他们发现了一个被遗忘的星球，上面隐藏着一个古老的文明。这个文明的技术和知识远远超出了人类的想象，他们的发现可能会改变人类对宇宙的认知。
+
+在团队的努力下，他们成功解读了一部分文字，发现这个文明曾经掌握了一种强大的能源，这种能源可以驱动他们的飞船穿越宇宙，甚至可能穿越时间。然而，这种能源的秘密随着文明的消亡而失传。
+
+李明和他的团队决定将这个发现带回地球，希望能够利用这些知识来推动人类文明的进步。他们小心翼翼地将壁画和文字记录下来，准备返回“希望号”飞船。
+
+就在他们准备离开时，星球突然发生了震动。原来，这个星球上的能源设施因为长时间的休眠而变得不稳定，即将发生爆炸。李明和他的团队必须迅速撤离，否则他们将与这个古老的文明一同消失在宇宙之中。
+
+在紧张的倒计时中，他们成功启动了飞船，逃离了即将爆炸的星球。在太空中，他们回头望去，只见那个被遗忘的星球在一片光芒中消失，仿佛从未存在过。
+
+李明和他的团队带着这个古老文明的秘密返回地球，他们的发现将开启人类探索宇宙的新篇章。而那个被遗忘的星球，以及它隐藏的古老文明，将永远成为宇宙中的一个谜。
+2024-06-03 17:00:29.176 | INFO     | __main__:main:285 - 科幻
+2024-06-03 17:00:29.177 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 科幻...']
+2024-06-03 17:00:29.177 | INFO     | __main__:_think:208 - -1
+2024-06-03 17:00:29.177 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteStoryStruct], state=0
+2024-06-03 17:00:34.204 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        小说的题材是科幻。请严格使用Chinese语言，并按照instruction中的说明内容输出内容\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家, 我们需要您根据给定的小说题材生成故事的基本结构。\n按照以下内容输出符合给定题材的小说基本结构：\n标题:"小说的标题"\n设置:"小说的情景设置细节，包括时间段、地点和所有相关背景信息"\n主角:"小说主角的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n反派角色:"小说反派角色的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n冲突:"小说故事的主要冲突，包括主角面临的问题和涉及的利害关系"\n对话:"以对话的形式描述情节，揭示人物，以此提供一些提示给读者"\n主题:"小说中心主题，并说明如何在整个情节、角色和背景中展开"\n基调:"整体故事的基调，以及保持背景和人物的一致性和适当性的说明"\n节奏:"调节故事节奏以建立和释放紧张气氛，推进情节，创造戏剧效果的说明"\n其它:"任何额外的细节或对故事的要求，如特定的字数或题材限制"\n'}]
+2024-06-03 17:00:52.437 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 17:00:52.438 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '标题: "星际迷航：遗失的文明"\n\n设置: 故事发生在遥远的未来，人类已经掌握了星际旅行的技术，并与其他外星文明建立了联系。主角的飞船在一次探索任务中意外发现了一个被遗忘的星球，这个星球上隐藏着一个古老的文明，其科技水平远远超越了当前的宇宙文明。\n\n主角: 李明，35岁，是一名经验丰富的星际探险家，性格坚韧不拔，好奇心旺盛，对未知充满渴望。他的动机是寻找宇宙中的未知文明，并揭示它们的秘密。\n\n反派角色: 杰克，40岁，是一名野心勃勃的宇宙海盗，性格冷酷无情，对权力和财富有着无尽的渴望。他的动机是夺取遗失文明的科技，以此来统治宇宙。\n\n冲突: 李明和他的团队在探索遗失文明的过程中，发现了这个文明留下的强大武器，但同时也触发了星球上的防御系统。杰克得知这一消息后，率领他的海盗舰队前来争夺。\n\n对话: 李明站在遗失文明的废墟前，对队友说：“我们终于找到了，这是人类历史上最伟大的发现。”杰克通过通讯器传来声音：“李明，把你们找到的东西交出来，否则你们将面临毁灭。”\n\n主题: 故事的主题是探索与贪婪。通过李明和杰克的对比，展现了人类对未知的好奇和对权力的渴望，以及这两种欲望如何影响人类的行为和选择。\n\n基调: 故事的基调是紧张和神秘，随着探索的深入，不断揭示遗失文明的秘密，同时也伴随着杰克的威胁和攻击，增加了故事的紧迫感。\n\n节奏: 故事的节奏通过探索的发现和杰克的追击来调节，探索的发现带来知识的喜悦，而追击则带来紧张和恐惧，两者交替进行，推动故事发展。\n\n其它: 故事要求在10,000字以内，以确保读者能够在短时间内完成阅读，同时保持情节的紧凑和吸引力。\n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家。我们需要您根据context的内容创作出小说的目录和章节内容概况。\n请按照以下要求提供该小说的具体目录和目录中的故事概况：\n1. 输出必须严格符合指定语言。\n2. 回答必须严格按照字典格式，如: {"title": "xxx", "directory": {"第一章：章节标题": "故事概况", "第二章：章节标题": "故事概况"}} 。\n3. 目录应尽可能引人注目和充分，包括一级目录和本章故事概况。\n4. 不要有额外的空格或换行符。\n'}]
+2024-06-03 17:01:04.493 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 17:01:04.494 | INFO     | __main__:_act:249 - {'title': '星际迷航：遗失的文明', 'directory': {'第一章：发现遗迹': '李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。', '第二章：文明的秘密': '探索过程中，李明发现了这个文明留下的强大武器，但同时也触发了星球上的防御系统。', '第三章：海盗的威胁': '宇宙海盗杰克得知遗失文明的消息，率领舰队前来争夺，李明和他的团队面临严峻的挑战。', '第四章：智慧与勇气': '在杰克的追击下，李明利用智慧和勇气，与队友们一起寻找关闭防御系统的方法。', '第五章：文明的遗产': '李明最终解开了文明的秘密，关闭了防御系统，并决定将文明的科技用于和平目的，而不是个人利益。', '第六章：新的征程': '李明和他的团队带着对宇宙的更深理解和对和平的承诺，开始了新的探索旅程。'}}
+2024-06-03 17:01:04.496 | INFO     | __main__:_think:208 - 0
+2024-06-03 17:01:04.496 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=0
+2024-06-03 17:01:09.527 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        您现在是短篇小说领域经验丰富的小说作家。请以引人入胜的风格，深入细致地按照故事概况"李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。"写出故事内容，注意与上一章故事内容的衔接。\n        上一章故事内容为星际迷航：遗失的文明。\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n您现在是短篇小说领域经验丰富的小说作家。我们需要您创作出小说详细内容。'}]
+2024-06-03 17:01:31.515 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 17:01:31.516 | INFO     | __main__:_think:208 - 0
+2024-06-03 17:01:31.516 | INFO     | __main__:_write_to_file:278 - Write tutorial to D:\Python\Test\data\tutorial_docx\2024-06-03_17-01-31
+2024-06-03 17:01:31.517 | DEBUG    | metagpt.utils.file:write:42 - Successfully write file: D:\Python\Test\data\tutorial_docx\2024-06-03_17-01-31\星际迷航：遗失的文明.md
+2024-06-03 17:01:31.518 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=-1
+2024-06-03 17:01:31.518 | INFO     | __main__:main:287 - user: Tutorial generation and writing completed successfully
+2024-06-03 17:11:59.387 | INFO     | __main__:main:285 - 科幻
+2024-06-03 17:11:59.387 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 科幻...']
+2024-06-03 17:11:59.387 | INFO     | __main__:_think:208 - -1
+2024-06-03 17:11:59.388 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteStoryStruct], state=0
+2024-06-03 17:12:04.406 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        小说的题材是科幻。请严格使用Chinese语言，并按照instruction中的说明内容输出内容\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家, 我们需要您根据给定的小说题材生成故事的基本结构。\n按照以下内容输出符合给定题材的小说基本结构：\n标题:"小说的标题"\n设置:"小说的情景设置细节，包括时间段、地点和所有相关背景信息"\n主角:"小说主角的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n反派角色:"小说反派角色的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n冲突:"小说故事的主要冲突，包括主角面临的问题和涉及的利害关系"\n对话:"以对话的形式描述情节，揭示人物，以此提供一些提示给读者"\n主题:"小说中心主题，并说明如何在整个情节、角色和背景中展开"\n基调:"整体故事的基调，以及保持背景和人物的一致性和适当性的说明"\n节奏:"调节故事节奏以建立和释放紧张气氛，推进情节，创造戏剧效果的说明"\n其它:"任何额外的细节或对故事的要求，如特定的字数或题材限制"\n'}]
+2024-06-03 17:12:23.271 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 17:12:23.272 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '标题: "星际迷航：遗失的文明"\n\n设置: 故事发生在遥远的未来，人类已经掌握了星际旅行的技术，并与其他外星文明建立了联系。主角的飞船在一次探索任务中意外发现了一个被遗忘的星球，这个星球上隐藏着一个古老的文明，其科技水平远远超越了当前的宇宙文明。\n\n主角: 李明，35岁，是一名经验丰富的星际探险家，性格坚韧不拔，好奇心旺盛，对未知充满渴望。他的动机是寻找宇宙中的未知文明，并解开它们的秘密。\n\n反派角色: 卡洛斯，40岁，是一名野心勃勃的宇宙海盗，性格冷酷无情，对权力和财富有着无尽的渴望。他的动机是夺取遗失文明的科技，以此来统治宇宙。\n\n冲突: 李明和他的团队在探索遗失文明的过程中，发现了这个文明留下的强大武器，但同时也触发了星球上的防御系统。卡洛斯得知这一消息后，率领他的海盗舰队前来争夺。\n\n对话: 李明站在遗失文明的废墟前，对队友说：“我们终于找到了，这是人类历史上最伟大的发现。” 卡洛斯通过通讯器传来声音：“李明，把那个文明的秘密交给我，否则你们都别想活着离开。”\n\n主题: 故事的主题是探索与贪婪。通过李明和卡洛斯的冲突，探讨人类对于未知的好奇心和对力量的渴望之间的道德界限。\n\n基调: 故事的基调是紧张和神秘的，随着探索的深入，不断揭示遗失文明的秘密，同时也伴随着宇宙海盗的威胁。\n\n节奏: 故事的节奏紧凑，通过探索遗失文明的科技和与宇宙海盗的斗争，不断建立和释放紧张气氛，推动情节发展。\n\n其它: 故事需要保持科学依据，同时也要有足够的想象空间，以吸引科幻爱好者的兴趣。\n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家。我们需要您根据context的内容创作出小说的目录和章节内容概况。\n请按照以下要求提供该小说的具体目录和目录中的故事概况：\n1. 输出必须严格符合指定语言。\n2. 回答必须严格按照字典格式，如: {"title": "xxx", "directory": {"第一章：章节标题": "故事概况", "第二章：章节标题": "故事概况"}} 。\n3. 目录应尽可能引人注目和充分，包括一级目录和本章故事概况。\n4. 不要有额外的空格或换行符。\n'}]
+2024-06-03 17:12:34.272 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 17:12:34.272 | INFO     | __main__:_act:249 - {'title': '星际迷航：遗失的文明', 'directory': {'第一章：发现遗迹': '李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。', '第二章：文明的秘密': '探索过程中，李明发现了这个文明留下的强大武器，但同时也触发了星球上的防御系统。', '第三章：海盗的威胁': '宇宙海盗卡洛斯得知遗失文明的消息，率领舰队前来争夺，李明和他的团队面临严峻挑战。', '第四章：科技与道德': '在对抗海盗的同时，李明开始思考人类对未知文明的好奇心和对力量的渴望之间的道德界限。', '第五章：最终决战': '李明和他的团队利用遗失文明的科技与卡洛斯的舰队进行决战，决定星球和文明的命运。', '第六章：新的开始': '决战后，李明和他的团队决定保护遗失文明的秘密，同时开启新的探索旅程，寻找宇宙中的其他未知文明。'}}
+2024-06-03 17:12:34.273 | INFO     | __main__:_think:208 - 0
+2024-06-03 17:12:34.273 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=0
+2024-06-03 17:12:39.298 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        您现在是短篇小说领域经验丰富的小说作家。请以引人入胜的风格，深入细致地按照故事概况"李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。"写出故事内容，注意与上一章故事内容的衔接。\n        上一章故事内容为星际迷航：遗失的文明。\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n您现在是短篇小说领域经验丰富的小说作家。我们需要您创作出小说详细内容。'}]
+2024-06-03 17:12:58.655 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 17:12:58.655 | INFO     | __main__:_think:208 - 0
+2024-06-03 17:13:03.664 | WARNING  | metagpt.utils.common:wrapper:649 - There is a exception in role's execution, in order to resume, we delete the newest role communication message in the role's memory.
+2024-06-03 17:16:07.615 | INFO     | __main__:main:286 - 科幻
+2024-06-03 17:16:07.616 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 科幻...']
+2024-06-03 17:16:07.616 | INFO     | __main__:_think:208 - -1
+2024-06-03 17:16:07.616 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteStoryStruct], state=0
+2024-06-03 17:16:12.640 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        小说的题材是科幻。请严格使用Chinese语言，并按照instruction中的说明内容输出内容\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家, 我们需要您根据给定的小说题材生成故事的基本结构。\n按照以下内容输出符合给定题材的小说基本结构：\n标题:"小说的标题"\n设置:"小说的情景设置细节，包括时间段、地点和所有相关背景信息"\n主角:"小说主角的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n反派角色:"小说反派角色的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n冲突:"小说故事的主要冲突，包括主角面临的问题和涉及的利害关系"\n对话:"以对话的形式描述情节，揭示人物，以此提供一些提示给读者"\n主题:"小说中心主题，并说明如何在整个情节、角色和背景中展开"\n基调:"整体故事的基调，以及保持背景和人物的一致性和适当性的说明"\n节奏:"调节故事节奏以建立和释放紧张气氛，推进情节，创造戏剧效果的说明"\n其它:"任何额外的细节或对故事的要求，如特定的字数或题材限制"\n'}]
+2024-06-03 17:16:31.086 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 17:16:31.086 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '标题: "星际迷航：遗失的文明"\n\n设置: 故事发生在遥远的未来，人类已经掌握了星际旅行的技术，并与其他外星文明建立了联系。主角的飞船在一次探索任务中意外发现了一个被遗忘的星球，这个星球上隐藏着一个古老的文明，其科技水平远远超越了当前的宇宙文明。\n\n主角: 李明，35岁，是一名经验丰富的星际探险家，性格坚韧不拔，好奇心旺盛，对未知充满渴望。他的动机是寻找宇宙中的未知文明，揭示宇宙的奥秘。\n\n反派角色: 杰克，40岁，是一名野心勃勃的宇宙海盗，性格冷酷无情，对权力和财富有着无尽的渴望。他的动机是夺取遗失文明的科技，以此来统治宇宙。\n\n冲突: 李明和他的团队在探索遗失文明的过程中，发现了这个文明留下的强大科技，但同时也遭遇了杰克和他的海盗团伙。双方为了争夺这些科技而展开了激烈的斗争。\n\n对话: 李明站在遗失文明的废墟前，对队友说：“我们终于找到了，这是人类历史上的重大发现。”杰克则在远处冷笑：“找到又如何，最终这些都将属于我。”\n\n主题: 故事的主题是探索与贪婪。通过主角对未知文明的探索，展现了人类对知识的渴望和对宇宙奥秘的追求。同时，反派角色的贪婪和对权力的渴望，则揭示了人性中黑暗的一面。\n\n基调: 故事的基调是紧张和神秘的。在探索遗失文明的过程中，充满了未知和危险，同时也伴随着对古代文明的敬畏和好奇。\n\n节奏: 故事的节奏紧凑，随着主角对文明的探索逐渐深入，紧张气氛逐渐升级，最终达到高潮，即与海盗的冲突。\n\n其它: 故事需要保持科学严谨性，所有科技和外星文明的设计都需要有科学依据。此外，故事的结局应该是开放性的，留给读者想象的空间。\n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家。我们需要您根据context的内容创作出小说的目录和章节内容概况。\n请按照以下要求提供该小说的具体目录和目录中的故事概况：\n1. 输出必须严格符合指定语言。\n2. 回答必须严格按照字典格式，如: {"title": "xxx", "directory": {"第一章：章节标题": "故事概况", "第二章：章节标题": "故事概况"}} 。\n3. 目录应尽可能引人注目和充分，包括一级目录和本章故事概况。\n4. 不要有额外的空格或换行符。\n'}]
+2024-06-03 17:16:43.935 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 17:16:43.935 | INFO     | __main__:_act:249 - {'title': '星际迷航：遗失的文明', 'directory': {'第一章：发现遗迹': '李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。', '第二章：文明的秘密': '探索过程中，李明发现了这个文明留下的强大科技，这些科技远远超越了当前的宇宙文明。', '第三章：海盗的威胁': '宇宙海盗杰克得知了遗失文明的存在，决定夺取这些科技来统治宇宙。', '第四章：科技争夺战': '李明和杰克之间的冲突升级，双方为了争夺遗失文明的科技而展开激烈的斗争。', '第五章：人性的较量': '在争夺科技的过程中，李明和杰克的人性被推向极限，揭示了探索与贪婪的主题。', '第六章：文明的觉醒': '遗失的文明开始苏醒，其真正的力量和目的逐渐浮出水面。', '第七章：宇宙的奥秘': '李明和他的团队在探索中逐渐揭开了宇宙的奥秘，同时也面临着新的挑战。', '第八章：最终的对决': '李明和杰克的最终对决，决定着遗失文明的科技和宇宙的未来。', '第九章：新的开始': '故事以开放性的结局结束，留给读者想象的空间，暗示着新的探索和冒险即将开始。'}}
+2024-06-03 17:16:43.936 | INFO     | __main__:_think:208 - 0
+2024-06-03 17:16:43.936 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=0
+2024-06-03 17:16:48.964 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        您现在是短篇小说领域经验丰富的小说作家。请以引人入胜的风格，深入细致地按照故事概况"李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。"写出故事内容，注意与上一章故事内容的衔接。\n        上一章故事内容为星际迷航：遗失的文明。\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n您现在是短篇小说领域经验丰富的小说作家。我们需要您创作出小说详细内容。'}]
+2024-06-03 17:17:10.911 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 17:17:10.912 | INFO     | __main__:_think:208 - 0
+2024-06-03 17:17:10.912 | INFO     | __main__:_write_to_file:279 - Write tutorial to D:\Python\Test\data\tutorial_docx\2024-06-03_17-17-10
+2024-06-03 17:17:10.913 | DEBUG    | metagpt.utils.file:write:42 - Successfully write file: D:\Python\Test\data\tutorial_docx\2024-06-03_17-17-10\星际迷航：遗失的文明.md
+2024-06-03 17:17:10.914 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=-1
+2024-06-03 17:17:10.914 | INFO     | __main__:main:288 - user: Tutorial generation and writing completed successfully
+2024-06-03 17:25:34.747 | INFO     | __main__:main:288 - 科幻
+2024-06-03 17:25:34.748 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 科幻...']
+2024-06-03 17:25:34.748 | INFO     | __main__:_think:208 - -1
+2024-06-03 17:25:34.748 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteStoryStruct], state=0
+2024-06-03 17:25:39.768 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        小说的题材是科幻。请严格使用Chinese语言，并按照instruction中的说明内容输出内容\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家, 我们需要您根据给定的小说题材生成故事的基本结构。\n按照以下内容输出符合给定题材的小说基本结构：\n标题:"小说的标题"\n设置:"小说的情景设置细节，包括时间段、地点和所有相关背景信息"\n主角:"小说主角的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n反派角色:"小说反派角色的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n冲突:"小说故事的主要冲突，包括主角面临的问题和涉及的利害关系"\n对话:"以对话的形式描述情节，揭示人物，以此提供一些提示给读者"\n主题:"小说中心主题，并说明如何在整个情节、角色和背景中展开"\n基调:"整体故事的基调，以及保持背景和人物的一致性和适当性的说明"\n节奏:"调节故事节奏以建立和释放紧张气氛，推进情节，创造戏剧效果的说明"\n其它:"任何额外的细节或对故事的要求，如特定的字数或题材限制"\n'}]
+2024-06-03 17:25:57.355 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 17:25:57.356 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '标题: "星际迷航：遗失的文明"\n\n设置: 故事发生在遥远的未来，人类已经掌握了星际旅行的技术，并与其他外星文明建立了联系。主角的飞船在一次探索任务中意外发现了一个被遗忘的星球，这个星球上隐藏着一个古老的文明，其科技水平远远超越了当前的宇宙文明。\n\n主角: 李明，35岁，是一名经验丰富的星际探险家，性格坚韧不拔，好奇心旺盛，对未知充满渴望。他的动机是寻找宇宙中的未知文明，并揭示它们的秘密。\n\n反派角色: 杰克，40岁，是一名野心勃勃的宇宙海盗，性格冷酷无情，对权力和财富有着无尽的渴望。他的动机是夺取遗失文明的科技，以此来统治宇宙。\n\n冲突: 李明和他的团队在探索遗失文明的过程中，发现了这个文明留下的强大武器，但同时也触发了星球上的防御系统。杰克得知这一消息后，率领他的海盗舰队前来争夺。\n\n对话: 李明站在遗失文明的废墟前，对队友说：“我们终于找到了，这是人类历史上的重大发现。”杰克通过通讯器传来声音：“李明，我知道你在那里，交出你找到的东西，否则你们都别想活着离开。”\n\n主题: 故事的主题是探索与贪婪。通过主角和李明的冒险，展现了人类对未知世界的好奇心和探索精神，同时也揭示了贪婪和野心可能带来的灾难性后果。\n\n基调: 故事的基调是紧张和神秘，随着主角对遗失文明的深入探索，逐渐揭开这个古老文明的秘密，同时也面临着来自宇宙海盗的威胁。\n\n节奏: 故事的节奏紧凑，通过一系列的冒险和冲突，不断推进情节的发展，让读者感受到紧张的气氛和探索的乐趣。\n\n其它: 故事需要保持科学严谨性，所有科技和外星文明的设计都需要有合理的解释。此外，故事的结局应该是开放性的，留给读者想象的空间。\n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家。我们需要您根据context的内容创作出小说的目录和章节内容概况。\n请按照以下要求提供该小说的具体目录和目录中的故事概况：\n1. 输出必须严格符合指定语言。\n2. 回答必须严格按照字典格式，如: {"title": "xxx", "directory": {"第一章：章节标题": "故事概况", "第二章：章节标题": "故事概况"}} 。\n3. 目录应尽可能引人注目和充分，包括一级目录和本章故事概况。\n4. 不要有额外的空格或换行符。\n'}]
+2024-06-03 17:26:06.355 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 17:26:06.355 | INFO     | __main__:_act:251 - {'title': '星际迷航：遗失的文明', 'directory': {'第一章：发现遗迹': '李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。', '第二章：遗失的科技': '探索过程中，李明发现了这个文明留下的强大武器，但同时也激活了星球的防御系统。', '第三章：海盗的威胁': '宇宙海盗杰克得知遗失文明的消息，率领舰队前来争夺，李明和他的团队面临严峻挑战。', '第四章：文明的秘密': '在躲避海盗追击的同时，李明深入研究遗失文明的科技，揭示了这个古老文明的秘密。', '第五章：终极对决': '李明和杰克的舰队在遗失文明的星球上展开决战，争夺控制权。', '第六章：新的开始': '决战后，李明和他的团队决定将遗失文明的科技用于和平目的，而杰克的野心也得到了应有的惩罚。'}}
+2024-06-03 17:26:06.356 | INFO     | __main__:_think:208 - 0
+2024-06-03 17:26:06.356 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=0
+2024-06-03 17:26:11.376 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        您现在是短篇小说领域经验丰富的小说作家。请以引人入胜的风格，深入细致地按照故事概况"李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。"写出故事内容，注意与上一章故事内容的衔接。\n        上一章故事内容为星际迷航：遗失的文明。\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n您现在是短篇小说领域经验丰富的小说作家。我们需要您创作出小说详细内容。'}]
+2024-06-03 17:26:30.614 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 17:26:30.615 | INFO     | __main__:_think:208 - 0
+2024-06-03 17:26:30.615 | INFO     | __main__:_write_to_file:281 - Write tutorial to D:\Python\Test\data\tutorial_docx\2024-06-03_17-26-30
+2024-06-03 17:26:30.616 | DEBUG    | metagpt.utils.file:write:42 - Successfully write file: D:\Python\Test\data\tutorial_docx\2024-06-03_17-26-30\星际迷航：遗失的文明.md
+2024-06-03 17:26:30.617 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=-1
+2024-06-03 17:26:30.617 | INFO     | __main__:main:290 - user: Tutorial generation and writing completed successfully
+2024-06-03 17:30:03.609 | INFO     | __main__:main:291 - 科幻
+2024-06-03 17:30:03.609 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 科幻...']
+2024-06-03 17:30:03.610 | INFO     | __main__:_write_to_file:284 - Write tutorial to D:\Python\Test\data\tutorial_docx\2024-06-03_17-30-03
+2024-06-03 17:30:03.611 | DEBUG    | metagpt.utils.file:write:42 - Successfully write file: D:\Python\Test\data\tutorial_docx\2024-06-03_17-30-03\.md
+2024-06-03 17:30:03.612 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteStoryStruct], state=-1
+2024-06-03 17:30:03.612 | INFO     | __main__:main:293 - user: Tutorial generation and writing completed successfully
+2024-06-03 17:39:25.608 | INFO     | __main__:main:285 - 科幻
+2024-06-03 17:39:25.608 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 科幻...']
+2024-06-03 17:39:25.608 | INFO     | __main__:_think:208 - -1
+2024-06-03 17:39:25.609 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteStoryStruct], state=0
+2024-06-03 17:39:30.633 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        小说的题材是科幻。请严格使用Chinese语言，并按照instruction中的说明内容输出内容\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家, 我们需要您根据给定的小说题材生成故事的基本结构。\n按照以下内容输出符合给定题材的小说基本结构：\n标题:"小说的标题"\n设置:"小说的情景设置细节，包括时间段、地点和所有相关背景信息"\n主角:"小说主角的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n反派角色:"小说反派角色的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n冲突:"小说故事的主要冲突，包括主角面临的问题和涉及的利害关系"\n对话:"以对话的形式描述情节，揭示人物，以此提供一些提示给读者"\n主题:"小说中心主题，并说明如何在整个情节、角色和背景中展开"\n基调:"整体故事的基调，以及保持背景和人物的一致性和适当性的说明"\n节奏:"调节故事节奏以建立和释放紧张气氛，推进情节，创造戏剧效果的说明"\n其它:"任何额外的细节或对故事的要求，如特定的字数或题材限制"\n'}]
+2024-06-03 17:39:48.115 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 17:39:48.116 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '标题: "星际迷航：遗失的文明"\n\n设置: 故事发生在遥远的未来，人类已经掌握了星际旅行的技术，并与其他外星文明建立了联系。主角的飞船在一次探索任务中意外发现了一个被遗忘的星球，这个星球上隐藏着一个古老的文明，其科技水平远远超越了当前的宇宙文明。\n\n主角: 李明，35岁，是一名经验丰富的星际探险家，性格坚韧不拔，好奇心旺盛，对未知充满渴望。他的动机是寻找宇宙中的未知文明，并揭示它们的秘密。\n\n反派角色: 杰克，40岁，是一名野心勃勃的宇宙海盗，性格冷酷无情，对权力和财富有着无尽的渴望。他的动机是夺取遗失文明的科技，以此来统治宇宙。\n\n冲突: 李明和他的团队在探索遗失文明的过程中，发现了这个文明留下的强大武器，但同时也触发了星球上的防御系统。杰克得知这一消息后，率领他的海盗舰队前来争夺。\n\n对话: 李明站在遗失文明的废墟前，对队友说：“我们终于找到了，这是人类历史上的重大发现。”杰克通过通讯器传来声音：“李明，我知道你在那里，交出你找到的东西，否则你们都别想活着离开。”\n\n主题: 故事的主题是探索与贪婪。通过主角和李明的冒险，展现了人类对未知世界的好奇心和探索精神，同时也揭示了贪婪和野心可能带来的灾难性后果。\n\n基调: 故事的基调是紧张和神秘，随着主角对遗失文明的深入探索，逐渐揭开这个古老文明的秘密，同时也面临着来自宇宙海盗的威胁。\n\n节奏: 故事的节奏紧凑，通过一系列的冒险和冲突，不断推进情节的发展，让读者感受到紧张的气氛和探索的乐趣。\n\n其它: 故事需要保持科学严谨性，所有科技和外星文明的设计都需要有合理的解释。此外，故事的结局应该是开放性的，留给读者想象的空间。\n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家。我们需要您根据context的内容创作出小说的目录和章节内容概况。\n请按照以下要求提供该小说的具体目录和目录中的故事概况：\n1. 输出必须严格符合指定语言。\n2. 回答必须严格按照字典格式，如: {"title": "xxx", "directory": {"第一章：章节标题": "故事概况", "第二章：章节标题": "故事概况"}} 。\n3. 目录应尽可能引人注目和充分，包括一级目录和本章故事概况。\n4. 不要有额外的空格或换行符。\n'}]
+2024-06-03 17:39:59.341 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 17:39:59.341 | INFO     | __main__:_act:251 - {'title': '星际迷航：遗失的文明', 'directory': {'第一章：发现遗迹': '李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。', '第二章：遗失的科技': '探索过程中，李明发现了这个文明留下的强大武器，但同时也激活了星球的防御系统。', '第三章：海盗的威胁': '宇宙海盗杰克得知遗失文明的消息，率领舰队前来争夺，李明和他的团队面临严峻挑战。', '第四章：文明的秘密': '在躲避海盗追击的同时，李明深入研究遗失文明的科技，揭示了这个古老文明的秘密。', '第五章：决战遗迹': '李明和杰克的舰队在遗迹星球上展开决战，李明利用遗失文明的科技对抗海盗，保护星球的秘密。', '第六章：新的启示': '决战后，李明和他的团队对遗失文明的科技有了更深的理解，他们决定将这些知识用于和平，而不是权力。', '第七章：未知的旅程': '故事以开放性结局结束，李明和他的团队准备踏上新的旅程，探索宇宙中更多的未知文明。'}}
+2024-06-03 17:39:59.342 | INFO     | __main__:_think:208 - 0
+2024-06-03 17:39:59.342 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=0
+2024-06-03 17:40:04.364 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        您现在是短篇小说领域经验丰富的小说作家。请以引人入胜的风格，深入细致地按照故事概况"李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。"写出故事内容，注意与上一章故事内容的衔接。\n        上一章故事内容为星际迷航：遗失的文明。\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n您现在是短篇小说领域经验丰富的小说作家。我们需要您创作出小说详细内容。'}]
+2024-06-03 17:40:23.600 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 17:40:23.601 | INFO     | __main__:_think:208 - 0
+2024-06-03 17:40:23.601 | INFO     | __main__:_react:277 - Write tutorial to D:\Python\Test\data\tutorial_docx\2024-06-03_17-40-23
+2024-06-03 17:40:23.602 | DEBUG    | metagpt.utils.file:write:42 - Successfully write file: D:\Python\Test\data\tutorial_docx\2024-06-03_17-40-23\星际迷航：遗失的文明.md
+2024-06-03 17:40:23.603 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=-1
+2024-06-03 17:40:23.603 | INFO     | __main__:main:287 - : ## 第一章：发现遗迹
+
+在遥远的未来，星际探索已成为人类文明的重要组成部分。李明，一位杰出的星际探险家，带领着他的团队，驾驶着先进的星际飞船“希望号”，穿梭于浩瀚的宇宙之中，寻找着未知的世界和文明的遗迹。
+
+他们的目标是一个被遗忘的星球，这个星球在古老的星图上被标记为“X-77”，但关于它的信息几乎是一片空白。李明和他的团队对这个神秘星球充满了好奇，他们知道，每一次的发现都可能改写人类对宇宙的认知。
+
+经过数月的航行，他们终于抵达了X-77星球。这个星球表面覆盖着厚厚的云层，从太空中望去，就像一颗巨大的珍珠。当“希望号”穿过云层，缓缓降落在这个星球上时，李明和他的团队被眼前的景象惊呆了。
+
+星球的表面是一片荒凉的景象，但在这荒凉之中，却隐藏着令人难以置信的秘密。他们发现了一系列古老的建筑，这些建筑风格奇特，与人类已知的任何文明都不相同。这些建筑似乎是由一种未知的材料建造，即使经过了无数岁月的侵蚀，依然坚固如初。
+
+李明和他的团队小心翼翼地探索着这些建筑，他们发现了一些壁画和文字，这些壁画和文字记录了一个古老文明的兴衰。这个文明曾经繁荣昌盛，但最终因为一场未知的灾难而消亡。
+
+在探索的过程中，李明发现了一个隐藏的房间，房间里有一个巨大的装置，似乎是某种能量源。当他触碰这个装置时，整个房间突然亮了起来，一幅全息图像出现在他们面前。
+
+全息图像展示了这个古老文明的最后一幕，他们为了保存自己的文明，将所有的知识和历史都储存在了这个装置中，希望有一天能够被其他文明发现。李明和他的团队意识到，他们不仅发现了一个古老的文明，还发现了一个文明的遗产。
+
+李明决定将这个发现带回地球，让全人类共享这份宝贵的遗产。他们小心翼翼地将装置带回了“希望号”，准备返回地球。在离开这个星球之前，李明回头望了一眼这个被遗忘的星球，心中充满了感慨。他知道，这次探索将会被载入史册，而他们，将成为人类历史上的一段传奇。
+2024-06-03 17:52:38.499 | INFO     | __main__:main:283 - 科幻
+2024-06-03 17:52:38.499 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 科幻...']
+2024-06-03 17:52:38.500 | INFO     | __main__:_think:208 - -1
+2024-06-03 17:52:38.500 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteStoryStruct], state=0
+2024-06-03 17:52:43.512 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        小说的题材是科幻。请严格使用Chinese语言，并按照instruction中的说明内容输出内容\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家, 我们需要您根据给定的小说题材生成故事的基本结构。\n按照以下内容输出符合给定题材的小说基本结构：\n标题:"小说的标题"\n设置:"小说的情景设置细节，包括时间段、地点和所有相关背景信息"\n主角:"小说主角的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n反派角色:"小说反派角色的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n冲突:"小说故事的主要冲突，包括主角面临的问题和涉及的利害关系"\n对话:"以对话的形式描述情节，揭示人物，以此提供一些提示给读者"\n主题:"小说中心主题，并说明如何在整个情节、角色和背景中展开"\n基调:"整体故事的基调，以及保持背景和人物的一致性和适当性的说明"\n节奏:"调节故事节奏以建立和释放紧张气氛，推进情节，创造戏剧效果的说明"\n其它:"任何额外的细节或对故事的要求，如特定的字数或题材限制"\n'}]
+2024-06-03 17:53:00.911 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 17:53:00.912 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '标题: "星际迷航：遗失的文明"\n\n设置: 故事发生在遥远的未来，人类已经掌握了星际旅行的技术，并与其他外星文明建立了联系。主角的飞船在一次探索任务中意外发现了一个被遗忘的星球，这个星球上隐藏着一个古老的文明，其科技水平远远超越了当前的宇宙文明。\n\n主角: 李明，35岁，是一名经验丰富的星际探险家，性格坚韧不拔，好奇心旺盛，对未知充满渴望。他的动机是寻找宇宙中的未知文明，揭示宇宙的奥秘。\n\n反派角色: 杰克，40岁，是一名野心勃勃的宇宙海盗，性格冷酷无情，对权力和财富有着无尽的渴望。他的动机是夺取遗失文明的科技，以此来统治宇宙。\n\n冲突: 李明和他的团队在探索遗失文明的过程中，发现了这个文明留下的强大科技，但同时也遭遇了杰克的海盗团伙。双方为了争夺科技的控制权而展开了激烈的斗争。\n\n对话: 李明站在遗失文明的废墟前，对队友说：“我们终于找到了，这是人类历史上的重大发现。”杰克则在远处冷笑：“找到又如何，最终还不是要落入我的手中。”\n\n主题: 故事的主题是探索与贪婪。通过主角对未知文明的探索，展现了人类对知识的渴望和对宇宙奥秘的追求。同时，反派角色的贪婪和对权力的渴望，揭示了人性中黑暗的一面。\n\n基调: 故事的基调是紧张和神秘的。在探索遗失文明的过程中，充满了未知和危险，同时也伴随着对古代文明的敬畏和好奇。\n\n节奏: 故事的节奏紧凑，随着主角对文明的探索逐渐深入，紧张气氛逐渐升级，最终达到高潮，即与海盗团伙的冲突。\n\n其它: 故事需要保持科学严谨性，所有科技和外星文明的设计都需要有合理的科学依据。\n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家。我们需要您根据context的内容创作出小说的目录和章节内容概况。\n请按照以下要求提供该小说的具体目录和目录中的故事概况：\n1. 输出必须严格符合指定语言。\n2. 回答必须严格按照字典格式，如: {"title": "xxx", "directory": {"第一章：章节标题": "故事概况", "第二章：章节标题": "故事概况"}} 。\n3. 目录应尽可能引人注目和充分，包括一级目录和本章故事概况。\n4. 不要有额外的空格或换行符。\n'}]
+2024-06-03 17:53:10.863 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 17:53:10.863 | INFO     | __main__:_act:249 - {'title': '星际迷航：遗失的文明', 'directory': {'第一章：星际探险家': '李明和他的团队在星际间探索，寻找未知文明。', '第二章：意外发现': '飞船意外发现一个被遗忘的星球，隐藏着古老的文明。', '第三章：遗失的科技': '探索过程中，李明发现了超越当前文明的科技。', '第四章：宇宙海盗的野心': '杰克和他的海盗团伙出现，意图夺取遗失的科技。', '第五章：争夺与冲突': '双方为了科技的控制权展开斗争，紧张气氛升级。', '第六章：文明的奥秘': '在斗争中，李明逐渐揭开古老文明背后的秘密。', '第七章：人性的较量': '李明和杰克的动机和性格冲突，展现人性光明与黑暗。', '第八章：宇宙的奥秘': '故事达到高潮，揭示宇宙中未知的奥秘。', '第九章：新的征程': '李明和他的团队在经历了一系列挑战后，准备新的探索任务。'}}
+2024-06-03 17:53:10.864 | INFO     | __main__:_think:208 - 0
+2024-06-03 17:53:10.865 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=0
+2024-06-03 17:53:15.887 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        您现在是短篇小说领域经验丰富的小说作家。请以引人入胜的风格，深入细致地按照故事概况"李明和他的团队在星际间探索，寻找未知文明。"写出故事内容，注意与上一章故事内容的衔接。\n        上一章故事内容为星际迷航：遗失的文明。\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n您现在是短篇小说领域经验丰富的小说作家。我们需要您创作出小说详细内容。'}]
+2024-06-03 17:53:42.691 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 17:53:42.692 | INFO     | __main__:_think:208 - 0
+2024-06-03 17:53:42.693 | INFO     | __main__:_react:275 - Write tutorial to D:\Python\Test\data\tutorial_docx\2024-06-03_17-53-42
+2024-06-03 17:53:42.695 | DEBUG    | metagpt.utils.file:write:42 - Successfully write file: D:\Python\Test\data\tutorial_docx\2024-06-03_17-53-42\星际迷航：遗失的文明.md
+2024-06-03 17:53:42.696 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=-1
+2024-06-03 17:53:42.697 | INFO     | __main__:main:285 - : ## 第一章：星际探险家
+
+在遥远的未来，人类已经掌握了星际旅行的技术，宇宙飞船如同穿梭于城市之间的公交车一样频繁。李明，一位杰出的星际探险家，带领着他的团队，驾驶着名为“星际漫游者”的先进飞船，穿梭于浩瀚的星海之间，寻找那些传说中的未知文明。
+
+上一章中，李明和他的团队在一次例行的星际探索中，意外发现了一个古老的文明遗迹。这个文明似乎在一夜之间消失，留下了无数的谜团和宝贵的科技遗产。李明和他的团队小心翼翼地探索着这个遗失的文明，试图解开其中的秘密。
+
+然而，就在他们即将揭开这个文明消失之谜的关键时刻，飞船的警报突然响起。一个未知的能量信号在附近的星域中被探测到，这个信号似乎是有意为之，像是某种邀请或是警告。李明和他的团队决定跟随这个信号，希望能够找到新的线索，或者甚至是另一个未知文明的踪迹。
+
+随着“星际漫游者”逐渐接近信号的源头，他们发现了一个隐藏在星云之中的巨大空间站。这个空间站的设计风格与他们之前发现的遗失文明截然不同，显然这是另一个文明的杰作。空间站的表面覆盖着奇异的符号和图案，似乎在诉说着一个古老的故事。
+
+李明和他的团队小心翼翼地与空间站建立了联系，出乎意料的是，空间站竟然回应了他们的信号，并打开了一个入口，邀请他们进入。在经过一番讨论后，李明决定带领一小队队员进入空间站，探索这个未知的领域。
+
+空间站内部充满了奇异的科技和艺术品，显然这个文明在科技和文化上都有着极高的成就。李明和他的队员们在空间站中发现了许多不可思议的装置，其中一些似乎能够操控时间和空间。在探索的过程中，他们还发现了一些记录着这个文明历史的数据晶体。
+
+正当他们沉浸在这些发现中时，空间站的中央控制室突然亮了起来。一个全息影像出现在他们面前，这是一个外形奇特的生物，自称是这个文明的守护者。它告诉李明，这个文明曾经是宇宙中的一股强大力量，但由于一场灾难性的战争，他们被迫放弃了实体形态，将意识上传到了这个空间站中。
+
+守护者解释说，他们探测到李明和他的团队在探索遗失的文明，因此发出了信号，希望能够与人类建立联系。他们希望通过人类，将他们的知识和文化传递给宇宙中的其他文明，以防止他们的遗产随着时间的流逝而消失。
+
+李明和他的团队被这个文明的故事深深打动，他们决定接受守护者的请求，将这个文明的知识和文化带回地球，与全人类分享。在告别守护者后，他们带着珍贵的数据晶体和对这个未知文明的深刻印象，踏上了返回地球的旅程。
+
+随着“星际漫游者”缓缓驶离空间站，李明望着窗外那片神秘的星云，心中充满了感慨。他知道，这次探索不仅让他们发现了两个未知文明的踪迹，更重要的是，他们见证了宇宙中不同文明之间的联系和传承。而这一切，都将是人类历史上的重要篇章。
+2024-06-03 18:07:40.310 | INFO     | __main__:main:284 - 科幻
+2024-06-03 18:07:40.310 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 科幻...']
+2024-06-03 18:07:40.310 | INFO     | __main__:_think:208 - -1
+2024-06-03 18:07:40.310 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteStoryStruct], state=0
+2024-06-03 18:07:45.339 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        小说的题材是科幻。请严格使用Chinese语言，并按照instruction中的说明内容输出内容\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家, 我们需要您根据给定的小说题材生成故事的基本结构。\n按照以下内容输出符合给定题材的小说基本结构：\n标题:"小说的标题"\n设置:"小说的情景设置细节，包括时间段、地点和所有相关背景信息"\n主角:"小说主角的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n反派角色:"小说反派角色的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n冲突:"小说故事的主要冲突，包括主角面临的问题和涉及的利害关系"\n对话:"以对话的形式描述情节，揭示人物，以此提供一些提示给读者"\n主题:"小说中心主题，并说明如何在整个情节、角色和背景中展开"\n基调:"整体故事的基调，以及保持背景和人物的一致性和适当性的说明"\n节奏:"调节故事节奏以建立和释放紧张气氛，推进情节，创造戏剧效果的说明"\n其它:"任何额外的细节或对故事的要求，如特定的字数或题材限制"\n'}]
+2024-06-03 18:08:03.421 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 18:08:03.422 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '标题: "星际迷航：遗失的文明"\n\n设置: 故事发生在遥远的未来，人类已经掌握了星际旅行的技术，并与其他外星文明建立了联系。主角的飞船在一次探索任务中意外发现了一个被遗忘的星球，这个星球上隐藏着一个古老的文明，其科技水平远远超越了当前的宇宙文明。\n\n主角: 李明，35岁，是一名经验丰富的星际探险家，性格坚韧不拔，好奇心旺盛，对未知充满渴望。他的动机是寻找宇宙中的未知文明，并揭示它们的秘密。\n\n反派角色: 杰克，40岁，是一名野心勃勃的宇宙海盗，性格冷酷无情，对权力和财富有着无尽的渴望。他的动机是夺取遗失文明的科技，以此来统治宇宙。\n\n冲突: 李明和他的团队在探索遗失文明的过程中，发现了这个文明留下的强大武器，但同时也触发了星球上的防御系统。杰克得知这一消息后，率领他的海盗舰队前来争夺。\n\n对话: 李明站在遗失文明的废墟前，对队友说：“我们终于找到了，这是人类历史上最伟大的发现。” 杰克通过通讯器传来声音：“李明，我知道你在那里，交出你找到的东西，否则你们都得死。”\n\n主题: 故事的主题是探索与贪婪。通过主角和李明的冒险，展现了人类对未知世界的好奇心和探索精神，同时也揭示了贪婪和野心如何导致冲突和战争。\n\n基调: 故事的基调是紧张和神秘，随着探索的深入，不断揭示遗失文明的秘密，同时也伴随着宇宙海盗的威胁，为故事增添了紧张刺激的氛围。\n\n节奏: 故事的节奏紧凑，从发现遗失文明的惊喜，到探索过程中的发现和挑战，再到与宇宙海盗的对抗，层层推进，不断制造高潮。\n\n其它: 故事需要在2万字以内完成，以确保读者能够在短时间内获得完整的阅读体验。\n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家。我们需要您根据context的内容创作出小说的目录和章节内容概况。\n请按照以下要求提供该小说的具体目录和目录中的故事概况：\n1. 输出必须严格符合指定语言。\n2. 回答必须严格按照字典格式，如: {"title": "xxx", "directory": {"第一章：章节标题": "故事概况", "第二章：章节标题": "故事概况"}} 。\n3. 目录应尽可能引人注目和充分，包括一级目录和本章故事概况。\n4. 不要有额外的空格或换行符。\n'}]
+2024-06-03 18:08:11.175 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 18:08:11.175 | INFO     | __main__:_act:250 - {'title': '星际迷航：遗失的文明', 'directory': {'第一章：发现遗迹': '李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。', '第二章：遗失的科技': '探索过程中，李明发现了这个文明留下的强大武器，但同时也触发了星球上的防御系统。', '第三章：海盗的威胁': '宇宙海盗杰克得知遗失文明的存在后，率领舰队前来争夺，威胁李明交出发现。', '第四章：秘密的揭示': '在探索遗失文明的过程中，李明逐渐揭开了这个古老文明的秘密，发现了一个惊人的真相。', '第五章：最终的对决': '李明和杰克之间的冲突达到高潮，他们为了控制遗失文明的科技而展开了一场激烈的战斗。'}}
+2024-06-03 18:08:11.176 | INFO     | __main__:_think:208 - 0
+2024-06-03 18:08:11.176 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=0
+2024-06-03 18:08:16.194 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        您现在是短篇小说领域经验丰富的小说作家。请以引人入胜的风格，深入细致地按照故事概况"李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。"写出故事内容，注意与上一章故事内容的衔接。\n        上一章故事内容为星际迷航：遗失的文明。\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n您现在是短篇小说领域经验丰富的小说作家。我们需要您创作出小说详细内容。'}]
+2024-06-03 18:08:37.397 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 18:08:37.397 | INFO     | __main__:_think:208 - 0
+2024-06-03 18:08:37.398 | INFO     | __main__:_react:276 - Write tutorial to D:\Python\Test\data\tutorial_docx\2024-06-03_18-08-37
+2024-06-03 18:08:37.399 | DEBUG    | metagpt.utils.file:write:42 - Successfully write file: D:\Python\Test\data\tutorial_docx\2024-06-03_18-08-37\星际迷航：遗失的文明.md
+2024-06-03 18:08:37.400 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=-1
+2024-06-03 18:08:37.400 | INFO     | __main__:main:286 - : ## 第一章：发现遗迹
+
+在遥远的未来，星际探索已成为人类文明的重要组成部分。李明，一位杰出的星际探险家，带领着他的团队，驾驶着先进的星际飞船“希望号”，穿梭于浩瀚的宇宙之中，寻找着未知的世界和文明的遗迹。
+
+他们的目标是一个被遗忘的星球，这个星球在古老的星图上被标记为“X-77”，但关于它的信息几乎是一片空白。李明和他的团队对这个神秘星球充满了好奇，他们知道，每一次的发现都可能改写人类对宇宙的认知。
+
+经过数月的航行，他们终于抵达了X-77星球。这个星球表面覆盖着厚厚的云层，从太空中望去，就像一颗巨大的珍珠。当“希望号”穿过云层，缓缓降落在这个星球上时，李明和他的团队被眼前的景象惊呆了。
+
+星球的表面是一片荒凉的景象，但在这荒凉之中，却隐藏着令人难以置信的秘密。他们发现了一系列古老的建筑，这些建筑风格奇特，与人类已知的任何文明都不相同。这些建筑似乎是由一种未知的材料建造，即使经过了无数岁月的侵蚀，依然坚固如初。
+
+李明和他的团队小心翼翼地探索着这些建筑，他们发现了一些壁画和文字，这些壁画和文字记录了一个古老文明的兴衰。这个文明曾经繁荣昌盛，但最终因为一场未知的灾难而消亡。
+
+在探索的过程中，李明发现了一个隐藏的房间，房间里有一个巨大的装置，这个装置似乎是用来进行某种能量转换的。李明和他的团队意识到，这个装置可能是这个古老文明的核心技术。
+
+经过一番努力，他们成功启动了这个装置，一股强大的能量波动在整个星球上扩散开来。随着能量的扩散，星球上的云层开始消散，露出了一个全新的世界。
+
+原来，这个星球上的文明并没有完全消亡，他们留下了一个保护机制，当有人能够启动那个装置时，这个星球就会重新焕发生机。李明和他的团队见证了这个奇迹，他们知道，这个发现将会震惊整个宇宙。
+
+在返回地球的途中，李明和他的团队带着对未知世界的好奇和对古老文明的敬意，他们知道，宇宙中还有无数的秘密等待他们去揭开。而X-77星球上的古老文明，将会成为人类历史上的一个新的篇章，激励着更多的人去探索那无尽的星空。
+2024-06-03 18:15:37.385 | INFO     | __main__:main:286 - 科幻
+2024-06-03 18:15:37.385 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 科幻...']
+2024-06-03 18:15:37.385 | INFO     | __main__:_think:205 - -1
+2024-06-03 18:15:37.385 | WARNING  | metagpt.utils.common:wrapper:649 - There is a exception in role's execution, in order to resume, we delete the newest role communication message in the role's memory.
+2024-06-03 18:16:25.062 | INFO     | __main__:main:286 - 科幻
+2024-06-03 18:16:25.062 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 科幻...']
+2024-06-03 18:16:25.063 | INFO     | __main__:_think:205 - -1
+2024-06-03 18:16:25.063 | WARNING  | metagpt.utils.common:wrapper:649 - There is a exception in role's execution, in order to resume, we delete the newest role communication message in the role's memory.
+2024-06-03 18:18:03.165 | INFO     | __main__:main:283 - 科幻
+2024-06-03 18:18:03.165 | DEBUG    | metagpt.roles.role:_observe:431 - () observed: ['user: 科幻...']
+2024-06-03 18:18:03.165 | INFO     | __main__:_think:208 - -1
+2024-06-03 18:18:03.166 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteStoryStruct], state=0
+2024-06-03 18:18:08.204 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        小说的题材是科幻。请严格使用Chinese语言，并按照instruction中的说明内容输出内容\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家, 我们需要您根据给定的小说题材生成故事的基本结构。\n按照以下内容输出符合给定题材的小说基本结构：\n标题:"小说的标题"\n设置:"小说的情景设置细节，包括时间段、地点和所有相关背景信息"\n主角:"小说主角的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n反派角色:"小说反派角色的名字、年龄、职业，以及他们的性格和动机、简要的描述"\n冲突:"小说故事的主要冲突，包括主角面临的问题和涉及的利害关系"\n对话:"以对话的形式描述情节，揭示人物，以此提供一些提示给读者"\n主题:"小说中心主题，并说明如何在整个情节、角色和背景中展开"\n基调:"整体故事的基调，以及保持背景和人物的一致性和适当性的说明"\n节奏:"调节故事节奏以建立和释放紧张气氛，推进情节，创造戏剧效果的说明"\n其它:"任何额外的细节或对故事的要求，如特定的字数或题材限制"\n'}]
+2024-06-03 18:18:25.649 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 18:18:25.649 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '标题: "星际迷航：遗失的文明"\n\n设置: 故事发生在遥远的未来，人类已经掌握了星际旅行的技术，并与其他外星文明建立了联系。主角的飞船在一次探索任务中意外发现了一个被遗忘的星球，这个星球上隐藏着一个古老的文明，其科技水平远远超越了当前的宇宙文明。\n\n主角: 李明，35岁，是一名经验丰富的星际探险家，性格坚韧不拔，好奇心旺盛，对未知充满渴望。他的动机是寻找宇宙中的未知文明，并揭示它们的秘密。\n\n反派角色: 杰克，40岁，是一名野心勃勃的宇宙海盗，性格冷酷无情，对权力和财富有着无尽的渴望。他的动机是夺取遗失文明的科技，以此来统治宇宙。\n\n冲突: 李明和他的团队在探索遗失文明的过程中，发现了这个文明留下的强大武器，但同时也触发了星球上的防御系统。杰克得知这一消息后，率领他的海盗舰队前来争夺。\n\n对话: 李明站在遗失文明的废墟前，对队友说：“我们终于找到了，这是人类历史上的重大发现。”杰克通过通讯器传来声音：“李明，我知道你在那里，交出你找到的东西，否则你们都别想活着离开。”\n\n主题: 故事的主题是探索与贪婪。通过主角和李明的冒险，展现了人类对未知世界的好奇心和探索精神，同时也揭示了贪婪和野心可能带来的灾难性后果。\n\n基调: 故事的基调是紧张和神秘，随着主角对遗失文明的深入探索，逐渐揭开这个古老文明的秘密，同时也面临着来自宇宙海盗的威胁。\n\n节奏: 故事的节奏紧凑，通过一系列的冒险和冲突，不断推进情节的发展，让读者感受到紧张的气氛和探索的乐趣。\n\n其它: 故事需要保持科学严谨性，所有科技和外星文明的设计都需要有合理的解释。此外，故事的结局应该是开放性的，留给读者想象的空间。\n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n\n您现在是短篇小说领域经验丰富的小说作家。我们需要您根据context的内容创作出小说的目录和章节内容概况。\n请按照以下要求提供该小说的具体目录和目录中的故事概况：\n1. 输出必须严格符合指定语言。\n2. 回答必须严格按照字典格式，如: {"title": "xxx", "directory": {"第一章：章节标题": "故事概况", "第二章：章节标题": "故事概况"}} 。\n3. 目录应尽可能引人注目和充分，包括一级目录和本章故事概况。\n4. 不要有额外的空格或换行符。\n'}]
+2024-06-03 18:18:34.439 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 18:18:34.440 | INFO     | __main__:_act:249 - {'title': '星际迷航：遗失的文明', 'directory': {'第一章：发现遗迹': '李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。', '第二章：遗失的科技': '探索过程中，李明发现了这个文明留下的强大武器，但同时也激活了星球的防御系统。', '第三章：海盗的威胁': '宇宙海盗杰克得知遗失文明的消息，率领舰队前来争夺，李明和他的团队面临严峻挑战。', '第四章：文明的秘密': '在躲避海盗追击的同时，李明深入研究遗失文明的科技，揭示了这个古老文明的秘密。', '第五章：终极对决': '李明和杰克的舰队在遗失文明的星球上展开决战，争夺控制权。', '第六章：新的开始': '决战后，李明和他的团队决定将遗失文明的科技用于和平目的，而杰克的野心也得到了应有的惩罚。'}}
+2024-06-03 18:18:34.442 | INFO     | __main__:_think:208 - 0
+2024-06-03 18:18:34.443 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=0
+2024-06-03 18:18:39.463 | DEBUG    | metagpt.provider.base_llm:aask:149 - [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': '\n        您现在是短篇小说领域经验丰富的小说作家。请以引人入胜的风格，深入细致地按照故事概况"李明和他的团队在一次星际探索中发现了一个被遗忘的星球，上面隐藏着一个古老的文明。"写出故事内容，注意与上一章故事内容的衔接。\n        上一章故事内容为星际迷航：遗失的文明。\n        \n\n## Actions\nLanguage: Please use the same language as Human INPUT.\n您现在是短篇小说领域经验丰富的小说作家。我们需要您创作出小说详细内容。'}]
+2024-06-03 18:18:58.582 | WARNING  | metagpt.utils.cost_manager:update_cost:49 - Model yi-large not found in TOKEN_COSTS.
+2024-06-03 18:18:58.582 | INFO     | __main__:_think:208 - 0
+2024-06-03 18:18:58.583 | INFO     | __main__:_react:275 - Write tutorial to D:\Python\Test\data\tutorial_docx\2024-06-03_18-18-58
+2024-06-03 18:18:58.584 | DEBUG    | metagpt.utils.file:write:42 - Successfully write file: D:\Python\Test\data\tutorial_docx\2024-06-03_18-18-58\星际迷航：遗失的文明.md
+2024-06-03 18:18:58.584 | DEBUG    | metagpt.roles.role:_set_state:325 - actions=[WriteContent, WriteContent, WriteContent, WriteContent, WriteContent, WriteContent], state=-1
+2024-06-03 18:18:58.584 | INFO     | __main__:main:285 - : ## 第一章：发现遗迹
+
+在遥远的未来，星际探索已成为人类文明的重要组成部分。李明，一位杰出的星际探险家，带领着他的团队，驾驶着先进的星际飞船“希望号”，穿梭于浩瀚的宇宙之中，寻找着未知的世界和文明的遗迹。
+
+他们的目标是一个被遗忘的星球，这个星球在古老的星图上被标记为“X-77”，但关于它的信息几乎是一片空白。李明和他的团队对这个神秘星球充满了好奇，他们知道，每一次的发现都可能改写人类对宇宙的认知。
+
+经过数月的航行，他们终于抵达了X-77星球。这个星球表面覆盖着厚厚的云层，从太空中望去，就像一颗巨大的珍珠。当“希望号”穿过云层，缓缓降落在这个星球上时，李明和他的团队被眼前的景象惊呆了。
+
+星球的表面是一片荒凉的景象，但在这荒凉之中，却隐藏着令人难以置信的秘密。他们发现了一系列古老的建筑，这些建筑风格奇特，与人类已知的任何文明都不相同。这些建筑似乎是由一种未知的材料建造，即使经过了无数岁月的侵蚀，依然坚固如初。
+
+李明和他的团队小心翼翼地探索着这些建筑，他们发现了一些壁画和文字，这些壁画和文字记录了一个古老文明的兴衰。这个文明曾经繁荣昌盛，但最终因为一场未知的灾难而消亡。
+
+在探索的过程中，李明发现了一个隐藏的房间，房间里有一个巨大的装置，似乎是某种能量源。当他触碰这个装置时，整个房间突然亮了起来，一幅全息图像出现在他们面前。
+
+全息图像展示了这个古老文明的最后一幕，他们为了保存自己的文明，将所有的知识和历史都储存在了这个装置中，希望有一天能够被其他文明发现。李明和他的团队意识到，他们不仅发现了一个古老的文明，还发现了一个文明的遗产。
+
+李明决定将这个发现带回地球，让全人类共享这份宝贵的遗产。他们小心翼翼地将装置带回了“希望号”，准备返回地球。在离开这个星球之前，李明回头望了一眼这个被遗忘的星球，心中充满了感慨。他知道，这次探索将会被载入史册，而他们，将成为人类历史上的一段传奇。

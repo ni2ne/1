@@ -1,0 +1,13 @@
+#llm:
+#  api_type: 'spark'
+#  app_id: '1240ae33'
+#  api_key: '6dab53b2a2bf76647c61810daa2458f1'
+#  api_secret: 'ZmIwNTVhMWNhY2NiODgxMDQ1NzY4Y2Zj'
+#  domain: 'generalv3.5'
+#  base_url: 'wss://spark-api.xf-yun.com/v3.5/chat'
+llm:
+  api_type: 'yi'
+  base_url: 'https://api.lingyiwanwu.com/v1'
+  api_key: '24409044b4d34e5896dd762da0fb71fd'
+  model: 'yi-large'
+  max_token: 2000
